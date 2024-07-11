@@ -24,6 +24,8 @@ struct CoolBackgroundView: View {
                 Image("blue-cloth").resizable().scaledToFill()
             case .img3:
                 Image("color-puffs").resizable().scaledToFill()
+            case .color1:
+                Color.black
         }
     }
 }

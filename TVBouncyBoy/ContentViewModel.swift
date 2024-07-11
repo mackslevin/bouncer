@@ -18,7 +18,7 @@ class ContentViewModel {
     var tighteningAmount: CGFloat = 20
     var shouldTighten = false
     var isShowingOptions = false 
-    var backgroundType: CoolBackground = .img1
+    var backgroundType: CoolBackground = .color1
     
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
