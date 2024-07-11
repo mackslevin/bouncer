@@ -8,15 +8,46 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var vm = ContentViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Button {
+            vm.isShowingOptions.toggle()
+        } label: {
+            RoundedRectangle(cornerRadius: 3)
+                .foregroundStyle(
+                    .linearGradient(colors: [.yellow, .pink, .indigo], startPoint: .topLeading, endPoint: .bottomTrailing)
+                )
+                .overlay(alignment: .center) {
+                    Image("used-to-this")
+                        .resizable().scaledToFit()
+                        .padding()
+                }
+                .frame(width: vm.rectangleSize.width, height: vm.rectangleSize.height)
+                .position(vm.position)
+                .onAppear {
+                    vm.startTimer()
+                    UIApplication.shared.isIdleTimerDisabled = true
+                }
+                .onDisappear {
+                    vm.timer?.invalidate()
+                }
         }
-        .padding()
+        .buttonStyle(BlankButtonStyle())
+        .background {
+            CoolBackgroundView(backgroundType: vm.backgroundType)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+        .ignoresSafeArea()
+        .onAppear {
+            vm.applyTightening()
+        }
+        .sheet(isPresented: $vm.isShowingOptions, content: {
+            OptionsView(contentViewModel: vm)
+        })
     }
+    
+    
 }
 
 #Preview {

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0114ADB22C404D4B008E5114 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADB12C404D4B008E5114 /* ContentViewModel.swift */; };
+		0114ADB42C405691008E5114 /* BlankButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADB32C405691008E5114 /* BlankButtonStyle.swift */; };
+		0114ADB62C4061E3008E5114 /* CoolBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADB52C4061E3008E5114 /* CoolBackground.swift */; };
+		0114ADB82C406284008E5114 /* CoolBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADB72C406284008E5114 /* CoolBackgroundView.swift */; };
+		0114ADBA2C406499008E5114 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADB92C406499008E5114 /* OptionsView.swift */; };
+		0114ADBC2C406FDC008E5114 /* OptionsRowButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADBB2C406FDC008E5114 /* OptionsRowButtonStyle.swift */; };
 		015E4FF02C39E77600AFD64E /* TVBouncyBoyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E4FEF2C39E77600AFD64E /* TVBouncyBoyApp.swift */; };
 		015E4FF22C39E77600AFD64E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E4FF12C39E77600AFD64E /* ContentView.swift */; };
 		015E4FF42C39E77700AFD64E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015E4FF32C39E77700AFD64E /* Assets.xcassets */; };
@@ -14,6 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0114ADB12C404D4B008E5114 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		0114ADB32C405691008E5114 /* BlankButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankButtonStyle.swift; sourceTree = "<group>"; };
+		0114ADB52C4061E3008E5114 /* CoolBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolBackground.swift; sourceTree = "<group>"; };
+		0114ADB72C406284008E5114 /* CoolBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolBackgroundView.swift; sourceTree = "<group>"; };
+		0114ADB92C406499008E5114 /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
+		0114ADBB2C406FDC008E5114 /* OptionsRowButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsRowButtonStyle.swift; sourceTree = "<group>"; };
 		015E4FEC2C39E77600AFD64E /* TVBouncyBoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVBouncyBoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		015E4FEF2C39E77600AFD64E /* TVBouncyBoyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVBouncyBoyApp.swift; sourceTree = "<group>"; };
 		015E4FF12C39E77600AFD64E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,9 +64,15 @@
 			isa = PBXGroup;
 			children = (
 				015E4FEF2C39E77600AFD64E /* TVBouncyBoyApp.swift */,
+				0114ADBB2C406FDC008E5114 /* OptionsRowButtonStyle.swift */,
 				015E4FF12C39E77600AFD64E /* ContentView.swift */,
+				0114ADB12C404D4B008E5114 /* ContentViewModel.swift */,
 				015E4FF32C39E77700AFD64E /* Assets.xcassets */,
 				015E4FF52C39E77700AFD64E /* Preview Content */,
+				0114ADB32C405691008E5114 /* BlankButtonStyle.swift */,
+				0114ADB52C4061E3008E5114 /* CoolBackground.swift */,
+				0114ADB72C406284008E5114 /* CoolBackgroundView.swift */,
+				0114ADB92C406499008E5114 /* OptionsView.swift */,
 			);
 			path = TVBouncyBoy;
 			sourceTree = "<group>";
@@ -137,8 +155,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0114ADB22C404D4B008E5114 /* ContentViewModel.swift in Sources */,
+				0114ADB82C406284008E5114 /* CoolBackgroundView.swift in Sources */,
 				015E4FF22C39E77600AFD64E /* ContentView.swift in Sources */,
+				0114ADBA2C406499008E5114 /* OptionsView.swift in Sources */,
+				0114ADB42C405691008E5114 /* BlankButtonStyle.swift in Sources */,
 				015E4FF02C39E77600AFD64E /* TVBouncyBoyApp.swift in Sources */,
+				0114ADB62C4061E3008E5114 /* CoolBackground.swift in Sources */,
+				0114ADBC2C406FDC008E5114 /* OptionsRowButtonStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +301,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -287,6 +312,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
 			};
 			name = Debug;
 		};
@@ -303,6 +329,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,6 +340,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
 			};
 			name = Release;
 		};
