@@ -13,4 +13,6 @@ struct Utility {
         dateFormatter.dateFormat = "yyyyMMddHHmmss"
         return dateFormatter.string(from: date)
     }
+    
+    static let defaultCornerRadius: CGFloat = 5
 }

@@ -10,20 +10,10 @@ import SwiftData
 
 @main
 struct TVBouncyBoy_iOSApp: App {
-    let sharedModelContainer = {
-        let schema = Schema([UserImage.self])
-        let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false, groupContainer: .identifier("group.com.johnslevin.TVBouncyBoy"), cloudKitDatabase: .private("iCloud.com.johnslevin.TVBouncyBoy"))
-        do {
-            return try ModelContainer(for: schema, configurations: [config])
-        } catch {
-            fatalError(error.localizedDescription)
-        }
-    }()
-
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(sharedModelContainer)
+        .modelContainer(DataManager.shared.container)
     }
 }

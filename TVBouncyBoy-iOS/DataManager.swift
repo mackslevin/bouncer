@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 actor DataManager {
-    let shared = DataManager()
+    static let shared = DataManager()
     let container: ModelContainer
     
     init() {
@@ -30,5 +30,12 @@ actor DataManager {
         let context = ModelContext(self.container)
         let items = try context.fetch(FetchDescriptor<UserImage>())
         return items
+    }
+    
+    func addUserImage(data: Data, type: UserImage.ImageType) {
+        let img = UserImage(data: data, imageType: type)
+        let context = ModelContext(self.container)
+        context.insert(img)
+        try? context.save()
     }
 }
