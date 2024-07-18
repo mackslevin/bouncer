@@ -122,10 +122,10 @@
 				01ADC90B2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift */,
 				01ADC90D2C49842F006A2214 /* ContentView.swift */,
 				01ADC9192C49858C006A2214 /* UserImage.swift */,
+				01ADC91F2C498B12006A2214 /* DataManager.swift */,
 				01ADC91C2C4989D2006A2214 /* Utility.swift */,
 				01ADC9132C498430006A2214 /* Preview Content */,
 				01ADC9112C498430006A2214 /* Assets.xcassets */,
-				01ADC91F2C498B12006A2214 /* DataManager.swift */,
 			);
 			path = "TVBouncyBoy-iOS";
 			sourceTree = "<group>";

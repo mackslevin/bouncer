@@ -25,4 +25,10 @@ actor DataManager {
         
         self.container = sharedModelContainer
     }
+    
+    func allUserImages() throws -> [UserImage] {
+        let context = ModelContext(self.container)
+        let items = try context.fetch(FetchDescriptor<UserImage>())
+        return items
+    }
 }
