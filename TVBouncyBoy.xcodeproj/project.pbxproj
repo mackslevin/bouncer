@@ -21,6 +21,12 @@
 		01ADC90E2C49842F006A2214 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC90D2C49842F006A2214 /* ContentView.swift */; };
 		01ADC9122C498430006A2214 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01ADC9112C498430006A2214 /* Assets.xcassets */; };
 		01ADC9152C498430006A2214 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01ADC9142C498430006A2214 /* Preview Assets.xcassets */; };
+		01ADC91A2C49858C006A2214 /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC9192C49858C006A2214 /* UserImage.swift */; };
+		01ADC91B2C49858C006A2214 /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC9192C49858C006A2214 /* UserImage.swift */; };
+		01ADC91D2C4989D2006A2214 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC91C2C4989D2006A2214 /* Utility.swift */; };
+		01ADC91E2C4989D2006A2214 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC91C2C4989D2006A2214 /* Utility.swift */; };
+		01ADC9202C498B12006A2214 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC91F2C498B12006A2214 /* DataManager.swift */; };
+		01ADC9212C498B12006A2214 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC91F2C498B12006A2214 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +46,11 @@
 		01ADC90D2C49842F006A2214 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		01ADC9112C498430006A2214 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01ADC9142C498430006A2214 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		01ADC9192C49858C006A2214 /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
+		01ADC91C2C4989D2006A2214 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		01ADC91F2C498B12006A2214 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		01ADC9222C498DCD006A2214 /* TVBouncyBoy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TVBouncyBoy.entitlements; sourceTree = "<group>"; };
+		01ADC9232C498EAC006A2214 /* TVBouncyBoy-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TVBouncyBoy-iOS.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +92,7 @@
 		015E4FEE2C39E77600AFD64E /* TVBouncyBoy */ = {
 			isa = PBXGroup;
 			children = (
+				01ADC9222C498DCD006A2214 /* TVBouncyBoy.entitlements */,
 				015E4FEF2C39E77600AFD64E /* TVBouncyBoyApp.swift */,
 				0114ADBB2C406FDC008E5114 /* OptionsRowButtonStyle.swift */,
 				015E4FF12C39E77600AFD64E /* ContentView.swift */,
@@ -106,10 +118,14 @@
 		01ADC90A2C49842F006A2214 /* TVBouncyBoy-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				01ADC9232C498EAC006A2214 /* TVBouncyBoy-iOS.entitlements */,
 				01ADC90B2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift */,
 				01ADC90D2C49842F006A2214 /* ContentView.swift */,
-				01ADC9112C498430006A2214 /* Assets.xcassets */,
+				01ADC9192C49858C006A2214 /* UserImage.swift */,
+				01ADC91C2C4989D2006A2214 /* Utility.swift */,
 				01ADC9132C498430006A2214 /* Preview Content */,
+				01ADC9112C498430006A2214 /* Assets.xcassets */,
+				01ADC91F2C498B12006A2214 /* DataManager.swift */,
 			);
 			path = "TVBouncyBoy-iOS";
 			sourceTree = "<group>";
@@ -222,12 +238,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01ADC91D2C4989D2006A2214 /* Utility.swift in Sources */,
 				0114ADB22C404D4B008E5114 /* ContentViewModel.swift in Sources */,
 				0114ADB82C406284008E5114 /* CoolBackgroundView.swift in Sources */,
+				01ADC91A2C49858C006A2214 /* UserImage.swift in Sources */,
 				015E4FF22C39E77600AFD64E /* ContentView.swift in Sources */,
 				0114ADBA2C406499008E5114 /* OptionsView.swift in Sources */,
 				0114ADB42C405691008E5114 /* BlankButtonStyle.swift in Sources */,
 				015E4FF02C39E77600AFD64E /* TVBouncyBoyApp.swift in Sources */,
+				01ADC9202C498B12006A2214 /* DataManager.swift in Sources */,
 				0114ADB62C4061E3008E5114 /* CoolBackground.swift in Sources */,
 				0114ADBC2C406FDC008E5114 /* OptionsRowButtonStyle.swift in Sources */,
 			);
@@ -237,8 +256,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01ADC91E2C4989D2006A2214 /* Utility.swift in Sources */,
+				01ADC9212C498B12006A2214 /* DataManager.swift in Sources */,
 				01ADC90E2C49842F006A2214 /* ContentView.swift in Sources */,
 				01ADC90C2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift in Sources */,
+				01ADC91B2C49858C006A2214 /* UserImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TVBouncyBoy/TVBouncyBoy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TVBouncyBoy/Preview Content\"";
@@ -397,6 +420,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TVBouncyBoy/TVBouncyBoy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TVBouncyBoy/Preview Content\"";
@@ -425,6 +449,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "TVBouncyBoy-iOS/TVBouncyBoy-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TVBouncyBoy-iOS/Preview Content\"";
@@ -456,6 +481,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "TVBouncyBoy-iOS/TVBouncyBoy-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TVBouncyBoy-iOS/Preview Content\"";
