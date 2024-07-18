@@ -10,14 +10,18 @@ import SwiftData
 import PhotosUI
 
 struct ContentView: View {
+    @Environment(\.modelContext) var modelContext
     @Query var userImages: [UserImage]
     @State private var vm = ContentViewModel()
     @ObservedObject var photosPickerManager = PhotosPickerManager()
     
     var body: some View {
         NavigationStack {
-            VStack {
-                GroupBox(label: Text("Backgrounds"), content: {
+            VStack(spacing: 40) {
+                VStack(alignment: .leading) {
+                    Text("Backgrounds")
+                        .font(.title2)
+                        .bold()
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: [GridItem()], content: {
                             PhotosPicker(selection: $photosPickerManager.backgroundImageSelection) {
@@ -39,13 +43,24 @@ struct ContentView: View {
                                         .scaledToFit()
                                         .frame(maxHeight: vm.rowHeight)
                                         .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
+                                        .contextMenu {
+                                            Button("Delete", systemImage: "trash", role: .destructive) {
+                                                withAnimation {
+                                                    modelContext.delete(userImage)
+                                                }
+                                            }
+                                        }
                                 }
                             }
                         })
                     }
-                })
+                    .frame(height: vm.rowHeight)
+                }
                 
-                GroupBox(label: Text("Box Images"), content: {
+                VStack(alignment: .leading) {
+                    Text("Box Images")
+                        .font(.title2)
+                        .bold()
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: [GridItem()], content: {
                             PhotosPicker(selection: $photosPickerManager.boxImageSelection) {
@@ -67,11 +82,19 @@ struct ContentView: View {
                                         .scaledToFit()
                                         .frame(maxHeight: vm.rowHeight)
                                         .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
+                                        .contextMenu {
+                                            Button("Delete", systemImage: "trash", role: .destructive) {
+                                                withAnimation {
+                                                    modelContext.delete(userImage)
+                                                }
+                                            }
+                                        }
                                 }
                             }
                         })
                     }
-                })
+                    .frame(height: vm.rowHeight)
+                }
                 
                 
                 Spacer()

@@ -6,13 +6,24 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct OptionsView: View {
     @Bindable var contentViewModel = ContentViewModel()
     @Environment(\.dismiss) var dismiss
+    @Query var userImages: [UserImage]
     
+    let backgroundPresets: [Preset] = [
+        Preset(image: Image("lake")),
+        Preset(image: Image("blue-cloth")),
+        Preset(image: Image("color-puffs")),
+        Preset(image: Image("test"))
+    ]
     
-    @State private var foo: Image? = nil
+    let boxImagePresets: [Preset] = [
+        Preset(image: Image("randy")),
+        Preset(image: Image("used-to-this"))
+    ]
     
     var body: some View {
         NavigationStack {
@@ -20,33 +31,78 @@ struct OptionsView: View {
                 VStack(alignment: .leading) {
                     Text("Background Presets")
                         .font(.title3)
-                    
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: [GridItem()], content: {
-                            ForEach(CoolBackground.allCases.reversed(), id: \.self) { bg in
-                                
+                            ForEach(backgroundPresets) { preset in
                                 Button {
-                                    contentViewModel.backgroundType = bg
+                                    contentViewModel.backgroundImage = preset.image
                                 } label: {
-                                    ZStack {
-                                        Color.white
-                                        Rectangle()
-                                            .overlay {
-                                                CoolBackgroundView(backgroundType: bg)
-                                            }
-                                            .clipped()
-                                            .padding(contentViewModel.backgroundType == bg ? 10 : 0)
-                                    }
-                                    .frame(width: 400, height: 240)
+                                    OptionsRowButtonLabel(contentViewModel: contentViewModel, image: preset.image, imageType: .background)
                                 }
                                 .buttonStyle(OptionsRowButtonStyle())
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
+                            }
+                        })
+                    }
+                    .padding(.bottom, 50)
+                    
+                    Text("Custom Backgrounds")
+                        .font(.title3)
+                    ScrollView(.horizontal) {
+                        LazyHGrid(rows: [GridItem()], content: {
+                            ForEach(userImages.filter({$0.imageType == .background}).sorted()) { userImage in
+                                if let data = userImage.data, let uiImage = UIImage(data: data) {
+                                    Button {
+                                        contentViewModel.backgroundImage = Image(uiImage: uiImage)
+                                    } label: {
+                                        OptionsRowButtonLabel(contentViewModel: contentViewModel, image: Image(uiImage: uiImage), imageType: .background)
+                                    }
+                                    .buttonStyle(OptionsRowButtonStyle())
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                }
                                 
                             }
                         })
                     }
                     .padding(.bottom, 50)
                     
+                    Text("Box Image Presets")
+                        .font(.title3)
+                    ScrollView(.horizontal) {
+                        LazyHGrid(rows: [GridItem()], content: {
+                            ForEach(boxImagePresets) { preset in
+                                
+                                Button {
+                                    contentViewModel.boxImage = preset.image
+                                } label: {
+                                    OptionsRowButtonLabel(contentViewModel: contentViewModel, image: preset.image, imageType: .boxImage)
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                            }
+                        })
+                    }
+                    .padding(.bottom, 50)
+                    
+                    Text("Custom Box Images")
+                        .font(.title3)
+                    ScrollView(.horizontal) {
+                        LazyHGrid(rows: [GridItem()], content: {
+                            ForEach(userImages.filter({$0.imageType == .boxImage}).sorted()) { userImage in
+                                if let data = userImage.data, let uiImage = UIImage(data: data) {
+                                    Button {
+                                        contentViewModel.boxImage = Image(uiImage: uiImage)
+                                    } label: {
+                                        OptionsRowButtonLabel(contentViewModel: contentViewModel, image: Image(uiImage: uiImage), imageType: .boxImage)
+                                    }
+                                    .buttonStyle(OptionsRowButtonStyle())
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                }
+                                
+                            }
+                        })
+                    }
+                    .padding(.bottom, 50)
                     
                     
                     Spacer()

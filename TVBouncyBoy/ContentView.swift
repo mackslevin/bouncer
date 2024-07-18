@@ -15,14 +15,12 @@ struct ContentView: View {
             vm.isShowingOptions.toggle()
         } label: {
             RoundedRectangle(cornerRadius: 3)
-                .foregroundStyle(
-                    .linearGradient(colors: [.yellow, .pink, .indigo], startPoint: .topLeading, endPoint: .bottomTrailing)
-                )
+                .foregroundStyle(.gray.gradient)
                 .overlay(alignment: .center) {
-                    Image("used-to-this")
-                        .resizable().scaledToFit()
-                        .padding()
+                    vm.boxImage
+                        .resizable().scaledToFill()
                 }
+                .clipped()
                 .frame(width: vm.rectangleSize.width, height: vm.rectangleSize.height)
                 .position(vm.position)
                 .onAppear {
@@ -35,7 +33,7 @@ struct ContentView: View {
         }
         .buttonStyle(BlankButtonStyle())
         .background {
-            CoolBackgroundView(backgroundType: vm.backgroundType)
+            vm.backgroundImage.resizable().scaledToFill()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .ignoresSafeArea()
