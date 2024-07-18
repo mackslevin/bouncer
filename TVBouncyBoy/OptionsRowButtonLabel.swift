@@ -21,9 +21,7 @@ struct OptionsRowButtonLabel: View {
                 }
                 .clipped()
                 .padding(
-//                    imageType == .background ? contentViewModel.backgroundImage == image ? 10 : 0 : contentViewModel.boxImage == image ? 10 : 0
-                    
-                    contentViewModel.backgroundImage == image || contentViewModel.boxImage == image ? 10 : 0
+                    contentViewModel.boxImage == image ? 10 : 0
                 )
         }
         .frame(width: 400, height: 240)

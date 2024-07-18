@@ -99,6 +99,7 @@
 				01ADC9222C498DCD006A2214 /* TVBouncyBoy.entitlements */,
 				015E4FEF2C39E77600AFD64E /* TVBouncyBoyApp.swift */,
 				0114ADBB2C406FDC008E5114 /* OptionsRowButtonStyle.swift */,
+				01ADC92B2C49C49A006A2214 /* OptionsRowButtonLabel.swift */,
 				015E4FF12C39E77600AFD64E /* ContentView.swift */,
 				0114ADB12C404D4B008E5114 /* ContentViewModel.swift */,
 				0114ADB32C405691008E5114 /* BlankButtonStyle.swift */,
@@ -106,7 +107,6 @@
 				015E4FF32C39E77700AFD64E /* Assets.xcassets */,
 				015E4FF52C39E77700AFD64E /* Preview Content */,
 				01ADC9292C49C21F006A2214 /* Preset.swift */,
-				01ADC92B2C49C49A006A2214 /* OptionsRowButtonLabel.swift */,
 			);
 			path = TVBouncyBoy;
 			sourceTree = "<group>";
