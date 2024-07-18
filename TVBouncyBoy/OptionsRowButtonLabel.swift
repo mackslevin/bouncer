@@ -10,7 +10,7 @@ import SwiftUI
 struct OptionsRowButtonLabel: View {
     @Bindable var contentViewModel: ContentViewModel
     let image: Image
-    let imageType: UserImage.ImageType
+    let imageType: AppImage.ImageType
     
     var body: some View {
         ZStack {

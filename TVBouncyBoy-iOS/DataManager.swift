@@ -14,7 +14,7 @@ actor DataManager {
     
     init() {
         let sharedModelContainer = {
-            let schema = Schema([UserImage.self])
+            let schema = Schema([AppImage.self])
             let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false, groupContainer: .identifier("group.com.johnslevin.TVBouncyBoy"), cloudKitDatabase: .private("iCloud.com.johnslevin.TVBouncyBoy"))
             do {
                 return try ModelContainer(for: schema, configurations: [config])
@@ -26,14 +26,14 @@ actor DataManager {
         self.container = sharedModelContainer
     }
     
-    func allUserImages() throws -> [UserImage] {
+    func allUserImages() throws -> [AppImage] {
         let context = ModelContext(self.container)
-        let items = try context.fetch(FetchDescriptor<UserImage>())
+        let items = try context.fetch(FetchDescriptor<AppImage>())
         return items
     }
     
-    func addUserImage(data: Data, type: UserImage.ImageType) {
-        let img = UserImage(data: data, imageType: type)
+    func addUserImage(data: Data, type: AppImage.ImageType) {
+        let img = AppImage(data: data, imageType: type)
         let context = ModelContext(self.container)
         context.insert(img)
         try? context.save()

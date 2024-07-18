@@ -11,7 +11,7 @@ import SwiftData
 @main
 struct TVBouncyBoyApp: App {
     let sharedModelContainer = {
-        let schema = Schema([UserImage.self])
+        let schema = Schema([AppImage.self])
         let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false, groupContainer: .identifier("group.com.johnslevin.TVBouncyBoy"), cloudKitDatabase: .private("iCloud.com.johnslevin.TVBouncyBoy"))
         do {
             return try ModelContainer(for: schema, configurations: [config])

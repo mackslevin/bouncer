@@ -11,7 +11,7 @@ import SwiftData
 struct OptionsView: View {
     @Bindable var contentViewModel = ContentViewModel()
     @Environment(\.dismiss) var dismiss
-    @Query var userImages: [UserImage]
+    @Query var userImages: [AppImage]
     
     let backgroundPresets: [Preset] = [
         Preset(image: Image("lake")),

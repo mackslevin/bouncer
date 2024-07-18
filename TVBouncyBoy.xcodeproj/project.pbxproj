@@ -19,8 +19,8 @@
 		01ADC90E2C49842F006A2214 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC90D2C49842F006A2214 /* ContentView.swift */; };
 		01ADC9122C498430006A2214 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01ADC9112C498430006A2214 /* Assets.xcassets */; };
 		01ADC9152C498430006A2214 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01ADC9142C498430006A2214 /* Preview Assets.xcassets */; };
-		01ADC91A2C49858C006A2214 /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC9192C49858C006A2214 /* UserImage.swift */; };
-		01ADC91B2C49858C006A2214 /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC9192C49858C006A2214 /* UserImage.swift */; };
+		01ADC91A2C49858C006A2214 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC9192C49858C006A2214 /* AppImage.swift */; };
+		01ADC91B2C49858C006A2214 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC9192C49858C006A2214 /* AppImage.swift */; };
 		01ADC91D2C4989D2006A2214 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC91C2C4989D2006A2214 /* Utility.swift */; };
 		01ADC91E2C4989D2006A2214 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC91C2C4989D2006A2214 /* Utility.swift */; };
 		01ADC9202C498B12006A2214 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC91F2C498B12006A2214 /* DataManager.swift */; };
@@ -46,7 +46,7 @@
 		01ADC90D2C49842F006A2214 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		01ADC9112C498430006A2214 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01ADC9142C498430006A2214 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		01ADC9192C49858C006A2214 /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
+		01ADC9192C49858C006A2214 /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
 		01ADC91C2C4989D2006A2214 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		01ADC91F2C498B12006A2214 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		01ADC9222C498DCD006A2214 /* TVBouncyBoy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TVBouncyBoy.entitlements; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 				01ADC9232C498EAC006A2214 /* TVBouncyBoy-iOS.entitlements */,
 				01ADC90B2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift */,
 				01ADC90D2C49842F006A2214 /* ContentView.swift */,
-				01ADC9192C49858C006A2214 /* UserImage.swift */,
+				01ADC9192C49858C006A2214 /* AppImage.swift */,
 				01ADC9242C49A656006A2214 /* ContentViewModel.swift */,
 				01ADC9272C49A759006A2214 /* PhotosPickerManager.swift */,
 				01ADC91F2C498B12006A2214 /* DataManager.swift */,
@@ -246,7 +246,7 @@
 			files = (
 				01ADC91D2C4989D2006A2214 /* Utility.swift in Sources */,
 				0114ADB22C404D4B008E5114 /* ContentViewModel.swift in Sources */,
-				01ADC91A2C49858C006A2214 /* UserImage.swift in Sources */,
+				01ADC91A2C49858C006A2214 /* AppImage.swift in Sources */,
 				015E4FF22C39E77600AFD64E /* ContentView.swift in Sources */,
 				0114ADBA2C406499008E5114 /* OptionsView.swift in Sources */,
 				0114ADB42C405691008E5114 /* BlankButtonStyle.swift in Sources */,
@@ -267,7 +267,7 @@
 				01ADC9262C49A656006A2214 /* ContentViewModel.swift in Sources */,
 				01ADC90E2C49842F006A2214 /* ContentView.swift in Sources */,
 				01ADC90C2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift in Sources */,
-				01ADC91B2C49858C006A2214 /* UserImage.swift in Sources */,
+				01ADC91B2C49858C006A2214 /* AppImage.swift in Sources */,
 				01ADC9282C49A759006A2214 /* PhotosPickerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
