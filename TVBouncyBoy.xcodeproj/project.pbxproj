@@ -17,6 +17,10 @@
 		015E4FF22C39E77600AFD64E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E4FF12C39E77600AFD64E /* ContentView.swift */; };
 		015E4FF42C39E77700AFD64E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015E4FF32C39E77700AFD64E /* Assets.xcassets */; };
 		015E4FF72C39E77700AFD64E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015E4FF62C39E77700AFD64E /* Preview Assets.xcassets */; };
+		01ADC90C2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC90B2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift */; };
+		01ADC90E2C49842F006A2214 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC90D2C49842F006A2214 /* ContentView.swift */; };
+		01ADC9122C498430006A2214 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01ADC9112C498430006A2214 /* Assets.xcassets */; };
+		01ADC9152C498430006A2214 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01ADC9142C498430006A2214 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +35,22 @@
 		015E4FF12C39E77600AFD64E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		015E4FF32C39E77700AFD64E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		015E4FF62C39E77700AFD64E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		01ADC9092C49842F006A2214 /* TVBouncyBoy-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TVBouncyBoy-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01ADC90B2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVBouncyBoy_iOSApp.swift; sourceTree = "<group>"; };
+		01ADC90D2C49842F006A2214 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		01ADC9112C498430006A2214 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		01ADC9142C498430006A2214 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		015E4FE92C39E77600AFD64E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01ADC9062C49842F006A2214 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -48,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				015E4FEE2C39E77600AFD64E /* TVBouncyBoy */,
+				01ADC90A2C49842F006A2214 /* TVBouncyBoy-iOS */,
 				015E4FED2C39E77600AFD64E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				015E4FEC2C39E77600AFD64E /* TVBouncyBoy.app */,
+				01ADC9092C49842F006A2214 /* TVBouncyBoy-iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +103,25 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		01ADC90A2C49842F006A2214 /* TVBouncyBoy-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				01ADC90B2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift */,
+				01ADC90D2C49842F006A2214 /* ContentView.swift */,
+				01ADC9112C498430006A2214 /* Assets.xcassets */,
+				01ADC9132C498430006A2214 /* Preview Content */,
+			);
+			path = "TVBouncyBoy-iOS";
+			sourceTree = "<group>";
+		};
+		01ADC9132C498430006A2214 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				01ADC9142C498430006A2214 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,6 +142,23 @@
 			productReference = 015E4FEC2C39E77600AFD64E /* TVBouncyBoy.app */;
 			productType = "com.apple.product-type.application";
 		};
+		01ADC9082C49842F006A2214 /* TVBouncyBoy-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01ADC9162C498430006A2214 /* Build configuration list for PBXNativeTarget "TVBouncyBoy-iOS" */;
+			buildPhases = (
+				01ADC9052C49842F006A2214 /* Sources */,
+				01ADC9062C49842F006A2214 /* Frameworks */,
+				01ADC9072C49842F006A2214 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TVBouncyBoy-iOS";
+			productName = "TVBouncyBoy-iOS";
+			productReference = 01ADC9092C49842F006A2214 /* TVBouncyBoy-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -112,11 +166,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					015E4FEB2C39E77600AFD64E = {
 						CreatedOnToolsVersion = 16.0;
+					};
+					01ADC9082C49842F006A2214 = {
+						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
@@ -134,6 +191,7 @@
 			projectRoot = "";
 			targets = (
 				015E4FEB2C39E77600AFD64E /* TVBouncyBoy */,
+				01ADC9082C49842F006A2214 /* TVBouncyBoy-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -145,6 +203,15 @@
 			files = (
 				015E4FF72C39E77700AFD64E /* Preview Assets.xcassets in Resources */,
 				015E4FF42C39E77700AFD64E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01ADC9072C49842F006A2214 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01ADC9152C498430006A2214 /* Preview Assets.xcassets in Resources */,
+				01ADC9122C498430006A2214 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +230,15 @@
 				015E4FF02C39E77600AFD64E /* TVBouncyBoyApp.swift in Sources */,
 				0114ADB62C4061E3008E5114 /* CoolBackground.swift in Sources */,
 				0114ADBC2C406FDC008E5114 /* OptionsRowButtonStyle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01ADC9052C49842F006A2214 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01ADC90E2C49842F006A2214 /* ContentView.swift in Sources */,
+				01ADC90C2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +420,68 @@
 			};
 			name = Release;
 		};
+		01ADC9172C498430006A2214 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TVBouncyBoy-iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = CCAQHTG68D;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.johnslevin.TVBouncyBoy-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		01ADC9182C498430006A2214 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TVBouncyBoy-iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = CCAQHTG68D;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.johnslevin.TVBouncyBoy-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -361,6 +499,15 @@
 			buildConfigurations = (
 				015E4FFB2C39E77700AFD64E /* Debug */,
 				015E4FFC2C39E77700AFD64E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01ADC9162C498430006A2214 /* Build configuration list for PBXNativeTarget "TVBouncyBoy-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01ADC9172C498430006A2214 /* Debug */,
+				01ADC9182C498430006A2214 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
