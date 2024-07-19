@@ -19,8 +19,21 @@ class ContentViewModel {
     var shouldTighten = false
     var isShowingOptions = false 
     
-    var backgroundImage = Image("color-puffs")
-    var boxImage = Image("used-to-this")
+    var backgroundImage = backgroundImagePresets.first!
+    var boxImage = boxImagePresets.first!
+    
+    
+    static let backgroundImagePresets = [
+        AppImage(presetName: "lake"),
+        AppImage(presetName: "blue-cloth"),
+        AppImage(presetName: "test"),
+        AppImage(presetName: "color-puffs")
+    ]
+    
+    static let boxImagePresets = [
+        AppImage(presetName: "randy"),
+        AppImage(presetName: "used-to-this")
+    ]
     
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in

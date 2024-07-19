@@ -13,18 +13,6 @@ struct OptionsView: View {
     @Environment(\.dismiss) var dismiss
     @Query var userImages: [AppImage]
     
-    let backgroundPresets: [Preset] = [
-        Preset(image: Image("lake")),
-        Preset(image: Image("blue-cloth")),
-        Preset(image: Image("color-puffs")),
-        Preset(image: Image("test"))
-    ]
-    
-    let boxImagePresets: [Preset] = [
-        Preset(image: Image("randy")),
-        Preset(image: Image("used-to-this"))
-    ]
-    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -33,11 +21,11 @@ struct OptionsView: View {
                         .font(.title3)
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: [GridItem()], content: {
-                            ForEach(backgroundPresets) { preset in
+                            ForEach(ContentViewModel.backgroundImagePresets) { preset in
                                 Button {
-                                    contentViewModel.backgroundImage = preset.image
+                                    contentViewModel.backgroundImage = preset
                                 } label: {
-                                    OptionsRowButtonLabel(contentViewModel: contentViewModel, image: preset.image, imageType: .background)
+                                    OptionsRowButtonLabel(contentViewModel: contentViewModel, image: preset, imageType: .background)
                                 }
                                 .buttonStyle(OptionsRowButtonStyle())
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -51,15 +39,15 @@ struct OptionsView: View {
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: [GridItem()], content: {
                             ForEach(userImages.filter({$0.imageType == .background}).sorted()) { userImage in
-                                if let data = userImage.data, let uiImage = UIImage(data: data) {
-                                    Button {
-                                        contentViewModel.backgroundImage = Image(uiImage: uiImage)
-                                    } label: {
-                                        OptionsRowButtonLabel(contentViewModel: contentViewModel, image: Image(uiImage: uiImage), imageType: .background)
-                                    }
-                                    .buttonStyle(OptionsRowButtonStyle())
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                
+                                Button {
+                                    contentViewModel.backgroundImage = userImage
+                                } label: {
+                                    OptionsRowButtonLabel(contentViewModel: contentViewModel, image: userImage, imageType: .background)
                                 }
+                                .buttonStyle(OptionsRowButtonStyle())
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                                
                                 
                             }
                         })
@@ -70,12 +58,12 @@ struct OptionsView: View {
                         .font(.title3)
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: [GridItem()], content: {
-                            ForEach(boxImagePresets) { preset in
+                            ForEach(ContentViewModel.boxImagePresets) { preset in
                                 
                                 Button {
-                                    contentViewModel.boxImage = preset.image
+                                    contentViewModel.boxImage = preset
                                 } label: {
-                                    OptionsRowButtonLabel(contentViewModel: contentViewModel, image: preset.image, imageType: .boxImage)
+                                    OptionsRowButtonLabel(contentViewModel: contentViewModel, image: preset, imageType: .boxImage)
                                 }
                                 .buttonStyle(OptionsRowButtonStyle())
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -89,15 +77,15 @@ struct OptionsView: View {
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: [GridItem()], content: {
                             ForEach(userImages.filter({$0.imageType == .boxImage}).sorted()) { userImage in
-                                if let data = userImage.data, let uiImage = UIImage(data: data) {
+                                
                                     Button {
-                                        contentViewModel.boxImage = Image(uiImage: uiImage)
+                                        contentViewModel.boxImage = userImage
                                     } label: {
-                                        OptionsRowButtonLabel(contentViewModel: contentViewModel, image: Image(uiImage: uiImage), imageType: .boxImage)
+                                        OptionsRowButtonLabel(contentViewModel: contentViewModel, image: userImage, imageType: .boxImage)
                                     }
                                     .buttonStyle(OptionsRowButtonStyle())
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
-                                }
+                                
                                 
                             }
                         })

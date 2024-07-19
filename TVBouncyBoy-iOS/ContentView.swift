@@ -11,7 +11,7 @@ import PhotosUI
 
 struct ContentView: View {
     @Environment(\.modelContext) var modelContext
-    @Query var userImages: [UserImage]
+    @Query var userImages: [AppImage]
     @State private var vm = ContentViewModel()
     @ObservedObject var photosPickerManager = PhotosPickerManager()
     
@@ -37,8 +37,8 @@ struct ContentView: View {
                             }
                             
                             ForEach(userImages.filter({$0.imageType == .background}).sorted()) { userImage in
-                                if let data = userImage.data, let uiImage = UIImage(data: data) {
-                                    Image(uiImage: uiImage)
+                                if let image = userImage.imageValue {
+                                    image
                                         .resizable()
                                         .scaledToFit()
                                         .frame(maxHeight: vm.rowHeight)
@@ -76,8 +76,8 @@ struct ContentView: View {
                             }
                             
                             ForEach(userImages.filter({$0.imageType == .boxImage}).sorted()) { userImage in
-                                if let data = userImage.data, let uiImage = UIImage(data: data) {
-                                    Image(uiImage: uiImage)
+                                if let image = userImage.imageValue {
+                                    image
                                         .resizable()
                                         .scaledToFit()
                                         .frame(maxHeight: vm.rowHeight)
@@ -107,5 +107,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: UserImage.self, inMemory: true)
+        .modelContainer(for: AppImage.self, inMemory: true)
 }

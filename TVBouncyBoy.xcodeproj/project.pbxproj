@@ -27,7 +27,6 @@
 		01ADC9212C498B12006A2214 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC91F2C498B12006A2214 /* DataManager.swift */; };
 		01ADC9262C49A656006A2214 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC9242C49A656006A2214 /* ContentViewModel.swift */; };
 		01ADC9282C49A759006A2214 /* PhotosPickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC9272C49A759006A2214 /* PhotosPickerManager.swift */; };
-		01ADC92A2C49C21F006A2214 /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC9292C49C21F006A2214 /* Preset.swift */; };
 		01ADC92C2C49C49A006A2214 /* OptionsRowButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC92B2C49C49A006A2214 /* OptionsRowButtonLabel.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +52,6 @@
 		01ADC9232C498EAC006A2214 /* TVBouncyBoy-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TVBouncyBoy-iOS.entitlements"; sourceTree = "<group>"; };
 		01ADC9242C49A656006A2214 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		01ADC9272C49A759006A2214 /* PhotosPickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPickerManager.swift; sourceTree = "<group>"; };
-		01ADC9292C49C21F006A2214 /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preset.swift; sourceTree = "<group>"; };
 		01ADC92B2C49C49A006A2214 /* OptionsRowButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsRowButtonLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,7 +104,6 @@
 				0114ADB92C406499008E5114 /* OptionsView.swift */,
 				015E4FF32C39E77700AFD64E /* Assets.xcassets */,
 				015E4FF52C39E77700AFD64E /* Preview Content */,
-				01ADC9292C49C21F006A2214 /* Preset.swift */,
 			);
 			path = TVBouncyBoy;
 			sourceTree = "<group>";
@@ -252,7 +249,6 @@
 				0114ADB42C405691008E5114 /* BlankButtonStyle.swift in Sources */,
 				015E4FF02C39E77600AFD64E /* TVBouncyBoyApp.swift in Sources */,
 				01ADC9202C498B12006A2214 /* DataManager.swift in Sources */,
-				01ADC92A2C49C21F006A2214 /* Preset.swift in Sources */,
 				0114ADBC2C406FDC008E5114 /* OptionsRowButtonStyle.swift in Sources */,
 				01ADC92C2C49C49A006A2214 /* OptionsRowButtonLabel.swift in Sources */,
 			);

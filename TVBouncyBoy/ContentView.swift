@@ -10,6 +10,10 @@ import SwiftUI
 struct ContentView: View {
     @State var vm = ContentViewModel()
     
+    // Proxies for performance. Reading the SwiftData-stored object directly seems to be much more demanding.
+    @State private var backgroundImageProxy: Image? = nil
+    @State private var boxImageProxy: Image? = nil
+    
     var body: some View {
         Button {
             vm.isShowingOptions.toggle()
@@ -17,8 +21,10 @@ struct ContentView: View {
             RoundedRectangle(cornerRadius: 3)
                 .foregroundStyle(.gray.gradient)
                 .overlay(alignment: .center) {
-                    vm.boxImage
-                        .resizable().scaledToFill()
+                    if let image = boxImageProxy {
+                        image
+                            .resizable().scaledToFill()
+                    }
                 }
                 .clipped()
                 .frame(width: vm.rectangleSize.width, height: vm.rectangleSize.height)
@@ -33,13 +39,24 @@ struct ContentView: View {
         }
         .buttonStyle(BlankButtonStyle())
         .background {
-            vm.backgroundImage.resizable().scaledToFill()
+            if let image = backgroundImageProxy {
+                image.resizable().scaledToFill()
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .ignoresSafeArea()
         .onAppear {
+            backgroundImageProxy = vm.backgroundImage.imageValue!
+            boxImageProxy = vm.boxImage.imageValue!
+            
             vm.applyTightening()
         }
+        .onChange(of: vm.boxImage, { _, newValue in
+            boxImageProxy = newValue.imageValue!
+        })
+        .onChange(of: vm.backgroundImage, { oldValue, newValue in
+            backgroundImageProxy = newValue.imageValue!
+        })
         .sheet(isPresented: $vm.isShowingOptions, content: {
             OptionsView(contentViewModel: vm)
         })

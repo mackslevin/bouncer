@@ -18,7 +18,7 @@ class PhotosPickerManager: ObservableObject {
     @Published var backgroundImageSelection: PhotosPickerItem? {
         didSet {
             if let backgroundImageSelection {
-                let progress = loadTransferable(from: backgroundImageSelection, imageType: .background)
+                let progress = loadTransferable(from: backgroundImageSelection, imageType: AppImage.ImageType.background)
                 imageState = .loading(progress)
             } else {
                 imageState = .empty
@@ -29,7 +29,7 @@ class PhotosPickerManager: ObservableObject {
     @Published var boxImageSelection: PhotosPickerItem? {
         didSet {
             if let boxImageSelection {
-                let progress = loadTransferable(from: boxImageSelection, imageType: .boxImage)
+                let progress = loadTransferable(from: boxImageSelection, imageType: AppImage.ImageType.boxImage)
                 imageState = .loading(progress)
             } else {
                 imageState = .empty
@@ -57,7 +57,7 @@ class PhotosPickerManager: ObservableObject {
         }
     }
     
-    private func loadTransferable(from imageSelection: PhotosPickerItem, imageType: UserImage.ImageType) -> Progress {
+    private func loadTransferable(from imageSelection: PhotosPickerItem, imageType: AppImage.ImageType) -> Progress {
         return imageSelection.loadTransferable(type: Data.self) { result in
             DispatchQueue.main.async {
                 if imageType == .background {
