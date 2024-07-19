@@ -4,7 +4,6 @@
 //
 //  Created by Mack Slevin on 7/18/24.
 //
-
 import SwiftUI
 import SwiftData
 
@@ -16,38 +15,47 @@ struct PreviewView: View {
         NavigationStack {
             VStack {
                 VStack {
-                    ZStack {
-                        Rectangle()
-                            .overlay {
-                                if let image = vm.proxyBackgroundImage {
-                                    image.resizable().scaledToFill()
-                                }
-                            }
+                    Canvas { context, size in
+                        // Draw the background rectangle and image
+                        if let image = vm.proxyBackgroundImage {
+                            context.draw(image, in: CGRect(origin: .zero, size: size))
+                        }
                         
-                        Rectangle()
-                            .foregroundStyle(.gray)
-                            .frame(width: vm.rectangleSize.width, height: vm.rectangleSize.height)
-                            .clipShape(RoundedRectangle(cornerRadius: 2))
+                        let rect = CGRect(x: vm.position.x - vm.rectangleSize.width / 2,
+                                          y: vm.position.y - vm.rectangleSize.height / 2,
+                                          width: vm.rectangleSize.width,
+                                          height: vm.rectangleSize.height)
+                        
+                        if let boxy = context.resolveSymbol(id: 1) {
+                            context.draw(boxy, in: rect)
+                        }
+                    } symbols: {
+                        RoundedRectangle(cornerRadius: Utility.defaultCornerRadius)
                             .overlay {
-                                if let image = vm.proxyBoxImage {
-                                    image.resizable().scaledToFill()
+                                if let boxImg = vm.proxyBoxImage {
+                                    boxImg.resizable().scaledToFill()
                                 }
                             }
                             .clipped()
-                            .position(vm.position)
-                            .onAppear {
-                                vm.startTimer()
-                            }
-                            .onDisappear {
-                                vm.timer?.invalidate()
-                            }
+                            .frame(width: vm.rectangleSize.width, height: vm.rectangleSize.height)
+                            .tag(1)
+                    }
+                    .frame(height: 300)
+                    .background {
+                        Rectangle()
+                            .foregroundStyle(.yellow)
+                    }
+                    .onAppear {
+                        vm.startTimer()
+                    }
+                    .onDisappear {
+                        vm.timer?.invalidate()
                     }
                 }
-                .frame(height: 300)
                 
                 Picker("Background Image", selection: $vm.selectedBackgroundImage) {
                     Text("Choose background...")
-                    ForEach(userImages.filter({$0.imageType == .background})) { bgImage in
+                    ForEach(userImages.filter({ $0.imageType == .background })) { bgImage in
                         Text(bgImage.title ?? "Image").tag(bgImage as AppImage?)
                     }
                 }
@@ -55,7 +63,7 @@ struct PreviewView: View {
                 
                 Picker("Box Image", selection: $vm.selectedBoxImage) {
                     Text("Choose box image...")
-                    ForEach(userImages.filter({$0.imageType == .boxImage})) { bgImage in
+                    ForEach(userImages.filter({ $0.imageType == .boxImage })) { bgImage in
                         Text(bgImage.title ?? "Image").tag(bgImage as AppImage?)
                     }
                 }
@@ -64,8 +72,7 @@ struct PreviewView: View {
             }
             .navigationTitle("Preview")
             .onAppear {
-                vm.containerSize = CGSize(width: UIScreen.main.bounds.width, height: 300
-                )
+                vm.containerSize = CGSize(width: UIScreen.main.bounds.width, height: 300)
             }
             .onChange(of: vm.selectedBackgroundImage) { _, newValue in
                 if let imageValue = newValue?.imageValue {
@@ -78,7 +85,6 @@ struct PreviewView: View {
                 }
             }
         }
-        
     }
 }
 

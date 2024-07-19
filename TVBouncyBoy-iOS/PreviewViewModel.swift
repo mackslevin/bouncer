@@ -10,17 +10,18 @@ import Observation
 
 @Observable
 final class PreviewViewModel {
-    let rectangleSize: CGSize = CGSize(width: 60, height: 32)
+    let rectangleSize: CGSize = CGSize(width: 75, height: 50)
     var containerSize: CGSize = CGSize(width: 300, height: 300)
     var timer: Timer?
     var velocity: CGSize = CGSize(width: 1, height: 1)
     var position: CGPoint = CGPoint(x: 30, y: 16)
     
-    // When the selected AppImage values change, the poxy versions are set in the view via onChange modifiers
+    // When the selected AppImage values change, the proxy versions are set in the view via onChange modifiers
     var selectedBackgroundImage: AppImage?
     var selectedBoxImage: AppImage?
     var proxyBackgroundImage: Image?
     var proxyBoxImage: Image?
+    
     
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
@@ -28,6 +29,7 @@ final class PreviewViewModel {
         }
     }
 
+    
     func updatePosition() {
         var newX = position.x + velocity.width
         var newY = position.y + velocity.height
@@ -46,6 +48,13 @@ final class PreviewViewModel {
         withAnimation(.linear(duration: 0.05)) {
             position = CGPoint(x: newX, y: newY)
         }
+    }
+    
+    func aspectFitSize(for originalSize: CGSize, in boundingSize: CGSize) -> CGSize {
+        let widthRatio = boundingSize.width / originalSize.width
+        let heightRatio = boundingSize.height / originalSize.height
+        let scale = min(widthRatio, heightRatio)
+        return CGSize(width: originalSize.width * scale, height: originalSize.height * scale)
     }
     
 }
