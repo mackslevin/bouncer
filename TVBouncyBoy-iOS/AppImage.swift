@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 @Model
-final class AppImage: Identifiable, Comparable {
+final class AppImage: Identifiable, Comparable, Hashable {
     let id = UUID()
     let data: Data?
     let presetName: String? // If this exists, the instance is a preset sourced from an asset catalog image which shares its name with this.

@@ -13,8 +13,14 @@ final class PreviewViewModel {
     let rectangleSize: CGSize = CGSize(width: 60, height: 32)
     var containerSize: CGSize = CGSize(width: 300, height: 300)
     var timer: Timer?
-    var velocity: CGSize = CGSize(width: 2, height: 2)
+    var velocity: CGSize = CGSize(width: 1, height: 1)
     var position: CGPoint = CGPoint(x: 30, y: 16)
+    
+    // When the selected AppImage values change, the poxy versions are set in the view via onChange modifiers
+    var selectedBackgroundImage: AppImage?
+    var selectedBoxImage: AppImage?
+    var proxyBackgroundImage: Image?
+    var proxyBoxImage: Image?
     
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
