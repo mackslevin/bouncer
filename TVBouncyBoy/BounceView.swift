@@ -18,31 +18,10 @@ struct BounceView: View {
         Button {
             vm.isShowingOptions.toggle()
         } label: {
-//            RoundedRectangle(cornerRadius: 3)
-//                .foregroundStyle(.gray.gradient)
-//                .overlay(alignment: .center) {
-//                    if let image = boxImageProxy {
-//                        image
-//                            .resizable().scaledToFill()
-//                    }
-//                }
-//                .clipped()
-//                .frame(width: vm.rectangleSize.width, height: vm.rectangleSize.height)
-//                .position(vm.position)
-//                .onAppear {
-//                    vm.startTimer()
-//                    UIApplication.shared.isIdleTimerDisabled = true
-//                }
-//                .onDisappear {
-//                    vm.timer?.invalidate()
-//                }
-            
             Canvas { context, size in
-                
                 if let bg = context.resolveSymbol(id: 0) {
                     context.draw(bg, in: CGRect(origin: .zero, size: size))
                 }
-                
                 
                 let rect = CGRect(x: vm.position.x - vm.rectangleSize.width / 2,
                                   y: vm.position.y - vm.rectangleSize.height / 2,
@@ -80,7 +59,6 @@ struct BounceView: View {
             .onDisappear {
                 vm.timer?.invalidate()
             }
-
         }
         .buttonStyle(BlankButtonStyle())
         .background {

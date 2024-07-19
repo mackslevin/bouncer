@@ -14,11 +14,10 @@ struct PreviewView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                VStack {
+                ZStack {
                     Canvas { context, size in
-                        // Draw the background rectangle and image
-                        if let image = vm.proxyBackgroundImage {
-                            context.draw(image, in: CGRect(origin: .zero, size: size))
+                        if let bg = context.resolveSymbol(id: 0) {
+                            context.draw(bg, in: CGRect(origin: .zero, size: size))
                         }
                         
                         let rect = CGRect(x: vm.position.x - vm.rectangleSize.width / 2,
@@ -39,12 +38,16 @@ struct PreviewView: View {
                             .clipped()
                             .frame(width: vm.rectangleSize.width, height: vm.rectangleSize.height)
                             .tag(1)
+                        
+                        if let bg = vm.proxyBackgroundImage {
+                            bg.resizable().scaledToFill()
+                                .tag(0)
+                        }
                     }
-                    .frame(height: 300)
                     .background {
-                        Rectangle()
-                            .foregroundStyle(.yellow)
+                        Color.gray
                     }
+                    .frame(height: vm.containerSize.height)
                     .onAppear {
                         vm.startTimer()
                     }
@@ -52,11 +55,13 @@ struct PreviewView: View {
                         vm.timer?.invalidate()
                     }
                 }
+                .frame(height: vm.containerSize.height)
                 
                 Picker("Background Image", selection: $vm.selectedBackgroundImage) {
                     Text("Choose background...")
                     ForEach(userImages.filter({ $0.imageType == .background })) { bgImage in
-                        Text(bgImage.title ?? "Image").tag(bgImage as AppImage?)
+                        Text(bgImage.title ?? "Image")
+                            .tag(bgImage as AppImage?)
                     }
                 }
                 .padding(.vertical)

@@ -11,7 +11,7 @@ import Observation
 @Observable
 class BounceViewModel {
     var position: CGPoint = CGPoint(x: 100, y: 100)
-    var velocity: CGSize = CGSize(width: 2, height: 2)
+    var velocity: CGSize = CGSize(width: 4, height: 4)
     var timer: Timer?
     var screenSize: CGSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
     let rectangleSize: CGSize = CGSize(width: 360, height: 220)
