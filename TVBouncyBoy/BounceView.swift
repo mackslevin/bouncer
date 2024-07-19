@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @State var vm = ContentViewModel()
+struct BounceView: View {
+    @State var vm = BounceViewModel()
     
     // Proxies for performance. Reading the SwiftData-stored object directly seems to be much more demanding.
     @State private var backgroundImageProxy: Image? = nil
@@ -66,5 +66,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    BounceView()
 }

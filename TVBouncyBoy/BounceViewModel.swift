@@ -9,7 +9,7 @@ import SwiftUI
 import Observation
 
 @Observable
-class ContentViewModel {
+class BounceViewModel {
     var position: CGPoint = CGPoint(x: 100, y: 100)
     var velocity: CGSize = CGSize(width: 2, height: 2)
     var timer: Timer?

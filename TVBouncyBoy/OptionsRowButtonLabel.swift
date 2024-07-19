@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OptionsRowButtonLabel: View {
-    @Bindable var contentViewModel: ContentViewModel
+    @Bindable var contentViewModel: BounceViewModel
     let image: AppImage
     let imageType: AppImage.ImageType
     

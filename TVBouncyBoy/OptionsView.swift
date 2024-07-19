@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct OptionsView: View {
-    @Bindable var contentViewModel = ContentViewModel()
+    @Bindable var contentViewModel = BounceViewModel()
     @Environment(\.dismiss) var dismiss
     @Query var userImages: [AppImage]
     
@@ -21,7 +21,7 @@ struct OptionsView: View {
                         .font(.title3)
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: [GridItem()], content: {
-                            ForEach(ContentViewModel.backgroundImagePresets) { preset in
+                            ForEach(BounceViewModel.backgroundImagePresets) { preset in
                                 Button {
                                     contentViewModel.backgroundImage = preset
                                 } label: {
@@ -58,7 +58,7 @@ struct OptionsView: View {
                         .font(.title3)
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: [GridItem()], content: {
-                            ForEach(ContentViewModel.boxImagePresets) { preset in
+                            ForEach(BounceViewModel.boxImagePresets) { preset in
                                 
                                 Button {
                                     contentViewModel.boxImage = preset

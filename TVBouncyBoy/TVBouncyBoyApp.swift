@@ -22,7 +22,7 @@ struct TVBouncyBoyApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BounceView()
         }
         .modelContainer(sharedModelContainer)
     }

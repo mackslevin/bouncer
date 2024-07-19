@@ -12,7 +12,7 @@ import SwiftData
 struct TVBouncyBoy_iOSApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
         .modelContainer(DataManager.shared.container)
     }
