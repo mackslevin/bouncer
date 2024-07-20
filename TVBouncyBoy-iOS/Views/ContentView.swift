@@ -24,7 +24,7 @@ struct ContentView: View {
                         .bold()
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: [GridItem()], content: {
-                            PhotosPicker(selection: $photosPickerManager.backgroundImageSelection) {
+                            PhotosPicker(selection: $photosPickerManager.backgroundImageSelection, matching: .images) {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: Utility.defaultCornerRadius)
                                     Image(systemName: "plus")
@@ -63,7 +63,7 @@ struct ContentView: View {
                         .bold()
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: [GridItem()], content: {
-                            PhotosPicker(selection: $photosPickerManager.boxImageSelection) {
+                            PhotosPicker(selection: $photosPickerManager.boxImageSelection, matching: .images) {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: Utility.defaultCornerRadius)
                                     Image(systemName: "plus")
