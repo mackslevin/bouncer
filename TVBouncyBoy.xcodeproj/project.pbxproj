@@ -33,6 +33,8 @@
 		01B3FD8E2C49FD5C00BCCA3E /* BlankButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADB32C405691008E5114 /* BlankButtonStyle.swift */; };
 		01B3FD912C49FDAE00BCCA3E /* OptionsRowButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADBB2C406FDC008E5114 /* OptionsRowButtonStyle.swift */; };
 		01B3FD932C49FEA000BCCA3E /* PreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B3FD922C49FEA000BCCA3E /* PreviewViewModel.swift */; };
+		01B6BF032C4B394A00F447BF /* AppImageChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6BF022C4B394A00F447BF /* AppImageChooser.swift */; };
+		01B6BF052C4B41CC00F447BF /* CheckCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6BF042C4B41CC00F447BF /* CheckCircle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		01B3FD872C49F9EC00BCCA3E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		01B3FD8A2C49FB0400BCCA3E /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		01B3FD922C49FEA000BCCA3E /* PreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewModel.swift; sourceTree = "<group>"; };
+		01B6BF022C4B394A00F447BF /* AppImageChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImageChooser.swift; sourceTree = "<group>"; };
+		01B6BF042C4B41CC00F447BF /* CheckCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCircle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,8 @@
 				01B3FD872C49F9EC00BCCA3E /* HomeView.swift */,
 				01ADC90D2C49842F006A2214 /* ContentView.swift */,
 				01B3FD8A2C49FB0400BCCA3E /* PreviewView.swift */,
+				01B6BF022C4B394A00F447BF /* AppImageChooser.swift */,
+				01B6BF042C4B41CC00F447BF /* CheckCircle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,8 +291,10 @@
 				01ADC9262C49A656006A2214 /* ContentViewModel.swift in Sources */,
 				01ADC90E2C49842F006A2214 /* ContentView.swift in Sources */,
 				01ADC90C2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift in Sources */,
+				01B6BF052C4B41CC00F447BF /* CheckCircle.swift in Sources */,
 				01B3FD882C49F9EC00BCCA3E /* HomeView.swift in Sources */,
 				01ADC91B2C49858C006A2214 /* AppImage.swift in Sources */,
+				01B6BF032C4B394A00F447BF /* AppImageChooser.swift in Sources */,
 				01B3FD8E2C49FD5C00BCCA3E /* BlankButtonStyle.swift in Sources */,
 				01ADC9282C49A759006A2214 /* PhotosPickerManager.swift in Sources */,
 			);
