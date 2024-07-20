@@ -17,24 +17,7 @@ struct OptionsView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading) {
-                    Text("Background Presets")
-                        .font(.title3)
-                    ScrollView(.horizontal) {
-                        LazyHGrid(rows: [GridItem()], content: {
-                            ForEach(BounceViewModel.backgroundImagePresets) { preset in
-                                Button {
-                                    contentViewModel.backgroundImage = preset
-                                } label: {
-                                    OptionsRowButtonLabel(contentViewModel: contentViewModel, image: preset, imageType: .background)
-                                }
-                                .buttonStyle(OptionsRowButtonStyle())
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                            }
-                        })
-                    }
-                    .padding(.bottom, 50)
-                    
-                    Text("Custom Backgrounds")
+                    Text("Backgrounds")
                         .font(.title3)
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: [GridItem()], content: {
@@ -54,25 +37,7 @@ struct OptionsView: View {
                     }
                     .padding(.bottom, 50)
                     
-                    Text("Box Image Presets")
-                        .font(.title3)
-                    ScrollView(.horizontal) {
-                        LazyHGrid(rows: [GridItem()], content: {
-                            ForEach(BounceViewModel.boxImagePresets) { preset in
-                                
-                                Button {
-                                    contentViewModel.boxImage = preset
-                                } label: {
-                                    OptionsRowButtonLabel(contentViewModel: contentViewModel, image: preset, imageType: .boxImage)
-                                }
-                                .buttonStyle(OptionsRowButtonStyle())
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                            }
-                        })
-                    }
-                    .padding(.bottom, 50)
-                    
-                    Text("Custom Box Images")
+                    Text("Box Images")
                         .font(.title3)
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: [GridItem()], content: {

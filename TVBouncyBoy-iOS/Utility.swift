@@ -15,4 +15,16 @@ struct Utility {
     }
     
     static let defaultCornerRadius: CGFloat = 5
+    
+    static let backgroundImagePresets = [
+        AppImage(presetName: "lake"),
+        AppImage(presetName: "blue-cloth"),
+        AppImage(presetName: "test"),
+        AppImage(presetName: "color-puffs")
+    ]
+
+    static let boxImagePresets = [
+        AppImage(presetName: "randy", imageType: .boxImage),
+        AppImage(presetName: "used-to-this", imageType: .boxImage)
+    ]
 }

@@ -8,7 +8,8 @@
 import Foundation
 import SwiftData
 
-actor DataManager {
+@MainActor
+final class DataManager {
     static let shared = DataManager()
     let container: ModelContainer
     
@@ -26,7 +27,7 @@ actor DataManager {
         self.container = sharedModelContainer
     }
     
-    @MainActor
+    
     func allUserImages() throws -> [AppImage] {
         let context = ModelContext(self.container)
         let items = try context.fetch(FetchDescriptor<AppImage>())
@@ -38,5 +39,10 @@ actor DataManager {
         let context = ModelContext(self.container)
         context.insert(img)
         try? context.save()
+    }
+    
+    func addAppImage(_ ai: AppImage) {
+        container.mainContext.insert(ai)
+        try? container.mainContext.save()
     }
 }
