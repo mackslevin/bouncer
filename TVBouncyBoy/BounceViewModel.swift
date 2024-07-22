@@ -40,7 +40,6 @@ class BounceViewModel {
                 Task {
                     await MainActor.run {
                         DataManager.shared.addAppImage(appImage)
-                        print("^^ added first run bg")
                     }
                 }
             }
@@ -48,48 +47,36 @@ class BounceViewModel {
                 Task {
                     await MainActor.run {
                         DataManager.shared.addAppImage(appImage)
-                        print("^^ added first run box image")
                     }
                 }
             }
             UserDefaults.standard.setValue(false, forKey: StorageKeys.isFirstRun.rawValue)
         }
         
-        
-        // Grab most recently set images from UserDefaults
-        if let bgID = UserDefaults.standard.value(forKey: StorageKeys.currentBackgroundID.rawValue) as? String, !bgID.isEmpty  {
-            print("^^ read \(bgID)")
-            Task {
-                if let bg = try? await DataManager.shared.allUserImages().first(where: {$0.id.uuidString == bgID}) {
-                    print("^^ got from swiftdata \(bg.id.uuidString)")
-                    backgroundImage = bg
-                }
-            }
-        } 
-        
-        if let boxID = UserDefaults.standard.value(forKey: StorageKeys.currentBoxImageID.rawValue) as? String, !boxID.isEmpty {
-            print("^^ read \(boxID)")
-            Task {
-                if let box = try? await DataManager.shared.allUserImages().first(where: {$0.id.uuidString == boxID}) {
-                    print("^^ got from swiftdata \(box.id.uuidString)")
-                    boxImage = box
-                }
-            }
+        Task {
+            try? await setImages()
         }
     }
     
-    
-//    static let backgroundImagePresets = [
-//        AppImage(presetName: "lake"),
-//        AppImage(presetName: "blue-cloth"),
-//        AppImage(presetName: "test"),
-//        AppImage(presetName: "color-puffs")
-//    ]
-//    
-//    static let boxImagePresets = [
-//        AppImage(presetName: "randy"),
-//        AppImage(presetName: "used-to-this")
-//    ]
+    private func setImages() async throws {
+        guard let allImages = try? await DataManager.shared.allUserImages() else {
+            print("^^ Couldn't fetch all images")
+            return
+        }
+        
+        let savedBackgroundID = UserDefaults.standard.value(forKey: StorageKeys.currentBackgroundID.rawValue) as? String
+        if let savedBackgroundID, let bgImage = allImages.first(where: {$0.id.uuidString == savedBackgroundID}) {
+            self.backgroundImage = bgImage
+        } else if let firstImage = allImages.first(where: {$0.imageType == .background}) {
+            self.backgroundImage = firstImage
+        }
+        
+        if let savedBoxID = UserDefaults.standard.value(forKey: StorageKeys.currentBoxImageID.rawValue) as? String, let boxImg = allImages.first(where: {$0.id.uuidString == savedBoxID}) {
+            self.boxImage = boxImg
+        } else if let firstImage = allImages.first(where: {$0.imageType == .boxImage}) {
+            self.boxImage = firstImage
+        }
+    }
     
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
