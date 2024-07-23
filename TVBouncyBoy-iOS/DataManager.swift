@@ -17,6 +17,7 @@ final class DataManager {
         let sharedModelContainer = {
             let schema = Schema([AppImage.self])
             let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false, groupContainer: .identifier("group.com.johnslevin.TVBouncyBoy"), cloudKitDatabase: .private("iCloud.com.johnslevin.TVBouncyBoy"))
+//            let config = ModelConfiguration(schema: schema)
             do {
                 return try ModelContainer(for: schema, configurations: [config])
             } catch {
