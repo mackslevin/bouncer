@@ -59,7 +59,6 @@ struct ContentView: View {
                                                     vm.selectedImage = userImage
                                                     vm.isShowingImageDetail = true
                                                 } label: {
-                                                    
                                                     Image(systemName: "ellipsis.circle.fill")
                                                         .resizable().scaledToFit()
                                                         .foregroundStyle(.regularMaterial)
@@ -84,7 +83,7 @@ struct ContentView: View {
                         .font(.title2)
                         .bold()
                     ScrollView(.horizontal) {
-                        LazyHGrid(rows: [GridItem(), GridItem()], content: {
+                        LazyHGrid(rows: gridRows, content: {
                             PhotosPicker(selection: $photosPickerManager.backgroundImageSelection, matching: .images) {
                                 Rectangle()
                                     .aspectRatio(16/9, contentMode: .fit)
@@ -95,11 +94,10 @@ struct ContentView: View {
                                             .padding(vm.rowHeight/3)
                                             .foregroundStyle(.primary)
                                             .colorInvert()
-                                            
                                     }
                                     .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
                                     .tint(.secondary)
-                            }
+                            }.zIndex(101)
                             
                             ForEach(userImages.filter({$0.imageType == .background}).sorted()) { userImage in
                                 if let image = userImage.imageValue {
