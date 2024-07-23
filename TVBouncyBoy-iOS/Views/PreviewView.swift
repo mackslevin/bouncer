@@ -44,8 +44,13 @@ struct PreviewView: View {
                                 .tag(1)
                             
                             if let bg = vm.proxyBackgroundImage {
-                                bg.resizable().scaledToFill()
+                                Rectangle()
+                                    .overlay {
+                                        bg.resizable().scaledToFill()
+                                            
+                                    }
                                     .tag(0)
+                                
                         }
                     }
                     .background {
