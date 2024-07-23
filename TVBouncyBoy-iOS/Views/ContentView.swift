@@ -15,57 +15,32 @@ struct ContentView: View {
     @State private var vm = ContentViewModel()
     @ObservedObject var photosPickerManager = PhotosPickerManager()
     
+    
+    let gridRows: [GridItem] = [GridItem(), GridItem()]
+    
     var body: some View {
         NavigationStack {
             ScrollView {
-                
-                if
-                    let id = vm.selectedImageID,
-                    let usrImage = userImages.first(where: {$0.id == id}),
-                    let image = usrImage.imageValue
-                {
-//                    image.resizable().scaledToFill()
-//                        .clipShape(
-//                            RoundedRectangle(cornerRadius: Utility.defaultCornerRadius)
-//                                
-//                        )
-//                        .aspectRatio(16/9, contentMode: .fit)
-                    
-                    Rectangle()
-                        .aspectRatio(16/9, contentMode: .fit)
-                        .overlay {
-                            image.resizable().scaledToFill()
-                        }
-                        .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
-                } else {
-                    ZStack {
-                        Rectangle()
-                            .foregroundStyle(Color.secondary.gradient)
-                        Image(systemName: "photo")
-                            .resizable().scaledToFit()
-                            .padding(50)
-                            .foregroundStyle(.tertiary)
-                    }
-                    .aspectRatio(16/9, contentMode: .fit)
-                    .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
-                }
-                
                 VStack(alignment: .leading) {
                     Text("Box Images")
                         .font(.title2)
                         .bold()
                     ScrollView(.horizontal) {
-                        LazyHGrid(rows: [GridItem()], content: {
+                        LazyHGrid(rows: gridRows, content: {
                             PhotosPicker(selection: $photosPickerManager.boxImageSelection, matching: .images) {
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: Utility.defaultCornerRadius)
-                                    Image(systemName: "plus")
-                                        .resizable().scaledToFit()
-                                        .padding()
-                                        .foregroundStyle(Color.primary).colorInvert()
-                                }
-                                .frame(width: vm.rowHeight, height:  vm.rowHeight)
-                                .tint(.secondary)
+                                Rectangle()
+                                    .aspectRatio(16/9, contentMode: .fit)
+                                    .overlay {
+                                        Image(systemName: "plus")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .padding(vm.rowHeight/3)
+                                            .foregroundStyle(.primary)
+                                            .colorInvert()
+                                            
+                                    }
+                                    .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
+                                    .tint(.secondary)
                             }
                             
                             ForEach(userImages.filter({$0.imageType == .boxImage}).sorted()) { userImage in
@@ -78,14 +53,29 @@ struct ContentView: View {
                                                 }
                                             }
                                         }
-                                        .onTapGesture {
-                                            vm.toggleSelected(id: userImage.id)
+                                        .overlay {
+                                            VStack {
+                                                Button {
+                                                    vm.selectedImage = userImage
+                                                    vm.isShowingImageDetail = true
+                                                } label: {
+                                                    
+                                                    Image(systemName: "ellipsis.circle.fill")
+                                                        .resizable().scaledToFit()
+                                                        .foregroundStyle(.regularMaterial)
+                                                        .frame(width: vm.rowHeight/4)
+                                                        .padding(6)
+                                                }
+                                            }
+                                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
                                         }
                                 }
                             }
                         })
+                        
                     }
-                    .frame(height: vm.rowHeight)
+                    .frame(minHeight: vm.rowHeight * CGFloat(gridRows.count))
+                    
                 }
                 .padding(.vertical)
                 
@@ -94,22 +84,26 @@ struct ContentView: View {
                         .font(.title2)
                         .bold()
                     ScrollView(.horizontal) {
-                        LazyHGrid(rows: [GridItem()], content: {
+                        LazyHGrid(rows: [GridItem(), GridItem()], content: {
                             PhotosPicker(selection: $photosPickerManager.backgroundImageSelection, matching: .images) {
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: Utility.defaultCornerRadius)
-                                    Image(systemName: "plus")
-                                        .resizable().scaledToFit()
-                                        .padding()
-                                        .foregroundStyle(Color.primary).colorInvert()
-                                }
-                                .frame(width: vm.rowHeight, height:  vm.rowHeight)
-                                .tint(.secondary)
+                                Rectangle()
+                                    .aspectRatio(16/9, contentMode: .fit)
+                                    .overlay {
+                                        Image(systemName: "plus")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .padding(vm.rowHeight/3)
+                                            .foregroundStyle(.primary)
+                                            .colorInvert()
+                                            
+                                    }
+                                    .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
+                                    .tint(.secondary)
                             }
                             
                             ForEach(userImages.filter({$0.imageType == .background}).sorted()) { userImage in
                                 if let image = userImage.imageValue {
-                                    WidescreenImageView(image: image) 
+                                    WidescreenImageView(image: image)
                                         .contextMenu {
                                             Button("Delete", systemImage: "trash", role: .destructive) {
                                                 withAnimation {
@@ -117,21 +111,41 @@ struct ContentView: View {
                                                 }
                                             }
                                         }
-                                        .onTapGesture {
-                                            vm.toggleSelected(id: userImage.id)
+                                        .overlay {
+                                            VStack {
+                                                Button {
+                                                    vm.selectedImage = userImage
+                                                    vm.isShowingImageDetail = true
+                                                } label: {
+                                                    Image(systemName: "ellipsis.circle.fill")
+                                                        .resizable().scaledToFit()
+                                                        .foregroundStyle(.regularMaterial)
+                                                        .frame(width: vm.rowHeight/4)
+                                                        .padding(6)
+                                                }
+                                            }
+                                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
                                         }
                                 }
                             }
                         })
                     }
-                    .frame(height: vm.rowHeight)
+                    .frame(minHeight: vm.rowHeight * CGFloat(gridRows.count))
                 }
                 .padding(.vertical)
-                
-                
             }
             .padding()
             .navigationTitle("TV Bouncy Boy")
+            .sheet(isPresented: $vm.isShowingImageDetail, content: {
+                AppImageDetailView(appImage: $vm.selectedImage) {
+                    // Callback on user selecting "delete"
+                    withAnimation {
+                        guard let image = vm.selectedImage else { return }
+                        modelContext.delete(image)
+                    }
+                }
+                .presentationDetents([.medium])
+            })
         }
     }
 }

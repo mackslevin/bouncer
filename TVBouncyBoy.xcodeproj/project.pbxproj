@@ -39,6 +39,7 @@
 		01B6BF052C4B41CC00F447BF /* CheckCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6BF042C4B41CC00F447BF /* CheckCircle.swift */; };
 		01B6BF072C4C3F3F00F447BF /* StorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6BF062C4C3F3F00F447BF /* StorageKeys.swift */; };
 		01B6BF082C4C3F3F00F447BF /* StorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6BF062C4C3F3F00F447BF /* StorageKeys.swift */; };
+		01CBF0732C50555D0015C327 /* AppImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBF0722C50555D0015C327 /* AppImageDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		01B6BF022C4B394A00F447BF /* AppImageChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImageChooser.swift; sourceTree = "<group>"; };
 		01B6BF042C4B41CC00F447BF /* CheckCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCircle.swift; sourceTree = "<group>"; };
 		01B6BF062C4C3F3F00F447BF /* StorageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageKeys.swift; sourceTree = "<group>"; };
+		01CBF0722C50555D0015C327 /* AppImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImageDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				01B6BF022C4B394A00F447BF /* AppImageChooser.swift */,
 				01B6BF042C4B41CC00F447BF /* CheckCircle.swift */,
 				01A4571A2C4F220100A3B8DB /* WidescreenImageView.swift */,
+				01CBF0722C50555D0015C327 /* AppImageDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				01B3FD912C49FDAE00BCCA3E /* OptionsRowButtonStyle.swift in Sources */,
 				01ADC91E2C4989D2006A2214 /* Utility.swift in Sources */,
 				01ADC9212C498B12006A2214 /* DataManager.swift in Sources */,
+				01CBF0732C50555D0015C327 /* AppImageDetailView.swift in Sources */,
 				01B3FD932C49FEA000BCCA3E /* PreviewViewModel.swift in Sources */,
 				01B3FD8B2C49FB0400BCCA3E /* PreviewView.swift in Sources */,
 				01ADC9262C49A656006A2214 /* ContentViewModel.swift in Sources */,

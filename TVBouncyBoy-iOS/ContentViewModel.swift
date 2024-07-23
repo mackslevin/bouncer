@@ -12,16 +12,17 @@ import PhotosUI
 @Observable
 final class ContentViewModel {
     let rowHeight: CGFloat = 100
-    var selectedImageID: AppImage.ID? = nil
+    var selectedImage: AppImage? = nil
+    var isShowingImageDetail = false
     
-    func toggleSelected(id: AppImage.ID?) {
+    func toggleSelected(_ ai: AppImage?) {
         withAnimation {
-            guard let id else { selectedImageID = nil; return }
+            guard let ai else { selectedImage = nil; return }
             
-            if selectedImageID == id {
-                selectedImageID = nil
+            if selectedImage == ai {
+                selectedImage = nil
             } else {
-                selectedImageID = id
+                selectedImage = ai
             }
         }
     }
