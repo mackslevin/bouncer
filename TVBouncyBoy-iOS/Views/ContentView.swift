@@ -14,7 +14,8 @@ struct ContentView: View {
     @Query var userImages: [AppImage]
     @State private var vm = ContentViewModel()
     @ObservedObject var photosPickerManager = PhotosPickerManager()
-    
+    @AppStorage(StorageKeys.warnBeforeDelete.rawValue) var shouldWarnBeforeDeleting: Bool = true
+    @State private var isShowingSettings = false
     
     let gridRows: [GridItem] = [GridItem(), GridItem()]
     
@@ -37,7 +38,7 @@ struct ContentView: View {
                                             .padding(vm.rowHeight/3)
                                             .foregroundStyle(.primary)
                                             .colorInvert()
-                                            
+                                        
                                     }
                                     .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
                                     .tint(.secondary)
@@ -46,13 +47,6 @@ struct ContentView: View {
                             ForEach(userImages.filter({$0.imageType == .boxImage}).sorted()) { userImage in
                                 if let image = userImage.imageValue {
                                     WidescreenImageView(image: image)
-                                        .contextMenu {
-                                            Button("Delete", systemImage: "trash", role: .destructive) {
-                                                withAnimation {
-                                                    modelContext.delete(userImage)
-                                                }
-                                            }
-                                        }
                                         .overlay {
                                             VStack {
                                                 Button {
@@ -102,13 +96,6 @@ struct ContentView: View {
                             ForEach(userImages.filter({$0.imageType == .background}).sorted()) { userImage in
                                 if let image = userImage.imageValue {
                                     WidescreenImageView(image: image)
-                                        .contextMenu {
-                                            Button("Delete", systemImage: "trash", role: .destructive) {
-                                                withAnimation {
-                                                    modelContext.delete(userImage)
-                                                }
-                                            }
-                                        }
                                         .overlay {
                                             VStack {
                                                 Button {
@@ -143,6 +130,16 @@ struct ContentView: View {
                     }
                 }
                 .presentationDetents([.medium])
+            })
+            .toolbar {
+                ToolbarItem(placement: .automatic) {
+                    Button("Settings", systemImage: "gear") {
+                        isShowingSettings.toggle()
+                    }
+                }
+            }
+            .sheet(isPresented: $isShowingSettings, content: {
+                SettingsView()
             })
         }
     }

@@ -12,6 +12,7 @@ struct OptionsView: View {
     @Bindable var contentViewModel = BounceViewModel()
     @Environment(\.dismiss) var dismiss
     @Query var userImages: [AppImage]
+    @State private var isShowingSettings = false
     
     var body: some View {
         NavigationStack {
@@ -30,8 +31,6 @@ struct OptionsView: View {
                                 }
                                 .buttonStyle(OptionsRowButtonStyle())
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
-                                
-                                
                             }
                         })
                     }
@@ -57,6 +56,12 @@ struct OptionsView: View {
                     }
                     .padding(.bottom, 50)
                     
+                    VStack {
+                        Button("Settings", systemImage: "gear") { isShowingSettings.toggle() }
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                    
+                    
                     
                     Spacer()
                     
@@ -67,7 +72,10 @@ struct OptionsView: View {
                         Button("Done") { dismiss() }
                     }
                 }
-                .navigationTitle("Settings")
+                .navigationTitle("Bouncer")
+                .sheet(isPresented: $isShowingSettings, content: {
+                    SettingsView()
+                })
             }
             
         }

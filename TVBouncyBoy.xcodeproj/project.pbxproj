@@ -15,6 +15,7 @@
 		015E4FF22C39E77600AFD64E /* BounceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E4FF12C39E77600AFD64E /* BounceView.swift */; };
 		015E4FF42C39E77700AFD64E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015E4FF32C39E77700AFD64E /* Assets.xcassets */; };
 		015E4FF72C39E77700AFD64E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015E4FF62C39E77700AFD64E /* Preview Assets.xcassets */; };
+		015EC8CF2C507CB1002E05F2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBF0742C5068D00015C327 /* SettingsView.swift */; };
 		01A4571B2C4F220100A3B8DB /* WidescreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4571A2C4F220100A3B8DB /* WidescreenImageView.swift */; };
 		01A4571C2C4F220100A3B8DB /* WidescreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4571A2C4F220100A3B8DB /* WidescreenImageView.swift */; };
 		01ADC90C2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC90B2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift */; };
@@ -40,6 +41,7 @@
 		01B6BF072C4C3F3F00F447BF /* StorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6BF062C4C3F3F00F447BF /* StorageKeys.swift */; };
 		01B6BF082C4C3F3F00F447BF /* StorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6BF062C4C3F3F00F447BF /* StorageKeys.swift */; };
 		01CBF0732C50555D0015C327 /* AppImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBF0722C50555D0015C327 /* AppImageDetailView.swift */; };
+		01CBF0752C5068D00015C327 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBF0742C5068D00015C327 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +75,7 @@
 		01B6BF042C4B41CC00F447BF /* CheckCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCircle.swift; sourceTree = "<group>"; };
 		01B6BF062C4C3F3F00F447BF /* StorageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageKeys.swift; sourceTree = "<group>"; };
 		01CBF0722C50555D0015C327 /* AppImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImageDetailView.swift; sourceTree = "<group>"; };
+		01CBF0742C5068D00015C327 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +176,7 @@
 				01B6BF042C4B41CC00F447BF /* CheckCircle.swift */,
 				01A4571A2C4F220100A3B8DB /* WidescreenImageView.swift */,
 				01CBF0722C50555D0015C327 /* AppImageDetailView.swift */,
+				01CBF0742C5068D00015C327 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,6 +293,7 @@
 				01ADC9202C498B12006A2214 /* DataManager.swift in Sources */,
 				0114ADBC2C406FDC008E5114 /* OptionsRowButtonStyle.swift in Sources */,
 				01ADC92C2C49C49A006A2214 /* OptionsRowButtonLabel.swift in Sources */,
+				015EC8CF2C507CB1002E05F2 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +304,7 @@
 				01B3FD912C49FDAE00BCCA3E /* OptionsRowButtonStyle.swift in Sources */,
 				01ADC91E2C4989D2006A2214 /* Utility.swift in Sources */,
 				01ADC9212C498B12006A2214 /* DataManager.swift in Sources */,
+				01CBF0752C5068D00015C327 /* SettingsView.swift in Sources */,
 				01CBF0732C50555D0015C327 /* AppImageDetailView.swift in Sources */,
 				01B3FD932C49FEA000BCCA3E /* PreviewViewModel.swift in Sources */,
 				01B3FD8B2C49FB0400BCCA3E /* PreviewView.swift in Sources */,

@@ -12,5 +12,8 @@ enum StorageKeys: String {
     case currentBackgroundID = "currentBackgroundID" // type Optional<AppImage.ID>
     case currentBoxImageID = "currentBoxImageID" // type Optional<AppImage.ID>
     case isFirstRun = "isFirstRun" // type Bool
+    
+    // User-settable settings
     case warnBeforeDelete = "warnBeforeDelete"
+    case boxShouldHaveRoundedCorners = "boxShouldHaveRoundedCorners"
 }

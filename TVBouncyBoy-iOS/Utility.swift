@@ -27,4 +27,12 @@ struct Utility {
         AppImage(presetName: "randy", imageType: .boxImage),
         AppImage(presetName: "used-to-this", imageType: .boxImage)
     ]
+    
+    static func isTV() -> Bool {
+        #if os(tvOS)
+        return true
+        #else
+        return UIDevice.current.userInterfaceIdiom == .tv
+        #endif
+    }
 }
