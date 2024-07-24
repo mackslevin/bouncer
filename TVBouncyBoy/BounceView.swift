@@ -14,12 +14,6 @@ struct BounceView: View {
     @State private var backgroundImageProxy: Image? = nil
     @State private var boxImageProxy: Image? = nil
     
-    
-//    @AppStorage(StorageKeys.currentBackgroundID.rawValue) var bgID: String = ""
-//    @AppStorage(StorageKeys.currentBoxImageID.rawValue) var boxID: String = ""
-    
-    
-    
     var body: some View {
         Button {
             vm.isShowingOptions.toggle()
@@ -39,9 +33,19 @@ struct BounceView: View {
                 }
             } symbols: {
                 Rectangle()
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(.black)
                     .overlay {
-                        if let bg = backgroundImageProxy {
+                        if vm.isLoading {
+                            VStack {
+                                Image(systemName: "photo")
+                                    .resizable().scaledToFit()
+                                    .frame(width: UIScreen.main.bounds.height/3)
+                                Text("Setting things up...")
+                            }
+                            .foregroundStyle(.secondary)
+                            
+                            
+                        } else if let bg = backgroundImageProxy {
                             bg.resizable().scaledToFill()
                         }
                     }
@@ -52,11 +56,15 @@ struct BounceView: View {
                     .overlay {
                         if let boxImg = boxImageProxy {
                             boxImg.resizable().scaledToFill()
+                                .onAppear {
+                                    vm.isLoading = false
+                                }
                         }
                     }
                     .clipShape(RoundedRectangle(cornerRadius: Utility.boxCornerRadius))
                     .frame(width: vm.rectangleSize.width, height: vm.rectangleSize.height)
                     .tag(1)
+                    .opacity(vm.isLoading ? 0 : 1)
             }
             .onAppear {
                 vm.startTimer()
@@ -75,27 +83,16 @@ struct BounceView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .ignoresSafeArea()
         .onAppear {
-            backgroundImageProxy = vm.backgroundImage?.imageValue!
+            backgroundImageProxy = vm.backgroundImage?.imageValue
             boxImageProxy = vm.boxImage?.imageValue
-            
             vm.applyTightening()
         }
         .onChange(of: vm.boxImage, { _, newValue in
-            boxImageProxy = newValue?.imageValue!
+            boxImageProxy = newValue?.imageValue
         })
         .onChange(of: vm.backgroundImage, { oldValue, newValue in
-            backgroundImageProxy = newValue?.imageValue!
+            backgroundImageProxy = newValue?.imageValue
         })
-//        .onChange(of: bgID, { oldValue, newValue in
-//            Task {
-//                vm.backgroundImage = try? DataManager.shared.allUserImages().first(where: {$0.id.uuidString == newValue})
-//            }
-//        })
-//        .onChange(of: boxID, { oldValue, newValue in
-//            Task {
-//                vm.boxImage = try? DataManager.shared.allUserImages().first(where: {$0.id.uuidString == newValue})
-//            }
-//        })
         .sheet(isPresented: $vm.isShowingOptions, content: {
             OptionsView(contentViewModel: vm)
         })

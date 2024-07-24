@@ -19,9 +19,10 @@ class BounceViewModel {
     var shouldTighten = false
     var isShowingOptions = false 
     
+    var isLoading = true // This is set to false when BounceView's box image overlay loads
+    
     var backgroundImage: AppImage? {
         didSet {
-            
             UserDefaults.standard.setValue(backgroundImage?.id.uuidString ?? "", forKey: StorageKeys.currentBackgroundID.rawValue)
         }
     }
