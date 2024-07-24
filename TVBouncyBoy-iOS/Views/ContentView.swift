@@ -23,7 +23,7 @@ struct ContentView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading) {
-                    Text("Box Images")
+                    Text("My Box Images")
                         .font(.title2)
                         .bold()
                     ScrollView(.horizontal) {
@@ -44,7 +44,9 @@ struct ContentView: View {
                                     .tint(.secondary)
                             }
                             
-                            ForEach(userImages.filter({$0.imageType == .boxImage}).sorted()) { userImage in
+                            ForEach(userImages.filter({
+                                $0.imageType == .boxImage && $0.presetName == nil
+                            }).sorted()) { userImage in
                                 if let image = userImage.imageValue {
                                     WidescreenImageView(image: image)
                                         .overlay {
@@ -73,7 +75,7 @@ struct ContentView: View {
                 .padding(.vertical)
                 
                 VStack(alignment: .leading) {
-                    Text("Backgrounds")
+                    Text("My Backgrounds")
                         .font(.title2)
                         .bold()
                     ScrollView(.horizontal) {
@@ -93,7 +95,9 @@ struct ContentView: View {
                                     .tint(.secondary)
                             }.zIndex(101)
                             
-                            ForEach(userImages.filter({$0.imageType == .background}).sorted()) { userImage in
+                            ForEach(userImages.filter({
+                                $0.imageType == .background && $0.presetName == nil
+                            }).sorted()) { userImage in
                                 if let image = userImage.imageValue {
                                     WidescreenImageView(image: image)
                                         .overlay {

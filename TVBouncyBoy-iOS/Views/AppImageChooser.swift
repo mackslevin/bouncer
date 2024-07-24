@@ -53,6 +53,8 @@ struct AppImageChooser: View {
                                 case .boxImage:
                                     $0.imageType == .boxImage
                             }
+                        }).sorted(by: {
+                            $0.dateAdded > $1.dateAdded
                         })) { ai in
                             Rectangle()
                                 .frame(height: cardHeight)

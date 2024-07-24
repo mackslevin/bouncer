@@ -18,26 +18,30 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Toggle(isOn: $roundedCorners, label: {
-                    VStack(alignment: .leading) {
-                        Text("Rounded Corners")
-                            .bold()
-                        Text("When this setting is on, the bouncing box's corners will be slightly rounded.")
-                            .foregroundStyle(.secondary)
-                    }
-                })
-                Toggle("Dim Background", isOn: $dimBackground)
-                Toggle(isOn: $boxShadow, label: {
-                    VStack(alignment: .leading) {
-                        Text("Box Shadow")
-                            .bold()
-                        Text("Do you want the little bouncing box to have a little shadow? 🤷‍♂️")
-                            .foregroundStyle(.secondary)
-                    }
-                })
-                
                 if !Utility.isTV() {
-                    Toggle("Warn before deleting images?", isOn: $warnBeforeDelete)
+                    Section {
+                        Toggle("Warn before deleting images?", isOn: $warnBeforeDelete)
+                    }
+                }
+                
+                Section(Utility.isTV() ? "" : "TV App") {
+                    Toggle(isOn: $roundedCorners, label: {
+                        VStack(alignment: .leading) {
+                            Text("Rounded Corners")
+                                .bold()
+                            Text("When this setting is on, the bouncing box's corners will be slightly rounded.")
+                                .foregroundStyle(.secondary)
+                        }
+                    })
+                    Toggle("Dim Background", isOn: $dimBackground)
+                    Toggle(isOn: $boxShadow, label: {
+                        VStack(alignment: .leading) {
+                            Text("Box Shadow")
+                                .bold()
+                            Text("Do you want the little bouncing box to have a little shadow? 🤷‍♂️")
+                                .foregroundStyle(.secondary)
+                        }
+                    })
                 }
             }
             .navigationTitle("Settings")
