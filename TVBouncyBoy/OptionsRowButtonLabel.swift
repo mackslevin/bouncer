@@ -12,7 +12,7 @@ struct OptionsRowButtonLabel: View {
     let image: AppImage
     let imageType: AppImage.ImageType
     
-    let labelHeight: CGFloat = 160
+    let labelHeight: CGFloat = 150
     
     var body: some View {
         Rectangle()

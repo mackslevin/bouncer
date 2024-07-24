@@ -12,7 +12,7 @@ struct HomeView: View {
         TabView {
             ContentView()
                 .tabItem {
-                    Label("Images", systemImage: "photo")
+                    Label("Upload", systemImage: "photo")
                 }
             
             PreviewView()

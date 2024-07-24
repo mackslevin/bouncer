@@ -13,6 +13,8 @@ struct SettingsView: View {
     @AppStorage(StorageKeys.dimBackground.rawValue) var dimBackground = false
     @AppStorage(StorageKeys.boxShouldHaveShadow.rawValue) var boxShadow = false
     
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         NavigationStack {
             Form {
@@ -29,7 +31,7 @@ struct SettingsView: View {
                     VStack(alignment: .leading) {
                         Text("Box Shadow")
                             .bold()
-                        Text("Do you want the little bouncing box to have a shadow? 🤷‍♂️")
+                        Text("Do you want the little bouncing box to have a little shadow? 🤷‍♂️")
                             .foregroundStyle(.secondary)
                     }
                 })
@@ -39,6 +41,11 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle("Settings")
+            .toolbar {
+                ToolbarItem {
+                    Button("Done") { dismiss() }.bold()
+                }
+            }
         }
     }
 }

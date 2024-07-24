@@ -16,6 +16,8 @@
 		015E4FF42C39E77700AFD64E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015E4FF32C39E77700AFD64E /* Assets.xcassets */; };
 		015E4FF72C39E77700AFD64E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015E4FF62C39E77700AFD64E /* Preview Assets.xcassets */; };
 		015EC8CF2C507CB1002E05F2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBF0742C5068D00015C327 /* SettingsView.swift */; };
+		015EC8D12C519B21002E05F2 /* OptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015EC8D02C519B21002E05F2 /* OptionsViewModel.swift */; };
+		015EC8D32C51A198002E05F2 /* UploadOnCompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015EC8D22C51A198002E05F2 /* UploadOnCompanionApp.swift */; };
 		01A4571B2C4F220100A3B8DB /* WidescreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4571A2C4F220100A3B8DB /* WidescreenImageView.swift */; };
 		01A4571C2C4F220100A3B8DB /* WidescreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4571A2C4F220100A3B8DB /* WidescreenImageView.swift */; };
 		01ADC90C2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC90B2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift */; };
@@ -54,6 +56,8 @@
 		015E4FF12C39E77600AFD64E /* BounceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceView.swift; sourceTree = "<group>"; };
 		015E4FF32C39E77700AFD64E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		015E4FF62C39E77700AFD64E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		015EC8D02C519B21002E05F2 /* OptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewModel.swift; sourceTree = "<group>"; };
+		015EC8D22C51A198002E05F2 /* UploadOnCompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadOnCompanionApp.swift; sourceTree = "<group>"; };
 		01A4571A2C4F220100A3B8DB /* WidescreenImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidescreenImageView.swift; sourceTree = "<group>"; };
 		01ADC9092C49842F006A2214 /* TVBouncyBoy-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TVBouncyBoy-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01ADC90B2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVBouncyBoy_iOSApp.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				0114ADB92C406499008E5114 /* OptionsView.swift */,
 				015E4FF32C39E77700AFD64E /* Assets.xcassets */,
 				015E4FF52C39E77700AFD64E /* Preview Content */,
+				015EC8D02C519B21002E05F2 /* OptionsViewModel.swift */,
+				015EC8D22C51A198002E05F2 /* UploadOnCompanionApp.swift */,
 			);
 			path = TVBouncyBoy;
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				015EC8D32C51A198002E05F2 /* UploadOnCompanionApp.swift in Sources */,
 				01ADC91D2C4989D2006A2214 /* Utility.swift in Sources */,
 				0114ADB22C404D4B008E5114 /* BounceViewModel.swift in Sources */,
 				01B6BF072C4C3F3F00F447BF /* StorageKeys.swift in Sources */,
@@ -288,6 +295,7 @@
 				01ADC91A2C49858C006A2214 /* AppImage.swift in Sources */,
 				015E4FF22C39E77600AFD64E /* BounceView.swift in Sources */,
 				0114ADBA2C406499008E5114 /* OptionsView.swift in Sources */,
+				015EC8D12C519B21002E05F2 /* OptionsViewModel.swift in Sources */,
 				0114ADB42C405691008E5114 /* BlankButtonStyle.swift in Sources */,
 				015E4FF02C39E77600AFD64E /* TVBouncyBoyApp.swift in Sources */,
 				01ADC9202C498B12006A2214 /* DataManager.swift in Sources */,
