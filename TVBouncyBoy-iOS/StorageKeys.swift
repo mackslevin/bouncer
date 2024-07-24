@@ -16,4 +16,6 @@ enum StorageKeys: String {
     // User-settable settings
     case warnBeforeDelete = "warnBeforeDelete"
     case boxShouldHaveRoundedCorners = "boxShouldHaveRoundedCorners"
+    case dimBackground = "dimBackground"
+    case boxShouldHaveShadow = "boxShouldHaveShadow"
 }

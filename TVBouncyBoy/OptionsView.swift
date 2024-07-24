@@ -41,16 +41,11 @@ struct OptionsView: View {
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: [GridItem()], content: {
                             ForEach(userImages.filter({$0.imageType == .boxImage}).sorted()) { userImage in
-                                
-                                    Button {
-                                        contentViewModel.boxImage = userImage
-                                    } label: {
+                                    Button { contentViewModel.boxImage = userImage } label: {
                                         OptionsRowButtonLabel(contentViewModel: contentViewModel, image: userImage, imageType: .boxImage)
                                     }
                                     .buttonStyle(OptionsRowButtonStyle())
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
-                                
-                                
                             }
                         })
                     }

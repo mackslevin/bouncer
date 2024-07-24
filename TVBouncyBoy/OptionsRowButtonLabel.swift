@@ -12,21 +12,33 @@ struct OptionsRowButtonLabel: View {
     let image: AppImage
     let imageType: AppImage.ImageType
     
+    let labelHeight: CGFloat = 160
+    
     var body: some View {
-        ZStack {
-            Color.white
-            Rectangle()
-                .overlay {
+        Rectangle()
+            .overlay {
+                ZStack {
                     if let imageValue = image.imageValue {
                         imageValue.resizable().scaledToFill()
                     }
+                    
+                    if isSelected() {
+                        Color.black.opacity(0.5)
+                        Image(systemName: "checkmark.circle.fill").resizable().scaledToFit()
+                            .frame(height: labelHeight * 0.6)
+                            .foregroundStyle(.white)
+                            .shadow(radius: 4)
+                    }
                 }
-                .clipped()
-                .padding(
-                    contentViewModel.boxImage == image || contentViewModel.backgroundImage == image ? 10 : 0
-                )
-        }
-        .frame(width: 400, height: 240)
+            }
+            .clipped()
+            .aspectRatio(16/9, contentMode: .fit)
+            .frame(height: labelHeight)
+    }
+    
+    
+    func isSelected() -> Bool {
+        contentViewModel.boxImage == image || contentViewModel.backgroundImage == image
     }
 }
 

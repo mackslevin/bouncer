@@ -14,7 +14,7 @@ class BounceViewModel {
     var velocity: CGSize = CGSize(width: 4, height: 4)
     var timer: Timer?
     var screenSize: CGSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-    let rectangleSize: CGSize = CGSize(width: 360, height: 220)
+    let rectangleSize: CGSize = CGSize(width: 390, height: 220)
     var tighteningAmount: CGFloat = 20
     var shouldTighten = false
     var isShowingOptions = false 

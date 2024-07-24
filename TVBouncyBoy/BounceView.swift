@@ -14,6 +14,9 @@ struct BounceView: View {
     @State private var backgroundImageProxy: Image? = nil
     @State private var boxImageProxy: Image? = nil
     
+    @AppStorage(StorageKeys.dimBackground.rawValue) var dimBackground = false
+    @AppStorage(StorageKeys.boxShouldHaveShadow.rawValue) var boxShadow = false
+    
     var body: some View {
         Button {
             vm.isShowingOptions.toggle()
@@ -35,18 +38,20 @@ struct BounceView: View {
                 Rectangle()
                     .foregroundStyle(.black)
                     .overlay {
-                        if vm.isLoading {
-                            VStack {
-                                Image(systemName: "photo")
-                                    .resizable().scaledToFit()
-                                    .frame(width: UIScreen.main.bounds.height/3)
-                                Text("Setting things up...")
+                        ZStack {
+                            if vm.isLoading {
+                                VStack {
+                                    Image(systemName: "photo")
+                                        .resizable().scaledToFit()
+                                        .frame(width: UIScreen.main.bounds.height/3)
+                                    Text("Setting things up...")
+                                }
+                                .foregroundStyle(.secondary)
+                            } else if let bg = backgroundImageProxy {
+                                bg.resizable().scaledToFill()
+                                Color.black
+                                    .opacity(dimBackground ? 0.5 : 0)
                             }
-                            .foregroundStyle(.secondary)
-                            
-                            
-                        } else if let bg = backgroundImageProxy {
-                            bg.resizable().scaledToFill()
                         }
                     }
                     .clipped()
@@ -63,6 +68,7 @@ struct BounceView: View {
                     }
                     .clipShape(RoundedRectangle(cornerRadius: Utility.boxCornerRadius))
                     .frame(width: vm.rectangleSize.width, height: vm.rectangleSize.height)
+                    .shadow(radius: boxShadow ? 10 : 0)
                     .tag(1)
                     .opacity(vm.isLoading ? 0 : 1)
             }
