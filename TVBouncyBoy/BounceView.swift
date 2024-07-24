@@ -48,13 +48,13 @@ struct BounceView: View {
                     .clipped()
                     .tag(0)
                 
-                RoundedRectangle(cornerRadius: Utility.defaultCornerRadius)
+                Rectangle()
                     .overlay {
                         if let boxImg = boxImageProxy {
                             boxImg.resizable().scaledToFill()
                         }
                     }
-                    .clipped()
+                    .clipShape(RoundedRectangle(cornerRadius: Utility.boxCornerRadius))
                     .frame(width: vm.rectangleSize.width, height: vm.rectangleSize.height)
                     .tag(1)
             }

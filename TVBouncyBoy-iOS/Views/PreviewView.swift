@@ -39,7 +39,7 @@ struct PreviewView: View {
                                         boxImg.resizable().scaledToFill()
                                     }
                                 }
-                                .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
+                                .clipShape(RoundedRectangle(cornerRadius: Utility.boxCornerRadius))
                                 .frame(width: vm.rectangleSize.width, height: vm.rectangleSize.height)
                                 .tag(1)
                             
@@ -47,7 +47,6 @@ struct PreviewView: View {
                                 Rectangle()
                                     .overlay {
                                         bg.resizable().scaledToFill()
-                                            
                                     }
                                     .tag(0)
                                 
