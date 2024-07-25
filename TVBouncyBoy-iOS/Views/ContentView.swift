@@ -16,8 +16,6 @@ struct ContentView: View {
     @ObservedObject var photosPickerManager = PhotosPickerManager()
     @AppStorage(StorageKeys.warnBeforeDelete.rawValue) var shouldWarnBeforeDeleting: Bool = true
     
-    
-    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -26,10 +24,11 @@ struct ContentView: View {
                         .font(.title2)
                         .bold()
                     ScrollView(.horizontal) {
-                        LazyHGrid(rows: vm.gridRows, content: {
+                        LazyHGrid(rows: vm.dynamicGridRows(appImages: userImages, type: .boxImage), content: {
                             PhotosPicker(selection: $photosPickerManager.boxImageSelection, matching: .images) {
                                 Rectangle()
                                     .aspectRatio(16/9, contentMode: .fit)
+                                    .frame(height: vm.rowHeight)
                                     .overlay {
                                         Image(systemName: "plus")
                                             .resizable()
@@ -48,6 +47,7 @@ struct ContentView: View {
                             }).sorted()) { userImage in
                                 if let image = userImage.imageValue {
                                     WidescreenImageView(image: image)
+                                        .frame(height: vm.rowHeight)
                                         .overlay {
                                             VStack {
                                                 Button {
@@ -68,8 +68,6 @@ struct ContentView: View {
                         })
                         
                     }
-                    .frame(minHeight: vm.rowHeight * CGFloat(vm.gridRows.count))
-                    
                 }
                 .padding(.vertical)
                 
@@ -78,10 +76,11 @@ struct ContentView: View {
                         .font(.title2)
                         .bold()
                     ScrollView(.horizontal) {
-                        LazyHGrid(rows: vm.gridRows, content: {
+                        LazyHGrid(rows: vm.dynamicGridRows(appImages: userImages, type: .background), content: {
                             PhotosPicker(selection: $photosPickerManager.backgroundImageSelection, matching: .images) {
                                 Rectangle()
                                     .aspectRatio(16/9, contentMode: .fit)
+                                    .frame(height: vm.rowHeight)
                                     .overlay {
                                         Image(systemName: "plus")
                                             .resizable()
@@ -92,13 +91,15 @@ struct ContentView: View {
                                     }
                                     .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
                                     .tint(.secondary)
-                            }.zIndex(101)
+                            }
+                            .zIndex(101)
                             
                             ForEach(userImages.filter({
                                 $0.imageType == .background && $0.presetName == nil
                             }).sorted()) { userImage in
                                 if let image = userImage.imageValue {
                                     WidescreenImageView(image: image)
+                                        .frame(height: vm.rowHeight)
                                         .overlay {
                                             VStack {
                                                 Button {
@@ -118,10 +119,8 @@ struct ContentView: View {
                             }
                         })
                     }
-                    .frame(minHeight: vm.rowHeight * CGFloat(vm.gridRows.count))
                 }
                 .padding(.vertical)
-                
             }
             .toolbarTitleDisplayMode(.inline)
             .padding()
@@ -145,7 +144,7 @@ struct ContentView: View {
                         Image("logo-accent") // Replace "YourLogo" with the name of your image asset
                             .resizable()
                             .scaledToFit()
-                            .frame(height: 30) // Adjust the height as needed
+                            .frame(height: 24) // Adjust the height as needed
                         Spacer()
                         Button("Settings", systemImage: "gear") {
                             vm.isShowingSettings.toggle()
@@ -156,12 +155,12 @@ struct ContentView: View {
             .sheet(isPresented: $vm.isShowingSettings, content: {
                 SettingsView()
             })
-            
         }
     }
 }
 
 #Preview {
-    ContentView()
+    HomeView()
+//    ContentView()
         .modelContainer(for: AppImage.self, inMemory: true)
 }

@@ -14,12 +14,18 @@ struct HomeView: View {
                 .tabItem {
                     Label("Upload", systemImage: "photo")
                 }
+                
             
             PreviewView()
                 .tabItem {
                     Label("Preview", systemImage: "play.tv")
                 }
         }
+        .onAppear {
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.accent]
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.accent]
+        }
+        .fontDesign(.rounded)
     }
 }
 

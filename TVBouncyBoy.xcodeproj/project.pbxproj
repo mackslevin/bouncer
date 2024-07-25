@@ -128,11 +128,11 @@
 				015E4FF12C39E77600AFD64E /* BounceView.swift */,
 				0114ADB12C404D4B008E5114 /* BounceViewModel.swift */,
 				0114ADB32C405691008E5114 /* BlankButtonStyle.swift */,
+				015EC8D02C519B21002E05F2 /* OptionsViewModel.swift */,
+				015EC8D22C51A198002E05F2 /* UploadOnCompanionApp.swift */,
 				0114ADB92C406499008E5114 /* OptionsView.swift */,
 				015E4FF32C39E77700AFD64E /* Assets.xcassets */,
 				015E4FF52C39E77700AFD64E /* Preview Content */,
-				015EC8D02C519B21002E05F2 /* OptionsViewModel.swift */,
-				015EC8D22C51A198002E05F2 /* UploadOnCompanionApp.swift */,
 			);
 			path = TVBouncyBoy;
 			sourceTree = "<group>";

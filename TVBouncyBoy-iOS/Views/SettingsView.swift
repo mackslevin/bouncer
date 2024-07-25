@@ -33,7 +33,7 @@ struct SettingsView: View {
                                 .foregroundStyle(.secondary)
                         }
                     })
-                    Toggle("Dim Background", isOn: $dimBackground)
+                    
                     Toggle(isOn: $boxShadow, label: {
                         VStack(alignment: .leading) {
                             Text("Box Shadow")
@@ -42,8 +42,12 @@ struct SettingsView: View {
                                 .foregroundStyle(.secondary)
                         }
                     })
+                    
+                    Toggle("Dim Background", isOn: $dimBackground)
+                        .bold()
                 }
             }
+            .tint(.accent)
             .navigationTitle("Settings")
             .toolbar {
                 ToolbarItem {
