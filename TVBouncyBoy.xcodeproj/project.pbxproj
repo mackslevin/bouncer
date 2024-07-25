@@ -18,6 +18,7 @@
 		015EC8CF2C507CB1002E05F2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBF0742C5068D00015C327 /* SettingsView.swift */; };
 		015EC8D12C519B21002E05F2 /* OptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015EC8D02C519B21002E05F2 /* OptionsViewModel.swift */; };
 		015EC8D32C51A198002E05F2 /* UploadOnCompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015EC8D22C51A198002E05F2 /* UploadOnCompanionApp.swift */; };
+		015EC8D52C530B95002E05F2 /* CompanionAppOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015EC8D42C530B95002E05F2 /* CompanionAppOverviewView.swift */; };
 		01A4571B2C4F220100A3B8DB /* WidescreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4571A2C4F220100A3B8DB /* WidescreenImageView.swift */; };
 		01A4571C2C4F220100A3B8DB /* WidescreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4571A2C4F220100A3B8DB /* WidescreenImageView.swift */; };
 		01ADC90C2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC90B2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift */; };
@@ -58,6 +59,7 @@
 		015E4FF62C39E77700AFD64E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		015EC8D02C519B21002E05F2 /* OptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewModel.swift; sourceTree = "<group>"; };
 		015EC8D22C51A198002E05F2 /* UploadOnCompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadOnCompanionApp.swift; sourceTree = "<group>"; };
+		015EC8D42C530B95002E05F2 /* CompanionAppOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionAppOverviewView.swift; sourceTree = "<group>"; };
 		01A4571A2C4F220100A3B8DB /* WidescreenImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidescreenImageView.swift; sourceTree = "<group>"; };
 		01ADC9092C49842F006A2214 /* TVBouncyBoy-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TVBouncyBoy-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01ADC90B2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVBouncyBoy_iOSApp.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				01A4571A2C4F220100A3B8DB /* WidescreenImageView.swift */,
 				01CBF0722C50555D0015C327 /* AppImageDetailView.swift */,
 				01CBF0742C5068D00015C327 /* SettingsView.swift */,
+				015EC8D42C530B95002E05F2 /* CompanionAppOverviewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				01B3FD882C49F9EC00BCCA3E /* HomeView.swift in Sources */,
 				01A4571C2C4F220100A3B8DB /* WidescreenImageView.swift in Sources */,
 				01ADC91B2C49858C006A2214 /* AppImage.swift in Sources */,
+				015EC8D52C530B95002E05F2 /* CompanionAppOverviewView.swift in Sources */,
 				01B6BF032C4B394A00F447BF /* AppImageChooser.swift in Sources */,
 				01B3FD8E2C49FD5C00BCCA3E /* BlankButtonStyle.swift in Sources */,
 				01ADC9282C49A759006A2214 /* PhotosPickerManager.swift in Sources */,

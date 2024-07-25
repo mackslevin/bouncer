@@ -71,6 +71,7 @@ struct ContentView: View {
                         .scrollTargetLayout()
                         
                     }
+                    .scrollIndicators(.hidden)
                     .scrollTargetBehavior(.viewAligned)
                     .safeAreaPadding(.horizontal, vm.horizontalPadding)
                 }
@@ -126,6 +127,7 @@ struct ContentView: View {
                         })
                         .scrollTargetLayout()
                     }
+                    .scrollIndicators(.hidden)
                     .scrollTargetBehavior(.viewAligned)
                     .safeAreaPadding(.horizontal, vm.horizontalPadding)
                 }
@@ -145,14 +147,16 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     HStack {
-                        Button("Foo", systemImage: "circle") {
-                            // Taking up some space so the logo is centered
-                        }.opacity(0).accessibilityHidden(true)
+                        Button("Overview", systemImage: "questionmark.circle") {
+                            vm.isShowingOverview.toggle()
+                        }
                         Spacer()
-                        Image("logo-accent") // Replace "YourLogo" with the name of your image asset
+                        
+                        Image("logo-accent")
                             .resizable()
                             .scaledToFit()
-                            .frame(height: 24) // Adjust the height as needed
+                            .frame(height: 24)
+                        
                         Spacer()
                         Button("Settings", systemImage: "gear") {
                             vm.isShowingSettings.toggle()
@@ -162,6 +166,9 @@ struct ContentView: View {
             }
             .sheet(isPresented: $vm.isShowingSettings, content: {
                 SettingsView()
+            })
+            .sheet(isPresented: $vm.isShowingOverview, content: {
+                CompanionAppOverviewView()
             })
         }
     }
