@@ -121,6 +121,7 @@ struct PreviewView: View {
                 Spacer()
             }
             .navigationTitle("Preview")
+            .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 vm.containerSize = CGSize(width: UIScreen.main.bounds.width, height: 300)
             }

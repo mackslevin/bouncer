@@ -14,6 +14,8 @@ final class ContentViewModel {
     let rowHeight: CGFloat = 100
     var selectedImage: AppImage? = nil
     var isShowingImageDetail = false
+    var gridRows: [GridItem] = [GridItem(), GridItem()]
+    var isShowingSettings = false
     
     func toggleSelected(_ ai: AppImage?) {
         withAnimation {

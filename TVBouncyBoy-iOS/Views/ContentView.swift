@@ -15,9 +15,8 @@ struct ContentView: View {
     @State private var vm = ContentViewModel()
     @ObservedObject var photosPickerManager = PhotosPickerManager()
     @AppStorage(StorageKeys.warnBeforeDelete.rawValue) var shouldWarnBeforeDeleting: Bool = true
-    @State private var isShowingSettings = false
     
-    let gridRows: [GridItem] = [GridItem(), GridItem()]
+    
     
     var body: some View {
         NavigationStack {
@@ -27,7 +26,7 @@ struct ContentView: View {
                         .font(.title2)
                         .bold()
                     ScrollView(.horizontal) {
-                        LazyHGrid(rows: gridRows, content: {
+                        LazyHGrid(rows: vm.gridRows, content: {
                             PhotosPicker(selection: $photosPickerManager.boxImageSelection, matching: .images) {
                                 Rectangle()
                                     .aspectRatio(16/9, contentMode: .fit)
@@ -69,7 +68,7 @@ struct ContentView: View {
                         })
                         
                     }
-                    .frame(minHeight: vm.rowHeight * CGFloat(gridRows.count))
+                    .frame(minHeight: vm.rowHeight * CGFloat(vm.gridRows.count))
                     
                 }
                 .padding(.vertical)
@@ -79,7 +78,7 @@ struct ContentView: View {
                         .font(.title2)
                         .bold()
                     ScrollView(.horizontal) {
-                        LazyHGrid(rows: gridRows, content: {
+                        LazyHGrid(rows: vm.gridRows, content: {
                             PhotosPicker(selection: $photosPickerManager.backgroundImageSelection, matching: .images) {
                                 Rectangle()
                                     .aspectRatio(16/9, contentMode: .fit)
@@ -119,12 +118,13 @@ struct ContentView: View {
                             }
                         })
                     }
-                    .frame(minHeight: vm.rowHeight * CGFloat(gridRows.count))
+                    .frame(minHeight: vm.rowHeight * CGFloat(vm.gridRows.count))
                 }
                 .padding(.vertical)
+                
             }
+            .toolbarTitleDisplayMode(.inline)
             .padding()
-            .navigationTitle("TV Bouncy Boy")
             .sheet(isPresented: $vm.isShowingImageDetail, content: {
                 AppImageDetailView(appImage: $vm.selectedImage) {
                     // Callback on user selecting "delete"
@@ -136,15 +136,27 @@ struct ContentView: View {
                 .presentationDetents([.medium])
             })
             .toolbar {
-                ToolbarItem(placement: .automatic) {
-                    Button("Settings", systemImage: "gear") {
-                        isShowingSettings.toggle()
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Button("Foo", systemImage: "circle") {
+                            // Taking up some space so the logo is centered
+                        }.opacity(0).accessibilityHidden(true)
+                        Spacer()
+                        Image("logo-accent") // Replace "YourLogo" with the name of your image asset
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 30) // Adjust the height as needed
+                        Spacer()
+                        Button("Settings", systemImage: "gear") {
+                            vm.isShowingSettings.toggle()
+                        }
                     }
                 }
             }
-            .sheet(isPresented: $isShowingSettings, content: {
+            .sheet(isPresented: $vm.isShowingSettings, content: {
                 SettingsView()
             })
+            
         }
     }
 }

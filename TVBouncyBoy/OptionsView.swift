@@ -23,6 +23,19 @@ struct OptionsView: View {
                         Text("Box Image")
                             .font(.title3).bold()
                         
+                        Text("Presets").foregroundStyle(.secondary)
+                        ScrollView(.horizontal) {
+                            LazyHGrid(rows: [GridItem()], content: {
+                                ForEach(vm.presetImages(appImages: appImages, type: .boxImage)) { userImage in
+                                        Button { contentViewModel.boxImage = userImage } label: {
+                                            OptionsRowButtonLabel(contentViewModel: contentViewModel, image: userImage, imageType: .boxImage)
+                                        }
+                                        .buttonStyle(OptionsRowButtonStyle())
+                                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                                }
+                            })
+                        }
+                        
                         Text("Custom").foregroundStyle(.secondary)
                         if vm.customImages(appImages: appImages, type: .boxImage).isEmpty {
                             UploadOnCompanionApp()
@@ -40,25 +53,28 @@ struct OptionsView: View {
                             }
                             .padding(.bottom)
                         }
-                        
-                        
-                        Text("Presets").foregroundStyle(.secondary)
-                        ScrollView(.horizontal) {
-                            LazyHGrid(rows: [GridItem()], content: {
-                                ForEach(vm.presetImages(appImages: appImages, type: .boxImage)) { userImage in
-                                        Button { contentViewModel.boxImage = userImage } label: {
-                                            OptionsRowButtonLabel(contentViewModel: contentViewModel, image: userImage, imageType: .boxImage)
-                                        }
-                                        .buttonStyle(OptionsRowButtonStyle())
-                                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                                }
-                            })
-                        }
                     }
                     
                     VStack(alignment: .leading) {
                         Text("Background")
                             .font(.title3).bold()
+                        
+                        Text("Presets").foregroundStyle(.secondary)
+                        ScrollView(.horizontal) {
+                            LazyHGrid(rows: [GridItem()], content: {
+                                ForEach(vm.presetImages(appImages: appImages, type: .background)) { userImage in
+                                    
+                                    Button {
+                                        contentViewModel.backgroundImage = userImage
+                                    } label: {
+                                        OptionsRowButtonLabel(contentViewModel: contentViewModel, image: userImage, imageType: .background)
+                                    }
+                                    .buttonStyle(OptionsRowButtonStyle())
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                }
+                            })
+                        }
+                        .padding(.bottom)
                         
                         Text("Custom").foregroundStyle(.secondary)
                         if vm.customImages(appImages: appImages, type: .background).isEmpty {
@@ -80,25 +96,6 @@ struct OptionsView: View {
                             }
                             .padding(.bottom)
                         }
-                        
-                        
-                        
-                        Text("Preset").foregroundStyle(.secondary)
-                        ScrollView(.horizontal) {
-                            LazyHGrid(rows: [GridItem()], content: {
-                                ForEach(vm.presetImages(appImages: appImages, type: .background)) { userImage in
-                                    
-                                    Button {
-                                        contentViewModel.backgroundImage = userImage
-                                    } label: {
-                                        OptionsRowButtonLabel(contentViewModel: contentViewModel, image: userImage, imageType: .background)
-                                    }
-                                    .buttonStyle(OptionsRowButtonStyle())
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                                }
-                            })
-                        }
-                        .padding(.bottom)
                     }
                     
                     Button("Settings", systemImage: "gear") { vm.isShowingSettings.toggle() }

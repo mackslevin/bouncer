@@ -41,9 +41,9 @@ struct BounceView: View {
                         ZStack {
                             if vm.isLoading {
                                 VStack {
-                                    Image(systemName: "photo")
+                                    Image("logo")
                                         .resizable().scaledToFit()
-                                        .frame(width: UIScreen.main.bounds.height/3)
+                                        .frame(width: UIScreen.main.bounds.height/2)
                                     Text("Setting things up...")
                                 }
                                 .foregroundStyle(.secondary)
@@ -68,7 +68,7 @@ struct BounceView: View {
                     }
                     .clipShape(RoundedRectangle(cornerRadius: Utility.boxCornerRadius))
                     .frame(width: vm.rectangleSize.width, height: vm.rectangleSize.height)
-                    .shadow(radius: boxShadow ? 10 : 0)
+                    .shadow(radius: boxShadow ? 8 : 0)
                     .tag(1)
                     .opacity(vm.isLoading ? 0 : 1)
             }
