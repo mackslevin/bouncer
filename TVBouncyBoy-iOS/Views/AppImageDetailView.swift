@@ -19,7 +19,13 @@ struct AppImageDetailView: View {
         NavigationStack {
             VStack(spacing: 50) {
                 if let img = appImage?.imageValue {
-                    WidescreenImageView(image: img)
+                    VStack {
+                        WidescreenImageView(image: img)
+                        if let dims = appImage?.dimensions() {
+                            Text(dims)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
                     
                     HStack(spacing: 50) {
                         ShareLink(item: img, preview: SharePreview("Image", image: img))

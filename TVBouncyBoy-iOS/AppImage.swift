@@ -87,4 +87,13 @@ final class AppImage: Identifiable, Comparable, Hashable, Codable {
     static func == (lhs: AppImage, rhs: AppImage) -> Bool {
         lhs.id == rhs.id
     }
+    
+    func dimensions() -> String? {
+        guard let imgData = self.data, let uiImage = UIImage(data: imgData) else { return nil }
+        
+        // Since all images are force-cropped to 16:9 in display, calculate what the displayed height it, rather than showing the actual underlying image's height
+        let height = uiImage.size.width * 0.5625
+        
+        return "\(Int(uiImage.size.width)) x \(Int(height))"
+    }
 }
