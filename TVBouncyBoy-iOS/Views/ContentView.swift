@@ -23,6 +23,7 @@ struct ContentView: View {
                     Text("My Box Images")
                         .font(.title2)
                         .bold()
+                        .padding(.horizontal, vm.horizontalPadding)
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: vm.dynamicGridRows(appImages: userImages, type: .boxImage), content: {
                             PhotosPicker(selection: $photosPickerManager.boxImageSelection, matching: .images) {
@@ -41,6 +42,7 @@ struct ContentView: View {
                                     .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
                                     .tint(.secondary)
                             }
+                            .zIndex(101)
                             
                             ForEach(userImages.filter({
                                 $0.imageType == .boxImage && $0.presetName == nil
@@ -66,8 +68,11 @@ struct ContentView: View {
                                 }
                             }
                         })
+                        .scrollTargetLayout()
                         
                     }
+                    .scrollTargetBehavior(.viewAligned)
+                    .safeAreaPadding(.horizontal, vm.horizontalPadding)
                 }
                 .padding(.vertical)
                 
@@ -75,6 +80,7 @@ struct ContentView: View {
                     Text("My Backgrounds")
                         .font(.title2)
                         .bold()
+                        .padding(.horizontal, vm.horizontalPadding)
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: vm.dynamicGridRows(appImages: userImages, type: .background), content: {
                             PhotosPicker(selection: $photosPickerManager.backgroundImageSelection, matching: .images) {
@@ -118,12 +124,14 @@ struct ContentView: View {
                                 }
                             }
                         })
+                        .scrollTargetLayout()
                     }
+                    .scrollTargetBehavior(.viewAligned)
+                    .safeAreaPadding(.horizontal, vm.horizontalPadding)
                 }
                 .padding(.vertical)
             }
             .toolbarTitleDisplayMode(.inline)
-            .padding()
             .sheet(isPresented: $vm.isShowingImageDetail, content: {
                 AppImageDetailView(appImage: $vm.selectedImage) {
                     // Callback on user selecting "delete"
