@@ -72,8 +72,7 @@ struct PreviewView: View {
                     } label: {
                         VStack {
                             Text("Background")
-                                .font(.callout)
-                                .fontWeight(.semibold)
+                                .font(Font.displayFont(size: 15))
                             Rectangle()
                                 .overlay {
                                     if let bg = vm.proxyBackgroundImage {
@@ -86,9 +85,7 @@ struct PreviewView: View {
                                     }
                                 }
                                 .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
-                                
                         }
-                        
                     }
                     .tint(.primary)
                     
@@ -96,9 +93,8 @@ struct PreviewView: View {
                         isShowingBoxImageChooser.toggle()
                     } label: {
                         VStack {
-                            Text("Box Image")
-                                .font(.callout)
-                                .fontWeight(.semibold)
+                            Text("Bouncing Image")
+                                .font(Font.displayFont(size: 15))
                             Rectangle()
                                 .overlay {
                                     if let bg = vm.proxyBoxImage {
@@ -121,7 +117,6 @@ struct PreviewView: View {
                 Spacer()
             }
             .navigationTitle("Preview")
-            .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 vm.containerSize = CGSize(width: UIScreen.main.bounds.width, height: 300)
             }

@@ -22,10 +22,9 @@ struct HomeView: View {
                 }
         }
         .onAppear {
-            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.accent]
-            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.accent]
+            UINavigationBar.appearance().largeTitleTextAttributes = [.font: UIFont(name: "SpaceGrotesk-Bold", size: 33)!]
+            UINavigationBar.appearance().titleTextAttributes = [.font: UIFont(name: "SpaceGrotesk-Bold", size: 18)!]
         }
-        .fontDesign(.rounded)
     }
 }
 

@@ -71,6 +71,7 @@ struct SettingsView: View {
                     OverviewView()
                 #endif
             })
+            .fontDesign(.rounded)
         }
     }
 }

@@ -20,10 +20,13 @@ struct OptionsView: View {
             ScrollView {
                 VStack(spacing: 50) {
                     VStack(alignment: .leading) {
-                        Text("Box Image")
-                            .font(.title3).bold()
+                        Text("Bouncing Image")
+                            .font(Font.displayFont(size: 48))
                         
-                        Text("Presets").foregroundStyle(.secondary)
+                        Text("Presets")
+                            .fontDesign(.rounded)
+                            .foregroundStyle(.secondary)
+                        
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: [GridItem()], content: {
                                 ForEach(vm.presetImages(appImages: appImages, type: .boxImage)) { userImage in
@@ -36,7 +39,9 @@ struct OptionsView: View {
                             })
                         }
                         
-                        Text("Custom").foregroundStyle(.secondary)
+                        Text("Custom")
+                            .fontDesign(.rounded)
+                            .foregroundStyle(.secondary)
                         if vm.customImages(appImages: appImages, type: .boxImage).isEmpty {
                             UploadOnCompanionApp()
                         } else {
@@ -57,9 +62,12 @@ struct OptionsView: View {
                     
                     VStack(alignment: .leading) {
                         Text("Background")
-                            .font(.title3).bold()
+                            .font(Font.displayFont(size: 48))
                         
-                        Text("Presets").foregroundStyle(.secondary)
+                        Text("Presets")
+                            .fontDesign(.rounded)
+                            .foregroundStyle(.secondary)
+                        
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: [GridItem()], content: {
                                 ForEach(vm.presetImages(appImages: appImages, type: .background)) { userImage in
@@ -76,7 +84,10 @@ struct OptionsView: View {
                         }
                         .padding(.bottom)
                         
-                        Text("Custom").foregroundStyle(.secondary)
+                        Text("Custom")
+                            .fontDesign(.rounded)
+                            .foregroundStyle(.secondary)
+                        
                         if vm.customImages(appImages: appImages, type: .background).isEmpty {
                             UploadOnCompanionApp()
                         } else {
@@ -99,6 +110,7 @@ struct OptionsView: View {
                     }
                     
                     Button("Settings", systemImage: "gear") { vm.isShowingSettings.toggle() }
+                        .fontDesign(.rounded)
                     
                     Spacer()
                     
@@ -106,7 +118,7 @@ struct OptionsView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 .toolbar {
                     ToolbarItem(placement: .confirmationAction) {
-                        Button("Close") { dismiss() }.bold()
+                        Button("Close") { dismiss() }
                     }
                 }
                 .navigationTitle("Setup")

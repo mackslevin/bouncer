@@ -20,9 +20,8 @@ struct ContentView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading) {
-                    Text("My Box Images")
-                        .font(.title2)
-                        .bold()
+                    Text("My Bouncing Images")
+                        .font(Font.displayFont(size: 22))
                         .padding(.horizontal, vm.horizontalPadding)
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: vm.dynamicGridRows(appImages: userImages, type: .boxImage), content: {
@@ -79,8 +78,7 @@ struct ContentView: View {
                 
                 VStack(alignment: .leading) {
                     Text("My Backgrounds")
-                        .font(.title2)
-                        .bold()
+                        .font(Font.displayFont(size: 22))
                         .padding(.horizontal, vm.horizontalPadding)
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: vm.dynamicGridRows(appImages: userImages, type: .background), content: {

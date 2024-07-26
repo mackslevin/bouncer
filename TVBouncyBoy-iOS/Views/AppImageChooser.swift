@@ -90,7 +90,7 @@ struct AppImageChooser: View {
                 }
                 .padding()
                 .navigationTitle(
-                    imageType == .background ? "Choose Background" : "Choose Box Image"
+                    imageType == .background ? "Choose Background" : "Choose Bouncing Image"
                 )
                 .navigationBarTitleDisplayMode(.inline)
             }

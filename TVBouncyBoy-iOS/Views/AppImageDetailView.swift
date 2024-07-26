@@ -54,6 +54,7 @@ struct AppImageDetailView: View {
                 Spacer()
             }
             .padding()
+            .fontDesign(.rounded)
         }
     }
 }

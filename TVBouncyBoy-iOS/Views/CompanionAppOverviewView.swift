@@ -55,6 +55,7 @@ struct CompanionAppOverviewView: View {
                         Text("Thanks for downloading! Enjoy!")
                     }
                 }
+                .fontDesign(.rounded)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
                 .toolbar {

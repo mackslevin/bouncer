@@ -43,10 +43,10 @@ struct OverviewView: View {
                         }
                         
                         HStack(alignment: .center, spacing: 26) {
-                            Image(systemName: "macbook.and.iphone").resizable().scaledToFit()
+                            Image(systemName: "iphone").resizable().scaledToFit()
                                 .frame(width: 50)
                                 .foregroundStyle(.accent)
-                            Text("Download the **companion app** from the App Store on another device and upload your own photos!")
+                            Text("Download the **companion app** from the App Store on an iPhone and upload your own photos!")
                                 .multilineTextAlignment(.leading)
                         }
                         
@@ -58,14 +58,13 @@ struct OverviewView: View {
                             Spacer()
                         }
                         
-                        
-                        
                         Spacer()
                     }
                 }
                 .frame(maxWidth: 800)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
+                .fontDesign(.rounded)
             }
         }
     }

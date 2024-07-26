@@ -45,6 +45,7 @@ struct BounceView: View {
                                         .resizable().scaledToFit()
                                         .frame(width: UIScreen.main.bounds.height/2)
                                     Text("Setting things up...")
+                                        .fontDesign(.rounded)
                                 }
                                 .foregroundStyle(.secondary)
                             } else if let bg = backgroundImageProxy {

@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010BD2882C5431F600C522A8 /* SpaceGrotesk-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 010BD2862C5431F600C522A8 /* SpaceGrotesk-Bold.ttf */; };
+		010BD28B2C54323400C522A8 /* Font-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010BD28A2C54323400C522A8 /* Font-Ext.swift */; };
+		010BD28C2C54323400C522A8 /* Font-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010BD28A2C54323400C522A8 /* Font-Ext.swift */; };
 		0114ADB22C404D4B008E5114 /* BounceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADB12C404D4B008E5114 /* BounceViewModel.swift */; };
 		0114ADB42C405691008E5114 /* BlankButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADB32C405691008E5114 /* BlankButtonStyle.swift */; };
 		0114ADBA2C406499008E5114 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADB92C406499008E5114 /* OptionsView.swift */; };
 		0114ADBC2C406FDC008E5114 /* OptionsRowButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADBB2C406FDC008E5114 /* OptionsRowButtonStyle.swift */; };
+		0133D5A12C543FFC006B7C15 /* SpaceGrotesk-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 010BD2862C5431F600C522A8 /* SpaceGrotesk-Bold.ttf */; };
 		015E4FF02C39E77600AFD64E /* TVBouncyBoyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E4FEF2C39E77600AFD64E /* TVBouncyBoyApp.swift */; };
 		015E4FF22C39E77600AFD64E /* BounceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E4FF12C39E77600AFD64E /* BounceView.swift */; };
 		015E4FF42C39E77700AFD64E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015E4FF32C39E77700AFD64E /* Assets.xcassets */; };
@@ -49,6 +53,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010BD2862C5431F600C522A8 /* SpaceGrotesk-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Bold.ttf"; sourceTree = "<group>"; };
+		010BD2892C54320B00C522A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		010BD28A2C54323400C522A8 /* Font-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font-Ext.swift"; sourceTree = "<group>"; };
+		010BD28D2C5432DA00C522A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0114ADB12C404D4B008E5114 /* BounceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceViewModel.swift; sourceTree = "<group>"; };
 		0114ADB32C405691008E5114 /* BlankButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankButtonStyle.swift; sourceTree = "<group>"; };
 		0114ADB92C406499008E5114 /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
@@ -125,6 +133,7 @@
 		015E4FEE2C39E77600AFD64E /* TVBouncyBoy */ = {
 			isa = PBXGroup;
 			children = (
+				010BD2892C54320B00C522A8 /* Info.plist */,
 				01ADC9222C498DCD006A2214 /* TVBouncyBoy.entitlements */,
 				015E4FEF2C39E77600AFD64E /* TVBouncyBoyApp.swift */,
 				0114ADBB2C406FDC008E5114 /* OptionsRowButtonStyle.swift */,
@@ -153,6 +162,7 @@
 		01ADC90A2C49842F006A2214 /* TVBouncyBoy-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				010BD28D2C5432DA00C522A8 /* Info.plist */,
 				01B3FD892C49FADA00BCCA3E /* Views */,
 				01ADC9232C498EAC006A2214 /* TVBouncyBoy-iOS.entitlements */,
 				01ADC90B2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift */,
@@ -162,7 +172,9 @@
 				01ADC91F2C498B12006A2214 /* DataManager.swift */,
 				01B3FD922C49FEA000BCCA3E /* PreviewViewModel.swift */,
 				01B6BF062C4C3F3F00F447BF /* StorageKeys.swift */,
+				010BD28A2C54323400C522A8 /* Font-Ext.swift */,
 				01ADC91C2C4989D2006A2214 /* Utility.swift */,
+				010BD2862C5431F600C522A8 /* SpaceGrotesk-Bold.ttf */,
 				01ADC9132C498430006A2214 /* Preview Content */,
 				01ADC9112C498430006A2214 /* Assets.xcassets */,
 			);
@@ -272,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0133D5A12C543FFC006B7C15 /* SpaceGrotesk-Bold.ttf in Resources */,
 				015E4FF72C39E77700AFD64E /* Preview Assets.xcassets in Resources */,
 				015E4FF42C39E77700AFD64E /* Assets.xcassets in Resources */,
 			);
@@ -281,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				010BD2882C5431F600C522A8 /* SpaceGrotesk-Bold.ttf in Resources */,
 				01ADC9152C498430006A2214 /* Preview Assets.xcassets in Resources */,
 				01ADC9122C498430006A2214 /* Assets.xcassets in Resources */,
 			);
@@ -309,6 +323,7 @@
 				01ADC92C2C49C49A006A2214 /* OptionsRowButtonLabel.swift in Sources */,
 				015EC8CF2C507CB1002E05F2 /* SettingsView.swift in Sources */,
 				015EC8D72C531C92002E05F2 /* OverviewView.swift in Sources */,
+				010BD28B2C54323400C522A8 /* Font-Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +333,7 @@
 			files = (
 				01B3FD912C49FDAE00BCCA3E /* OptionsRowButtonStyle.swift in Sources */,
 				01ADC91E2C4989D2006A2214 /* Utility.swift in Sources */,
+				010BD28C2C54323400C522A8 /* Font-Ext.swift in Sources */,
 				01ADC9212C498B12006A2214 /* DataManager.swift in Sources */,
 				01CBF0752C5068D00015C327 /* SettingsView.swift in Sources */,
 				01CBF0732C50555D0015C327 /* AppImageDetailView.swift in Sources */,
@@ -472,7 +488,7 @@
 				DEVELOPMENT_TEAM = CCAQHTG68D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Bouncer;
+				INFOPLIST_FILE = TVBouncyBoy/Info.plist;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -502,7 +518,7 @@
 				DEVELOPMENT_TEAM = CCAQHTG68D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Bouncer;
+				INFOPLIST_FILE = TVBouncyBoy/Info.plist;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -532,7 +548,7 @@
 				DEVELOPMENT_TEAM = CCAQHTG68D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Bouncer;
+				INFOPLIST_FILE = "TVBouncyBoy-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -565,7 +581,7 @@
 				DEVELOPMENT_TEAM = CCAQHTG68D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Bouncer;
+				INFOPLIST_FILE = "TVBouncyBoy-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
