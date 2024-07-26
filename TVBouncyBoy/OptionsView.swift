@@ -109,14 +109,16 @@ struct OptionsView: View {
                         }
                     }
                     
-                    Button("Settings", systemImage: "gear") { vm.isShowingSettings.toggle() }
-                        .fontDesign(.rounded)
-                    
                     Spacer()
                     
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button("Settings", systemImage: "gear") { vm.isShowingSettings.toggle() }
+                            .fontDesign(.rounded)
+                            .labelStyle(.titleOnly)
+                    }
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Close") { dismiss() }
                     }
