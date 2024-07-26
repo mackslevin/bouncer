@@ -21,20 +21,22 @@ struct CompanionAppOverviewView: View {
                             .foregroundStyle(.accent)
                         Image("logo-accent").resizable().scaledToFit()
                             .padding(.horizontal, 50)
-                        
-                        Text("**Finally**, an app that allows you to see a rectangle bouncing around within another rectangle!")
-                            .padding(.top, 24)
                     }
                     
-                    
-                    
+                    VStack(alignment: .center, spacing: 12) {
+                        Image(systemName: "rectangle.inset.bottomleft.filled").resizable().scaledToFit()
+                            .frame(height: 50)
+                            .foregroundStyle(.accent)
+                        
+                        Text("**Finally**, an app that allows you to see a rectangle bounce around on your very own TV screen!")
+                    }
                     
                     VStack(alignment: .center, spacing: 12) {
                         Image(systemName: "appletv.fill").resizable().scaledToFit()
                             .frame(height: 50)
                             .foregroundStyle(.accent)
                         
-                        Text("The primary experience is on Apple TV, so be sure to visit the App Store there to download the Bouncer tvOS app. ")
+                        Text("As the primary experience is on Apple TV, be sure to visit the App Store there to download the Bouncer tvOS app if you haven't already.")
                     }
                     
                     VStack(alignment: .center, spacing: 12) {
@@ -42,7 +44,7 @@ struct CompanionAppOverviewView: View {
                             .frame(height: 50)
                             .foregroundStyle(.accent)
                         
-                            Text("This companion app allows you to upload and preview your own images for use on the TV app. ")
+                            Text("This companion app allows you to upload and preview your own images to use in the TV app.")
                     }
                     
                     VStack(alignment: .center, spacing: 12) {

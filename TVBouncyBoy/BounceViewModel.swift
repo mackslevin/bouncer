@@ -18,6 +18,7 @@ class BounceViewModel {
     var tighteningAmount: CGFloat = 20
     var shouldTighten = false
     var isShowingOptions = false 
+    var isShowingOverview = false
     
     var isLoading = true // This is set to false when BounceView's box image overlay loads
     
@@ -51,6 +52,9 @@ class BounceViewModel {
                     }
                 }
             }
+            
+            self.isShowingOverview = true
+            
             UserDefaults.standard.setValue(false, forKey: StorageKeys.isFirstRun.rawValue)
         }
         

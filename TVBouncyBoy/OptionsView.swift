@@ -109,7 +109,7 @@ struct OptionsView: View {
                         Button("Close") { dismiss() }.bold()
                     }
                 }
-                .navigationTitle("Bouncer")
+                .navigationTitle("Setup")
                 .sheet(isPresented: $vm.isShowingSettings, content: {
                     SettingsView()
                 })

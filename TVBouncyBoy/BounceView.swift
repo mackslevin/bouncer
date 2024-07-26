@@ -102,6 +102,9 @@ struct BounceView: View {
         .sheet(isPresented: $vm.isShowingOptions, content: {
             OptionsView(contentViewModel: vm)
         })
+        .sheet(isPresented: $vm.isShowingOverview, content: {
+            OverviewView()
+        })
     }
     
     
