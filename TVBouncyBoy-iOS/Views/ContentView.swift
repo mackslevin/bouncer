@@ -145,23 +145,21 @@ struct ContentView: View {
                 .presentationDetents([.medium])
             })
             .toolbar {
-                ToolbarItem(placement: .principal) {
-                    HStack {
-                        Button("Overview", systemImage: "questionmark.circle") {
-                            vm.isShowingOverview.toggle()
-                        }
-                        Spacer()
-                        
-                        Image("logo-accent")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 24)
-                        
-                        Spacer()
-                        Button("Settings", systemImage: "gear") {
-                            vm.isShowingSettings.toggle()
-                        }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Settings", systemImage: "gear") {
+                        vm.isShowingSettings.toggle()
                     }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Overview", systemImage: "questionmark.circle") {
+                        vm.isShowingOverview.toggle()
+                    }
+                }
+                ToolbarItem(placement: .principal) {
+                    Image("logo-accent")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 24)
                 }
             }
             .sheet(isPresented: $vm.isShowingSettings, content: {
