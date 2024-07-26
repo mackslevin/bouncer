@@ -40,11 +40,11 @@ struct CompanionAppOverviewView: View {
                     }
                     
                     VStack(alignment: .center, spacing: 12) {
-                        Image(systemName: "macbook.and.iphone").resizable().scaledToFit()
+                        Image(systemName: "photo.tv").resizable().scaledToFit()
                             .frame(height: 50)
                             .foregroundStyle(.accent)
                         
-                            Text("This companion app allows you to upload and manage your own images to use in the TV app.")
+                        Text("This companion app allows you to upload and manage your own images to use in the TV app.")
                     }
                     
                     VStack(alignment: .center, spacing: 12) {

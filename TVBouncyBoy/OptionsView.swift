@@ -22,6 +22,7 @@ struct OptionsView: View {
                     VStack(alignment: .leading) {
                         Text("Bouncing Image")
                             .font(Font.displayFont(size: 48))
+                            .foregroundStyle(.accent)
                         
                         Text("Presets")
                             .fontDesign(.rounded)
@@ -63,6 +64,7 @@ struct OptionsView: View {
                     VStack(alignment: .leading) {
                         Text("Background")
                             .font(Font.displayFont(size: 48))
+                            .foregroundStyle(.accent)
                         
                         Text("Presets")
                             .fontDesign(.rounded)

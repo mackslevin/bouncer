@@ -21,6 +21,21 @@ struct SettingsView: View {
         NavigationStack {
             Form {
                 if Utility.isTV() {
+                    
+                    HStack {
+                        Spacer()
+                        Image("logo-accent")
+                            .resizable().scaledToFit()
+                            .padding()
+                            
+                            .frame(maxWidth: 500)
+                        Spacer()
+                        
+                    }
+                    .listRowBackground(EmptyView())
+                    .padding(.bottom)
+                    
+                    
                     Section {
                         Toggle(isOn: $roundedCorners, label: {
                             VStack(alignment: .leading) {
