@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BounceView: View {
-    @State var vm = BounceViewModel()
+    @Bindable var homeVM: TVHomeViewModel
     
     // Proxies for performance. Reading the SwiftData-stored object directly seems to be much more demanding.
     @State private var backgroundImageProxy: Image? = nil
@@ -19,17 +19,17 @@ struct BounceView: View {
     
     var body: some View {
         Button {
-            vm.isShowingOptions.toggle()
+            homeVM.isShowingOptions.toggle()
         } label: {
             Canvas { context, size in
                 if let bg = context.resolveSymbol(id: 0) {
                     context.draw(bg, in: CGRect(origin: .zero, size: size))
                 }
                 
-                let rect = CGRect(x: vm.position.x - vm.rectangleSize.width / 2,
-                                  y: vm.position.y - vm.rectangleSize.height / 2,
-                                  width: vm.rectangleSize.width,
-                                  height: vm.rectangleSize.height)
+                let rect = CGRect(x: homeVM.position.x - homeVM.rectangleSize.width / 2,
+                                  y: homeVM.position.y - homeVM.rectangleSize.height / 2,
+                                  width: homeVM.rectangleSize.width,
+                                  height: homeVM.rectangleSize.height)
                 
                 if let boxy = context.resolveSymbol(id: 1) {
                     context.draw(boxy, in: rect)
@@ -39,7 +39,7 @@ struct BounceView: View {
                     .foregroundStyle(.black)
                     .overlay {
                         ZStack {
-                            if vm.isLoading {
+                            if homeVM.isLoading {
                                 VStack {
                                     Image("logo")
                                         .resizable().scaledToFit()
@@ -63,22 +63,22 @@ struct BounceView: View {
                         if let boxImg = boxImageProxy {
                             boxImg.resizable().scaledToFill()
                                 .onAppear {
-                                    vm.isLoading = false
+                                    homeVM.isLoading = false
                                 }
                         }
                     }
                     .clipShape(RoundedRectangle(cornerRadius: Utility.boxCornerRadius))
-                    .frame(width: vm.rectangleSize.width, height: vm.rectangleSize.height)
+                    .frame(width: homeVM.rectangleSize.width, height: homeVM.rectangleSize.height)
                     .shadow(radius: boxShadow ? 8 : 0)
                     .tag(1)
-                    .opacity(vm.isLoading ? 0 : 1)
+                    .opacity(homeVM.isLoading ? 0 : 1)
             }
             .onAppear {
-                vm.startTimer()
+                homeVM.startTimer()
                 UIApplication.shared.isIdleTimerDisabled = true
             }
             .onDisappear {
-                vm.timer?.invalidate()
+                homeVM.timer?.invalidate()
             }
         }
         .buttonStyle(BlankButtonStyle())
@@ -90,27 +90,22 @@ struct BounceView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .ignoresSafeArea()
         .onAppear {
-            backgroundImageProxy = vm.backgroundImage?.imageValue
-            boxImageProxy = vm.boxImage?.imageValue
-            vm.applyTightening()
+            backgroundImageProxy = homeVM.backgroundImage?.imageValue
+            boxImageProxy = homeVM.boxImage?.imageValue
+            homeVM.applyTightening()
         }
-        .onChange(of: vm.boxImage, { _, newValue in
+        .onChange(of: homeVM.boxImage, { _, newValue in
             boxImageProxy = newValue?.imageValue
         })
-        .onChange(of: vm.backgroundImage, { oldValue, newValue in
+        .onChange(of: homeVM.backgroundImage, { oldValue, newValue in
             backgroundImageProxy = newValue?.imageValue
         })
-        .sheet(isPresented: $vm.isShowingOptions, content: {
-            OptionsView(contentViewModel: vm)
-        })
-        .sheet(isPresented: $vm.isShowingOverview, content: {
-            OverviewView()
-        })
+        
     }
     
     
 }
 
 #Preview {
-    BounceView()
+    BounceView(homeVM: TVHomeViewModel())
 }

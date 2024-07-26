@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct OptionsView: View {
-    @Bindable var contentViewModel = BounceViewModel()
+    @Bindable var homeVM: TVHomeViewModel
     @Environment(\.dismiss) var dismiss
     @Query var appImages: [AppImage]
     @State private var vm = OptionsViewModel()
@@ -31,8 +31,8 @@ struct OptionsView: View {
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: [GridItem()], content: {
                                 ForEach(vm.presetImages(appImages: appImages, type: .boxImage)) { userImage in
-                                        Button { contentViewModel.boxImage = userImage } label: {
-                                            OptionsRowButtonLabel(contentViewModel: contentViewModel, image: userImage, imageType: .boxImage)
+                                        Button { homeVM.boxImage = userImage } label: {
+                                            OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .boxImage)
                                         }
                                         .buttonStyle(OptionsRowButtonStyle())
                                         .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -49,8 +49,8 @@ struct OptionsView: View {
                             ScrollView(.horizontal) {
                                 LazyHGrid(rows: [GridItem()], content: {
                                     ForEach(vm.customImages(appImages: appImages, type: .boxImage)) { userImage in
-                                            Button { contentViewModel.boxImage = userImage } label: {
-                                                OptionsRowButtonLabel(contentViewModel: contentViewModel, image: userImage, imageType: .boxImage)
+                                            Button { homeVM.boxImage = userImage } label: {
+                                                OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .boxImage)
                                             }
                                             .buttonStyle(OptionsRowButtonStyle())
                                             .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -75,9 +75,9 @@ struct OptionsView: View {
                                 ForEach(vm.presetImages(appImages: appImages, type: .background)) { userImage in
                                     
                                     Button {
-                                        contentViewModel.backgroundImage = userImage
+                                        homeVM.backgroundImage = userImage
                                     } label: {
-                                        OptionsRowButtonLabel(contentViewModel: contentViewModel, image: userImage, imageType: .background)
+                                        OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .background)
                                     }
                                     .buttonStyle(OptionsRowButtonStyle())
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -98,9 +98,9 @@ struct OptionsView: View {
                                     ForEach(vm.customImages(appImages: appImages, type: .background)) { userImage in
                                         
                                         Button {
-                                            contentViewModel.backgroundImage = userImage
+                                            homeVM.backgroundImage = userImage
                                         } label: {
-                                            OptionsRowButtonLabel(contentViewModel: contentViewModel, image: userImage, imageType: .background)
+                                            OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .background)
                                         }
                                         .buttonStyle(OptionsRowButtonStyle())
                                         .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -136,5 +136,5 @@ struct OptionsView: View {
 }
 
 #Preview {
-    OptionsView()
+    OptionsView(homeVM: TVHomeViewModel())
 }

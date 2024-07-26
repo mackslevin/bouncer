@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OptionsRowButtonLabel: View {
-    @Bindable var contentViewModel: BounceViewModel
+    @Bindable var homeVM: TVHomeViewModel
     let image: AppImage
     let imageType: AppImage.ImageType
     
@@ -38,7 +38,7 @@ struct OptionsRowButtonLabel: View {
     
     
     func isSelected() -> Bool {
-        contentViewModel.boxImage == image || contentViewModel.backgroundImage == image
+        homeVM.boxImage == image || homeVM.backgroundImage == image
     }
 }
 
