@@ -38,7 +38,11 @@ struct OptionsRowButtonLabel: View {
     
     
     func isSelected() -> Bool {
-        homeVM.boxImage == image || homeVM.backgroundImage == image
+        if imageType == .background && homeVM.backgroundMode != .standardBounce {
+            return false
+        }
+        
+        return homeVM.boxImage == image || homeVM.backgroundImage == image
     }
 }
 

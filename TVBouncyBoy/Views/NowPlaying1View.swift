@@ -15,8 +15,7 @@ struct NowPlaying1View: View {
     var body: some View {
         ZStack {
             if !vm.someNowPlayingInfoExists() {
-                Text("Nothing Playing")
-                    .font(.displayFont(size: 34))
+                NothingPlayingView()
             } else {
                 
                 HStack {
@@ -43,11 +42,12 @@ struct NowPlaying1View: View {
                             .fontDesign(.rounded)
                         Text(vm.nowPlayingAlbum)
                             .fontDesign(.rounded)
+                            .lineLimit(4)
                     }
+                    .multilineTextAlignment(.leading)
                 }
-                
+                .padding()
             }
-            
         }
     }
 }

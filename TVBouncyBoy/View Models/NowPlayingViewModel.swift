@@ -33,7 +33,7 @@ final class NowPlayingViewModel {
                 nowPlayingAlbum = nowPlayingItem.albumTitle ?? "Unknown Album"
                 nowPlayingArtist = nowPlayingItem.artist ?? "Unknown Artist"
                 nowPlayingTitle = nowPlayingItem.title ?? "Unknown Title"
-                nowPlayingArtwork = nowPlayingItem.artwork?.image(at: nowPlayingItem.artwork?.bounds.size ?? CGSize(width: 500, height: 500))
+                nowPlayingArtwork = nowPlayingItem.artwork?.image(at: nowPlayingItem.artwork?.bounds.size ?? CGSize(width: 1000, height: 1000))
             }
         } else {
             print("^^ No now playing item")
