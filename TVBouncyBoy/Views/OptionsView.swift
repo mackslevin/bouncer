@@ -75,7 +75,7 @@ struct OptionsView: View {
                                 ForEach(vm.presetImages(appImages: appImages, type: .background)) { userImage in
                                     
                                     Button {
-                                        homeVM.mode = .standardBounce
+                                        homeVM.backgroundMode = .standardBounce
                                         homeVM.backgroundImage = userImage
                                     } label: {
                                         OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .background)
@@ -99,7 +99,7 @@ struct OptionsView: View {
                                     ForEach(vm.customImages(appImages: appImages, type: .background)) { userImage in
                                         
                                         Button {
-                                            homeVM.mode = .standardBounce
+                                            homeVM.backgroundMode = .standardBounce
                                             homeVM.backgroundImage = userImage
                                         } label: {
                                             OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .background)
@@ -120,7 +120,7 @@ struct OptionsView: View {
                                 Button {
                                     withAnimation {
                                         homeVM.backgroundImage = nil
-                                        homeVM.mode = .nowPlaying1
+                                        homeVM.backgroundMode = .nowPlaying1
                                     }
                                 } label: {
                                     ZStack {
@@ -140,7 +140,7 @@ struct OptionsView: View {
                                                 .foregroundStyle(.white)
                                                 .shadow(radius: 4)
                                         }
-                                        .opacity(homeVM.mode == .nowPlaying1 ? 1 : 0)
+                                        .opacity(homeVM.backgroundMode == .nowPlaying1 ? 1 : 0)
                                     }
                                 }
                                 .buttonStyle(OptionsRowButtonStyle())

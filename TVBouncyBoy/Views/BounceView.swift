@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+// TODO: Deprecated. Delete.
 struct BounceView: View {
     @Bindable var homeVM: TVHomeViewModel
     

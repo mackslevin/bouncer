@@ -12,13 +12,20 @@ struct TVHomeView: View {
     
     var body: some View {
         Group {
-            switch vm.mode {
+            switch vm.backgroundMode {
                 case .standardBounce:
-                    BounceView(homeVM: vm)
+                    BouncingForegroundView(homeVM: vm) {
+                        if let img = vm.backgroundImage?.imageValue {
+                            img.resizable().scaledToFill()
+                        }
+                    }
                 case .nowPlaying1:
-                    
                     BouncingForegroundView(homeVM: vm) {
                         NowPlaying1View()
+                    }
+                case .nowPlaying2:
+                    BouncingForegroundView(homeVM: vm) {
+                        NowPlaying2View()
                     }
             }
         }

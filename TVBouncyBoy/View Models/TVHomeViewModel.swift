@@ -10,7 +10,7 @@ import Observation
 
 @Observable
 final class TVHomeViewModel {
-    var mode: ViewingMode = .standardBounce
+    var backgroundMode: BackgroundMode = .nowPlaying1
     
     var position: CGPoint = CGPoint(x: 100, y: 100)
     var velocity: CGSize = CGSize(width: 4, height: 4)

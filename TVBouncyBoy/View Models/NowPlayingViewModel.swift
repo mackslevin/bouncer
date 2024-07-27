@@ -16,36 +16,36 @@ final class NowPlayingViewModel {
     var nowPlayingAlbum: String = ""
     var nowPlayingArtwork: UIImage? = nil
     
-    var timer: Timer?
+    private let musicPlayer = MPMusicPlayerController.systemMusicPlayer
     
     init() {
         updateNowPlayingInfo()
-        startTimer()
+        registerForNotifications()
     }
     
-    func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { [weak self] _ in
-            self?.updateNowPlayingInfo()
-        }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
-    func stopTimer() {
-        timer?.invalidate()
-        timer = nil
-    }
-    
-    func updateNowPlayingInfo() {
-        print("^^ Updating")
-        
-        if let nowPlayingItem = MPMusicPlayerController.systemMusicPlayer.nowPlayingItem {
-            nowPlayingAlbum = nowPlayingItem.albumTitle ?? "Unknown Album"
-            nowPlayingArtist = nowPlayingItem.artist ?? "Unknown Artist"
-            nowPlayingTitle = nowPlayingItem.title ?? "Unknown Title"
-            nowPlayingArtwork = nowPlayingItem.artwork?.image(at: nowPlayingItem.artwork?.bounds.size ?? CGSize(width: 500, height: 500))
+    @objc func updateNowPlayingInfo() {
+        if let nowPlayingItem = musicPlayer.nowPlayingItem {
+            withAnimation {
+                nowPlayingAlbum = nowPlayingItem.albumTitle ?? "Unknown Album"
+                nowPlayingArtist = nowPlayingItem.artist ?? "Unknown Artist"
+                nowPlayingTitle = nowPlayingItem.title ?? "Unknown Title"
+                nowPlayingArtwork = nowPlayingItem.artwork?.image(at: nowPlayingItem.artwork?.bounds.size ?? CGSize(width: 500, height: 500))
+            }
         } else {
             print("^^ No now playing item")
         }
     }
+    
+    func registerForNotifications() {
+            NotificationCenter.default.addObserver(self, selector: #selector(updateNowPlayingInfo), name: .MPMusicPlayerControllerNowPlayingItemDidChange, object: musicPlayer)
+            NotificationCenter.default.addObserver(self, selector: #selector(updateNowPlayingInfo), name: .MPMusicPlayerControllerPlaybackStateDidChange, object: musicPlayer)
+            
+            musicPlayer.beginGeneratingPlaybackNotifications()
+        }
     
     func someNowPlayingInfoExists() -> Bool {
         !nowPlayingAlbum.isEmpty || !nowPlayingTitle.isEmpty || !nowPlayingArtist.isEmpty || nowPlayingArtwork != nil

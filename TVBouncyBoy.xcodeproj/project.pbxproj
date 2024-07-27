@@ -16,11 +16,12 @@
 		0114ADBC2C406FDC008E5114 /* OptionsRowButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADBB2C406FDC008E5114 /* OptionsRowButtonStyle.swift */; };
 		0133D5A12C543FFC006B7C15 /* SpaceGrotesk-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 010BD2862C5431F600C522A8 /* SpaceGrotesk-Bold.ttf */; };
 		0133D5A32C5464B2006B7C15 /* TVHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5A22C5464B2006B7C15 /* TVHomeView.swift */; };
-		0133D5AA2C546628006B7C15 /* ViewingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5A92C546628006B7C15 /* ViewingMode.swift */; };
+		0133D5AA2C546628006B7C15 /* BackgroundMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5A92C546628006B7C15 /* BackgroundMode.swift */; };
 		0133D5AC2C5466DE006B7C15 /* TVHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5AB2C5466DE006B7C15 /* TVHomeViewModel.swift */; };
 		0133D5AE2C546EA4006B7C15 /* BouncingForegroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5AD2C546EA4006B7C15 /* BouncingForegroundView.swift */; };
 		0133D5B02C5498A8006B7C15 /* NowPlaying1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5AF2C5498A8006B7C15 /* NowPlaying1View.swift */; };
 		0133D5B22C549A91006B7C15 /* NowPlayingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5B12C549A91006B7C15 /* NowPlayingViewModel.swift */; };
+		0133D5B42C55656E006B7C15 /* NowPlaying2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5B32C55656E006B7C15 /* NowPlaying2View.swift */; };
 		015E4FF02C39E77600AFD64E /* TVBouncyBoyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E4FEF2C39E77600AFD64E /* TVBouncyBoyApp.swift */; };
 		015E4FF22C39E77600AFD64E /* BounceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E4FF12C39E77600AFD64E /* BounceView.swift */; };
 		015E4FF42C39E77700AFD64E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015E4FF32C39E77700AFD64E /* Assets.xcassets */; };
@@ -68,11 +69,12 @@
 		0114ADB92C406499008E5114 /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
 		0114ADBB2C406FDC008E5114 /* OptionsRowButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsRowButtonStyle.swift; sourceTree = "<group>"; };
 		0133D5A22C5464B2006B7C15 /* TVHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVHomeView.swift; sourceTree = "<group>"; };
-		0133D5A92C546628006B7C15 /* ViewingMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewingMode.swift; sourceTree = "<group>"; };
+		0133D5A92C546628006B7C15 /* BackgroundMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMode.swift; sourceTree = "<group>"; };
 		0133D5AB2C5466DE006B7C15 /* TVHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVHomeViewModel.swift; sourceTree = "<group>"; };
 		0133D5AD2C546EA4006B7C15 /* BouncingForegroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncingForegroundView.swift; sourceTree = "<group>"; };
 		0133D5AF2C5498A8006B7C15 /* NowPlaying1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlaying1View.swift; sourceTree = "<group>"; };
 		0133D5B12C549A91006B7C15 /* NowPlayingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewModel.swift; sourceTree = "<group>"; };
+		0133D5B32C55656E006B7C15 /* NowPlaying2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlaying2View.swift; sourceTree = "<group>"; };
 		015E4FEC2C39E77600AFD64E /* TVBouncyBoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVBouncyBoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		015E4FEF2C39E77600AFD64E /* TVBouncyBoyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVBouncyBoyApp.swift; sourceTree = "<group>"; };
 		015E4FF12C39E77600AFD64E /* BounceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceView.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				015EC8D62C531C92002E05F2 /* OverviewView.swift */,
 				0133D5AD2C546EA4006B7C15 /* BouncingForegroundView.swift */,
 				0133D5AF2C5498A8006B7C15 /* NowPlaying1View.swift */,
+				0133D5B32C55656E006B7C15 /* NowPlaying2View.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,7 +158,7 @@
 			children = (
 				0114ADBB2C406FDC008E5114 /* OptionsRowButtonStyle.swift */,
 				0114ADB32C405691008E5114 /* BlankButtonStyle.swift */,
-				0133D5A92C546628006B7C15 /* ViewingMode.swift */,
+				0133D5A92C546628006B7C15 /* BackgroundMode.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -367,9 +370,10 @@
 			files = (
 				015EC8D32C51A198002E05F2 /* UploadOnCompanionApp.swift in Sources */,
 				0133D5A32C5464B2006B7C15 /* TVHomeView.swift in Sources */,
-				0133D5AA2C546628006B7C15 /* ViewingMode.swift in Sources */,
+				0133D5AA2C546628006B7C15 /* BackgroundMode.swift in Sources */,
 				01ADC91D2C4989D2006A2214 /* Utility.swift in Sources */,
 				0114ADB22C404D4B008E5114 /* BounceViewModel.swift in Sources */,
+				0133D5B42C55656E006B7C15 /* NowPlaying2View.swift in Sources */,
 				01B6BF072C4C3F3F00F447BF /* StorageKeys.swift in Sources */,
 				01A4571B2C4F220100A3B8DB /* WidescreenImageView.swift in Sources */,
 				01ADC91A2C49858C006A2214 /* AppImage.swift in Sources */,

@@ -8,6 +8,7 @@
 import SwiftUI
 import MediaPlayer
 
+// Minimal. Text and album cover only, black background.
 struct NowPlaying1View: View {
     @State private var vm = NowPlayingViewModel()
     
@@ -41,6 +42,7 @@ struct NowPlaying1View: View {
                         Text(vm.nowPlayingArtist)
                             .fontDesign(.rounded)
                         Text(vm.nowPlayingAlbum)
+                            .fontDesign(.rounded)
                     }
                 }
                 
