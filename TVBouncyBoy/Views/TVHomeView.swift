@@ -16,7 +16,10 @@ struct TVHomeView: View {
                 case .standardBounce:
                     BounceView(homeVM: vm)
                 case .nowPlaying1:
-                    Text("Now Playing")
+                    
+                    BouncingForegroundView(homeVM: vm) {
+                        NowPlaying1View()
+                    }
             }
         }
         .sheet(isPresented: $vm.isShowingOptions, content: {

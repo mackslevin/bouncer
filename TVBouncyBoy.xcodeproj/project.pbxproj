@@ -18,6 +18,9 @@
 		0133D5A32C5464B2006B7C15 /* TVHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5A22C5464B2006B7C15 /* TVHomeView.swift */; };
 		0133D5AA2C546628006B7C15 /* ViewingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5A92C546628006B7C15 /* ViewingMode.swift */; };
 		0133D5AC2C5466DE006B7C15 /* TVHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5AB2C5466DE006B7C15 /* TVHomeViewModel.swift */; };
+		0133D5AE2C546EA4006B7C15 /* BouncingForegroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5AD2C546EA4006B7C15 /* BouncingForegroundView.swift */; };
+		0133D5B02C5498A8006B7C15 /* NowPlaying1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5AF2C5498A8006B7C15 /* NowPlaying1View.swift */; };
+		0133D5B22C549A91006B7C15 /* NowPlayingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5B12C549A91006B7C15 /* NowPlayingViewModel.swift */; };
 		015E4FF02C39E77600AFD64E /* TVBouncyBoyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E4FEF2C39E77600AFD64E /* TVBouncyBoyApp.swift */; };
 		015E4FF22C39E77600AFD64E /* BounceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E4FF12C39E77600AFD64E /* BounceView.swift */; };
 		015E4FF42C39E77700AFD64E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015E4FF32C39E77700AFD64E /* Assets.xcassets */; };
@@ -67,6 +70,9 @@
 		0133D5A22C5464B2006B7C15 /* TVHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVHomeView.swift; sourceTree = "<group>"; };
 		0133D5A92C546628006B7C15 /* ViewingMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewingMode.swift; sourceTree = "<group>"; };
 		0133D5AB2C5466DE006B7C15 /* TVHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVHomeViewModel.swift; sourceTree = "<group>"; };
+		0133D5AD2C546EA4006B7C15 /* BouncingForegroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncingForegroundView.swift; sourceTree = "<group>"; };
+		0133D5AF2C5498A8006B7C15 /* NowPlaying1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlaying1View.swift; sourceTree = "<group>"; };
+		0133D5B12C549A91006B7C15 /* NowPlayingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewModel.swift; sourceTree = "<group>"; };
 		015E4FEC2C39E77600AFD64E /* TVBouncyBoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVBouncyBoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		015E4FEF2C39E77600AFD64E /* TVBouncyBoyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVBouncyBoyApp.swift; sourceTree = "<group>"; };
 		015E4FF12C39E77600AFD64E /* BounceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceView.swift; sourceTree = "<group>"; };
@@ -127,6 +133,8 @@
 				0114ADB92C406499008E5114 /* OptionsView.swift */,
 				0133D5A22C5464B2006B7C15 /* TVHomeView.swift */,
 				015EC8D62C531C92002E05F2 /* OverviewView.swift */,
+				0133D5AD2C546EA4006B7C15 /* BouncingForegroundView.swift */,
+				0133D5AF2C5498A8006B7C15 /* NowPlaying1View.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -137,6 +145,7 @@
 				0114ADB12C404D4B008E5114 /* BounceViewModel.swift */,
 				015EC8D02C519B21002E05F2 /* OptionsViewModel.swift */,
 				0133D5AB2C5466DE006B7C15 /* TVHomeViewModel.swift */,
+				0133D5B12C549A91006B7C15 /* NowPlayingViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -365,12 +374,15 @@
 				01A4571B2C4F220100A3B8DB /* WidescreenImageView.swift in Sources */,
 				01ADC91A2C49858C006A2214 /* AppImage.swift in Sources */,
 				015E4FF22C39E77600AFD64E /* BounceView.swift in Sources */,
+				0133D5B22C549A91006B7C15 /* NowPlayingViewModel.swift in Sources */,
+				0133D5AE2C546EA4006B7C15 /* BouncingForegroundView.swift in Sources */,
 				0114ADBA2C406499008E5114 /* OptionsView.swift in Sources */,
 				015EC8D12C519B21002E05F2 /* OptionsViewModel.swift in Sources */,
 				0114ADB42C405691008E5114 /* BlankButtonStyle.swift in Sources */,
 				015E4FF02C39E77600AFD64E /* TVBouncyBoyApp.swift in Sources */,
 				01ADC9202C498B12006A2214 /* DataManager.swift in Sources */,
 				0114ADBC2C406FDC008E5114 /* OptionsRowButtonStyle.swift in Sources */,
+				0133D5B02C5498A8006B7C15 /* NowPlaying1View.swift in Sources */,
 				01ADC92C2C49C49A006A2214 /* OptionsRowButtonLabel.swift in Sources */,
 				015EC8CF2C507CB1002E05F2 /* SettingsView.swift in Sources */,
 				015EC8D72C531C92002E05F2 /* OverviewView.swift in Sources */,
@@ -541,6 +553,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TVBouncyBoy/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Used to show music info in the \"now playing\" modes";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -571,6 +584,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TVBouncyBoy/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Used to show music info in the \"now playing\" modes";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;

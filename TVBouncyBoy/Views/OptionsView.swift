@@ -75,6 +75,7 @@ struct OptionsView: View {
                                 ForEach(vm.presetImages(appImages: appImages, type: .background)) { userImage in
                                     
                                     Button {
+                                        homeVM.mode = .standardBounce
                                         homeVM.backgroundImage = userImage
                                     } label: {
                                         OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .background)
@@ -98,6 +99,7 @@ struct OptionsView: View {
                                     ForEach(vm.customImages(appImages: appImages, type: .background)) { userImage in
                                         
                                         Button {
+                                            homeVM.mode = .standardBounce
                                             homeVM.backgroundImage = userImage
                                         } label: {
                                             OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .background)
@@ -108,6 +110,41 @@ struct OptionsView: View {
                                 })
                             }
                             .padding(.bottom)
+                        }
+                        
+                        Text("Now Playing")
+                            .fontDesign(.rounded)
+                            .foregroundStyle(.secondary)
+                        ScrollView(.horizontal) {
+                            LazyHGrid(rows: [GridItem()], content: {
+                                Button {
+                                    withAnimation {
+                                        homeVM.backgroundImage = nil
+                                        homeVM.mode = .nowPlaying1
+                                    }
+                                } label: {
+                                    ZStack {
+                                        Rectangle()
+                                            .aspectRatio(16/9, contentMode: .fit)
+                                            .frame(height: 150)
+                                            .foregroundStyle(.accent.gradient)
+                                            .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
+                                        
+                                        Text("Now Playing 1")
+                                    }
+                                    .overlay {
+                                        ZStack {
+                                            Color.black.opacity(0.5)
+                                            Image(systemName: "checkmark.circle.fill").resizable().scaledToFit()
+                                                .frame(height: 150 * 0.6)
+                                                .foregroundStyle(.white)
+                                                .shadow(radius: 4)
+                                        }
+                                        .opacity(homeVM.mode == .nowPlaying1 ? 1 : 0)
+                                    }
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
+                            })
                         }
                     }
                     
