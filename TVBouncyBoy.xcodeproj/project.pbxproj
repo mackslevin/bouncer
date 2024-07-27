@@ -23,6 +23,7 @@
 		0133D5B22C549A91006B7C15 /* NowPlayingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5B12C549A91006B7C15 /* NowPlayingViewModel.swift */; };
 		0133D5B42C55656E006B7C15 /* NowPlaying2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5B32C55656E006B7C15 /* NowPlaying2View.swift */; };
 		0133D5B62C556A7A006B7C15 /* NothingPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5B52C556A7A006B7C15 /* NothingPlayingView.swift */; };
+		0133D5B82C557C9C006B7C15 /* NowPlaying3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5B72C557C9C006B7C15 /* NowPlaying3View.swift */; };
 		015E4FF02C39E77600AFD64E /* TVBouncyBoyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E4FEF2C39E77600AFD64E /* TVBouncyBoyApp.swift */; };
 		015E4FF22C39E77600AFD64E /* BounceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E4FF12C39E77600AFD64E /* BounceView.swift */; };
 		015E4FF42C39E77700AFD64E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015E4FF32C39E77700AFD64E /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		0133D5B12C549A91006B7C15 /* NowPlayingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewModel.swift; sourceTree = "<group>"; };
 		0133D5B32C55656E006B7C15 /* NowPlaying2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlaying2View.swift; sourceTree = "<group>"; };
 		0133D5B52C556A7A006B7C15 /* NothingPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NothingPlayingView.swift; sourceTree = "<group>"; };
+		0133D5B72C557C9C006B7C15 /* NowPlaying3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlaying3View.swift; sourceTree = "<group>"; };
 		015E4FEC2C39E77600AFD64E /* TVBouncyBoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVBouncyBoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		015E4FEF2C39E77600AFD64E /* TVBouncyBoyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVBouncyBoyApp.swift; sourceTree = "<group>"; };
 		015E4FF12C39E77600AFD64E /* BounceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceView.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				0133D5AF2C5498A8006B7C15 /* NowPlaying1View.swift */,
 				0133D5B32C55656E006B7C15 /* NowPlaying2View.swift */,
 				0133D5B52C556A7A006B7C15 /* NothingPlayingView.swift */,
+				0133D5B72C557C9C006B7C15 /* NowPlaying3View.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				01A4571B2C4F220100A3B8DB /* WidescreenImageView.swift in Sources */,
 				01ADC91A2C49858C006A2214 /* AppImage.swift in Sources */,
 				015E4FF22C39E77600AFD64E /* BounceView.swift in Sources */,
+				0133D5B82C557C9C006B7C15 /* NowPlaying3View.swift in Sources */,
 				0133D5B22C549A91006B7C15 /* NowPlayingViewModel.swift in Sources */,
 				0133D5AE2C546EA4006B7C15 /* BouncingForegroundView.swift in Sources */,
 				0114ADBA2C406499008E5114 /* OptionsView.swift in Sources */,

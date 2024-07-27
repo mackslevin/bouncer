@@ -14,4 +14,5 @@ enum BackgroundMode: String, Codable {
     case standardBounce = "standardBounce"
     case nowPlaying1 = "nowPlaying1"
     case nowPlaying2 = "nowPlaying2"
+    case nowPlaying3 = "nowPlaying3"
 }
