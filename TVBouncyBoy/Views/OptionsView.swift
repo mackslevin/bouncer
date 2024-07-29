@@ -35,7 +35,6 @@ struct OptionsView: View {
                                             OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .boxImage)
                                         }
                                         .buttonStyle(OptionsRowButtonStyle())
-
                                 }
                             })
                         }
@@ -76,7 +75,6 @@ struct OptionsView: View {
                                 ForEach(vm.presetImages(appImages: appImages, type: .background)) { userImage in
                                     
                                     Button {
-                                        homeVM.backgroundMode = .standardBounce
                                         homeVM.backgroundImage = userImage
                                     } label: {
                                         OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .background)
@@ -100,7 +98,6 @@ struct OptionsView: View {
                                     ForEach(vm.customImages(appImages: appImages, type: .background)) { userImage in
                                         
                                         Button {
-                                            homeVM.backgroundMode = .standardBounce
                                             homeVM.backgroundImage = userImage
                                         } label: {
                                             OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .background)
@@ -125,7 +122,7 @@ struct OptionsView: View {
                                         homeVM.backgroundMode = .nowPlaying1
                                     }
                                 } label: {
-                                    ModeButtonLabel(homeVM: homeVM, mode: .nowPlaying1) {
+                                    BackgroundModeButtonLabel(homeVM: homeVM, mode: .nowPlaying1) {
                                         Text("Now Playing 1")
                                     }
                                 }
@@ -137,7 +134,7 @@ struct OptionsView: View {
                                         homeVM.backgroundMode = .nowPlaying2
                                     }
                                 } label: {
-                                    ModeButtonLabel(homeVM: homeVM, mode: .nowPlaying2) {
+                                    BackgroundModeButtonLabel(homeVM: homeVM, mode: .nowPlaying2) {
                                         Text("Now Playing 2")
                                     }
                                 }
@@ -149,7 +146,7 @@ struct OptionsView: View {
                                         homeVM.backgroundMode = .nowPlaying3
                                     }
                                 } label: {
-                                    ModeButtonLabel(homeVM: homeVM, mode: .nowPlaying3) {
+                                    BackgroundModeButtonLabel(homeVM: homeVM, mode: .nowPlaying3) {
                                         Text("Now Playing 3")
                                     }
                                 }

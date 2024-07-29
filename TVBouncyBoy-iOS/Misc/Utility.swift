@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MediaPlayer
 
 struct Utility {
     static func uniqueFilename(from date: Date) -> String {
@@ -43,5 +44,25 @@ struct Utility {
         #else
         return UIDevice.current.userInterfaceIdiom == .tv
         #endif
+    }
+    
+    static func nowPlayingHandlePlayPauseButton() {
+        let player = MPMusicPlayerController.systemMusicPlayer
+        switch player.playbackState {
+            case .stopped:
+                player.play()
+            case .playing:
+                player.pause()
+            case .paused:
+                player.play()
+            default:
+                print("^^ 🤷‍♂️")
+        }
+    }
+    
+    static func simpleFormattedTime() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm"
+        return formatter.string(from: .now)
     }
 }

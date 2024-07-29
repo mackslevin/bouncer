@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ModeButtonLabel<Content: View>: View {
+struct BackgroundModeButtonLabel<Content: View>: View {
     @Bindable var homeVM: TVHomeViewModel
     let mode: BackgroundMode
     let content: Content
@@ -20,7 +20,6 @@ struct ModeButtonLabel<Content: View>: View {
         self.mode = mode
         self.content = content()
     }
-    
     
     var body: some View {
         ZStack {

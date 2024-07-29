@@ -45,6 +45,8 @@ class BounceViewModel {
         
         withAnimation(.linear(duration: 0.05)) {
             position = CGPoint(x: newX, y: newY)
+            
+            self.isLoading = false
         }
     }
     

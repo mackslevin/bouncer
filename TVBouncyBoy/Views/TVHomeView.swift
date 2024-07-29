@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MediaPlayer
 
 struct TVHomeView: View {
     @State private var vm = TVHomeViewModel()
@@ -19,18 +20,31 @@ struct TVHomeView: View {
                             img.resizable().scaledToFill()
                         }
                     }
+                
                 case .nowPlaying1:
                     BouncingForegroundView(homeVM: vm) {
                         NowPlaying1View()
                     }
+                    .onPlayPauseCommand {
+                        Utility.nowPlayingHandlePlayPauseButton()
+                    }
+                
                 case .nowPlaying2:
                     BouncingForegroundView(homeVM: vm) {
                         NowPlaying2View()
                     }
+                    .onPlayPauseCommand {
+                        Utility.nowPlayingHandlePlayPauseButton()
+                    }
+                
                 case .nowPlaying3:
                     BouncingForegroundView(homeVM: vm) {
                         NowPlaying3View()
                     }
+                    .onPlayPauseCommand {
+                        Utility.nowPlayingHandlePlayPauseButton()
+                    }
+                    
             }
         }
         .sheet(isPresented: $vm.isShowingOptions, content: {

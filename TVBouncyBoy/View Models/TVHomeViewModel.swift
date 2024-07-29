@@ -11,6 +11,7 @@ import Observation
 @Observable
 final class TVHomeViewModel {
     var backgroundMode: BackgroundMode = .nowPlaying3
+    var foregroundMode: ForegroundMode = .clock1
     
     
     var isShowingOptions = false
@@ -20,12 +21,13 @@ final class TVHomeViewModel {
     
     var backgroundImage: AppImage? {
         didSet {
+            backgroundMode = .standardBounce
             UserDefaults.standard.setValue(backgroundImage?.id.uuidString ?? "", forKey: StorageKeys.currentBackgroundID.rawValue)
         }
     }
     var boxImage: AppImage? {
         didSet {
-            print("^^ setting")
+            foregroundMode = .standardBounce
             UserDefaults.standard.setValue(boxImage?.id.uuidString ?? "", forKey: StorageKeys.currentBoxImageID.rawValue)
         }
     }

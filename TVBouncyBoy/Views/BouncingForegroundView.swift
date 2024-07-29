@@ -56,7 +56,6 @@ struct BouncingForegroundView<Content: View>: View {
                                 }
                                 .foregroundStyle(.secondary)
                             } else {
-
                                 backgroundView
                                 
                                 Color.black
@@ -68,17 +67,30 @@ struct BouncingForegroundView<Content: View>: View {
                     .tag(0)
                 
                 Rectangle()
+                    .frame(width: bounceVM.rectangleSize.width, height: bounceVM.rectangleSize.height)
+                    .clipShape(RoundedRectangle(cornerRadius: Utility.boxCornerRadius))
+                    .shadow(radius: boxShadow ? 8 : 0)
                     .overlay {
-                        if let boxImg = boxImageProxy {
-                            boxImg.resizable().scaledToFill()
-                                .onAppear {
-                                    bounceVM.isLoading = false
-                                }
+                        Group {
+                            switch homeVM.foregroundMode {
+                                case .standardBounce:
+                                    if let boxImg = boxImageProxy {
+                                        boxImg.resizable().scaledToFill()
+//                                            .onAppear {
+//                                                bounceVM.isLoading = false
+//                                            }
+                                    }
+                                case .clock1:
+                                    Clock1View()
+//                                        .onAppear {
+//                                            bounceVM.isLoading = false
+//                                        }
+                            }
                         }
+                        
+                        
                     }
                     .clipShape(RoundedRectangle(cornerRadius: Utility.boxCornerRadius))
-                    .frame(width: bounceVM.rectangleSize.width, height: bounceVM.rectangleSize.height)
-                    .shadow(radius: boxShadow ? 8 : 0)
                     .tag(1)
                     .opacity(bounceVM.isLoading ? 0 : 1)
             }
