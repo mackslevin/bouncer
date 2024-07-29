@@ -23,6 +23,7 @@ struct TVBouncyBoyApp: App {
     var body: some Scene {
         WindowGroup {
             TVHomeView()
+                .environment(TVHomeViewModel())
         }
         .modelContainer(sharedModelContainer)
     }

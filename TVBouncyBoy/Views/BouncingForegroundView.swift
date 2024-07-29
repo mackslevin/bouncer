@@ -11,6 +11,8 @@ import SwiftUI
 
 struct BouncingForegroundView<Content: View>: View {
     @Bindable var homeVM: TVHomeViewModel
+    @State private var bounceVM = BounceViewModel()
+    
     let backgroundView: Content
     
     @State private var boxImageProxy: Image? = nil
@@ -31,10 +33,10 @@ struct BouncingForegroundView<Content: View>: View {
                     context.draw(bg, in: CGRect(origin: .zero, size: size))
                 }
                 
-                let rect = CGRect(x: homeVM.position.x - homeVM.rectangleSize.width / 2,
-                                  y: homeVM.position.y - homeVM.rectangleSize.height / 2,
-                                  width: homeVM.rectangleSize.width,
-                                  height: homeVM.rectangleSize.height)
+                let rect = CGRect(x: bounceVM.position.x - bounceVM.rectangleSize.width / 2,
+                                  y: bounceVM.position.y - bounceVM.rectangleSize.height / 2,
+                                  width: bounceVM.rectangleSize.width,
+                                  height: bounceVM.rectangleSize.height)
                 
                 if let boxy = context.resolveSymbol(id: 1) {
                     context.draw(boxy, in: rect)
@@ -44,7 +46,7 @@ struct BouncingForegroundView<Content: View>: View {
                     .foregroundStyle(.black)
                     .overlay {
                         ZStack {
-                            if homeVM.isLoading {
+                            if bounceVM.isLoading {
                                 VStack {
                                     Image("logo")
                                         .resizable().scaledToFit()
@@ -70,22 +72,22 @@ struct BouncingForegroundView<Content: View>: View {
                         if let boxImg = boxImageProxy {
                             boxImg.resizable().scaledToFill()
                                 .onAppear {
-                                    homeVM.isLoading = false
+                                    bounceVM.isLoading = false
                                 }
                         }
                     }
                     .clipShape(RoundedRectangle(cornerRadius: Utility.boxCornerRadius))
-                    .frame(width: homeVM.rectangleSize.width, height: homeVM.rectangleSize.height)
+                    .frame(width: bounceVM.rectangleSize.width, height: bounceVM.rectangleSize.height)
                     .shadow(radius: boxShadow ? 8 : 0)
                     .tag(1)
-                    .opacity(homeVM.isLoading ? 0 : 1)
+                    .opacity(bounceVM.isLoading ? 0 : 1)
             }
             .onAppear {
-                homeVM.startTimer()
+                bounceVM.startTimer()
                 UIApplication.shared.isIdleTimerDisabled = true
             }
             .onDisappear {
-                homeVM.timer?.invalidate()
+                bounceVM.timer?.invalidate()
             }
         }
         .buttonStyle(BlankButtonStyle())
@@ -93,7 +95,7 @@ struct BouncingForegroundView<Content: View>: View {
         .ignoresSafeArea()
         .onAppear {
             boxImageProxy = homeVM.boxImage?.imageValue
-            homeVM.applyTightening()
+            bounceVM.applyTightening()
         }
         .onChange(of: homeVM.boxImage, { _, newValue in
             boxImageProxy = newValue?.imageValue
