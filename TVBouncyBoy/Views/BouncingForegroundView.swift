@@ -76,15 +76,9 @@ struct BouncingForegroundView<Content: View>: View {
                                 case .standardBounce:
                                     if let boxImg = boxImageProxy {
                                         boxImg.resizable().scaledToFill()
-//                                            .onAppear {
-//                                                bounceVM.isLoading = false
-//                                            }
                                     }
                                 case .clock1:
                                     Clock1View()
-//                                        .onAppear {
-//                                            bounceVM.isLoading = false
-//                                        }
                             }
                         }
                         

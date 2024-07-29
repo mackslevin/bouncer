@@ -42,6 +42,10 @@ struct OptionsRowButtonLabel: View {
             return false
         }
         
+        if imageType == .boxImage && homeVM.foregroundMode != .standardBounce {
+            return false
+        }
+        
         return homeVM.boxImage == image || homeVM.backgroundImage == image
     }
 }

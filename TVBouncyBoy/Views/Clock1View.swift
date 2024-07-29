@@ -17,7 +17,7 @@ struct Clock1View: View {
             
             Text(timeString)
                 .foregroundStyle(.black)
-                .font(.displayFont(size: 96))
+                .font(.displayFont(size: 196))
                 .minimumScaleFactor(0.1)
                 .padding()
         }

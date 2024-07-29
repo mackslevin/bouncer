@@ -24,22 +24,41 @@ struct OptionsView: View {
                             .font(Font.displayFont(size: 48))
                             .foregroundStyle(.accent)
                         
-                        Text("Presets")
+                        Text("Preset Images")
                             .fontDesign(.rounded)
                             .fontWeight(.bold)
-                        
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: [GridItem()], content: {
                                 ForEach(vm.presetImages(appImages: appImages, type: .boxImage)) { userImage in
-                                        Button { homeVM.boxImage = userImage } label: {
-                                            OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .boxImage)
-                                        }
-                                        .buttonStyle(OptionsRowButtonStyle())
+                                    Button {
+                                        homeVM.boxImage = userImage
+                                        homeVM.foregroundMode = .standardBounce
+                                    } label: {
+                                        OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .boxImage)
+                                    }
+                                    .buttonStyle(OptionsRowButtonStyle())
                                 }
                             })
                         }
                         
-                        Text("Custom")
+                        Text("Clock")
+                            .fontDesign(.rounded)
+                            .fontWeight(.bold)
+                        ScrollView(.horizontal) {
+                            LazyHGrid(rows: [GridItem()], content: {
+                                Button {
+                                    withAnimation {
+                                        homeVM.foregroundMode = .clock1
+                                        homeVM.boxImage = nil
+                                    }
+                                } label: {
+                                    Clock1View()
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
+                            })
+                        }
+                        
+                        Text("My Images")
                             .fontDesign(.rounded)
                             .fontWeight(.bold)
                             
@@ -49,10 +68,13 @@ struct OptionsView: View {
                             ScrollView(.horizontal) {
                                 LazyHGrid(rows: [GridItem()], content: {
                                     ForEach(vm.customImages(appImages: appImages, type: .boxImage)) { userImage in
-                                            Button { homeVM.boxImage = userImage } label: {
-                                                OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .boxImage)
-                                            }
-                                            .buttonStyle(OptionsRowButtonStyle())
+                                        Button {
+                                            homeVM.boxImage = userImage
+                                            homeVM.foregroundMode = .standardBounce
+                                        } label: {
+                                            OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .boxImage)
+                                        }
+                                        .buttonStyle(OptionsRowButtonStyle())
 
                                     }
                                 })
@@ -66,7 +88,7 @@ struct OptionsView: View {
                             .font(Font.displayFont(size: 48))
                             .foregroundStyle(.accent)
                         
-                        Text("Presets")
+                        Text("Preset Images")
                             .fontDesign(.rounded)
                             .fontWeight(.bold)
                         
@@ -76,6 +98,7 @@ struct OptionsView: View {
                                     
                                     Button {
                                         homeVM.backgroundImage = userImage
+                                        homeVM.backgroundMode = .standardBounce
                                     } label: {
                                         OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .background)
                                     }
@@ -86,7 +109,51 @@ struct OptionsView: View {
                         }
                         .padding(.bottom)
                         
-                        Text("Custom")
+                        Text("Now Playing")
+                            .fontDesign(.rounded)
+                            .fontWeight(.bold)
+                            
+                        ScrollView(.horizontal) {
+                            LazyHGrid(rows: [GridItem()], content: {
+                                Button {
+                                    withAnimation { 
+                                        homeVM.backgroundMode = .nowPlaying1
+                                        homeVM.backgroundImage = nil
+                                    }
+                                } label: {
+                                    BackgroundModeButtonLabel(homeVM: homeVM, mode: .nowPlaying1) {
+                                        Text("Now Playing 1")
+                                    }
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
+                                
+                                Button {
+                                    withAnimation {
+                                        homeVM.backgroundMode = .nowPlaying2
+                                        homeVM.backgroundImage = nil
+                                    }
+                                } label: {
+                                    BackgroundModeButtonLabel(homeVM: homeVM, mode: .nowPlaying2) {
+                                        Text("Now Playing 2")
+                                    }
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
+                                
+                                Button {
+                                    withAnimation {
+                                        homeVM.backgroundMode = .nowPlaying3
+                                        homeVM.backgroundImage = nil
+                                    }
+                                } label: {
+                                    BackgroundModeButtonLabel(homeVM: homeVM, mode: .nowPlaying3) {
+                                        Text("Now Playing 3")
+                                    }
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
+                            })
+                        }
+                        
+                        Text("My Images")
                             .fontDesign(.rounded)
                             .fontWeight(.bold)
                         
@@ -99,6 +166,7 @@ struct OptionsView: View {
                                         
                                         Button {
                                             homeVM.backgroundImage = userImage
+                                            homeVM.backgroundMode = .standardBounce
                                         } label: {
                                             OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .background)
                                         }
@@ -110,49 +178,7 @@ struct OptionsView: View {
                             .padding(.bottom)
                         }
                         
-                        Text("Now Playing")
-                            .fontDesign(.rounded)
-                            .fontWeight(.bold)
-                            
-                        ScrollView(.horizontal) {
-                            LazyHGrid(rows: [GridItem()], content: {
-                                Button {
-                                    withAnimation {
-                                        homeVM.backgroundImage = nil
-                                        homeVM.backgroundMode = .nowPlaying1
-                                    }
-                                } label: {
-                                    BackgroundModeButtonLabel(homeVM: homeVM, mode: .nowPlaying1) {
-                                        Text("Now Playing 1")
-                                    }
-                                }
-                                .buttonStyle(OptionsRowButtonStyle())
-                                
-                                Button {
-                                    withAnimation {
-                                        homeVM.backgroundImage = nil
-                                        homeVM.backgroundMode = .nowPlaying2
-                                    }
-                                } label: {
-                                    BackgroundModeButtonLabel(homeVM: homeVM, mode: .nowPlaying2) {
-                                        Text("Now Playing 2")
-                                    }
-                                }
-                                .buttonStyle(OptionsRowButtonStyle())
-                                
-                                Button {
-                                    withAnimation {
-                                        homeVM.backgroundImage = nil
-                                        homeVM.backgroundMode = .nowPlaying3
-                                    }
-                                } label: {
-                                    BackgroundModeButtonLabel(homeVM: homeVM, mode: .nowPlaying3) {
-                                        Text("Now Playing 3")
-                                    }
-                                }
-                                .buttonStyle(OptionsRowButtonStyle())
-                            })
-                        }
+                        
                     }
                     
                     Spacer()
