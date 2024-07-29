@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01048BF72C581FE20057111D /* ModeButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01048BF62C581FE20057111D /* ModeButtonLabel.swift */; };
 		010BD2882C5431F600C522A8 /* SpaceGrotesk-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 010BD2862C5431F600C522A8 /* SpaceGrotesk-Bold.ttf */; };
 		010BD28B2C54323400C522A8 /* Font-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010BD28A2C54323400C522A8 /* Font-Ext.swift */; };
 		010BD28C2C54323400C522A8 /* Font-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010BD28A2C54323400C522A8 /* Font-Ext.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01048BF62C581FE20057111D /* ModeButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeButtonLabel.swift; sourceTree = "<group>"; };
 		010BD2862C5431F600C522A8 /* SpaceGrotesk-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Bold.ttf"; sourceTree = "<group>"; };
 		010BD2892C54320B00C522A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		010BD28A2C54323400C522A8 /* Font-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font-Ext.swift"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				0133D5B32C55656E006B7C15 /* NowPlaying2View.swift */,
 				0133D5B52C556A7A006B7C15 /* NothingPlayingView.swift */,
 				0133D5B72C557C9C006B7C15 /* NowPlaying3View.swift */,
+				01048BF62C581FE20057111D /* ModeButtonLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				015EC8D32C51A198002E05F2 /* UploadOnCompanionApp.swift in Sources */,
+				01048BF72C581FE20057111D /* ModeButtonLabel.swift in Sources */,
 				0133D5A32C5464B2006B7C15 /* TVHomeView.swift in Sources */,
 				0133D5AA2C546628006B7C15 /* BackgroundMode.swift in Sources */,
 				01ADC91D2C4989D2006A2214 /* Utility.swift in Sources */,

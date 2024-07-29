@@ -26,7 +26,7 @@ struct OptionsView: View {
                         
                         Text("Presets")
                             .fontDesign(.rounded)
-                            .foregroundStyle(.secondary)
+                            .fontWeight(.bold)
                         
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: [GridItem()], content: {
@@ -35,14 +35,15 @@ struct OptionsView: View {
                                             OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .boxImage)
                                         }
                                         .buttonStyle(OptionsRowButtonStyle())
-                                        .clipShape(RoundedRectangle(cornerRadius: 10))
+
                                 }
                             })
                         }
                         
                         Text("Custom")
                             .fontDesign(.rounded)
-                            .foregroundStyle(.secondary)
+                            .fontWeight(.bold)
+                            
                         if vm.customImages(appImages: appImages, type: .boxImage).isEmpty {
                             UploadOnCompanionApp()
                         } else {
@@ -53,7 +54,7 @@ struct OptionsView: View {
                                                 OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .boxImage)
                                             }
                                             .buttonStyle(OptionsRowButtonStyle())
-                                            .clipShape(RoundedRectangle(cornerRadius: 10))
+
                                     }
                                 })
                             }
@@ -68,7 +69,7 @@ struct OptionsView: View {
                         
                         Text("Presets")
                             .fontDesign(.rounded)
-                            .foregroundStyle(.secondary)
+                            .fontWeight(.bold)
                         
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: [GridItem()], content: {
@@ -81,7 +82,7 @@ struct OptionsView: View {
                                         OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .background)
                                     }
                                     .buttonStyle(OptionsRowButtonStyle())
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+
                                 }
                             })
                         }
@@ -89,7 +90,7 @@ struct OptionsView: View {
                         
                         Text("Custom")
                             .fontDesign(.rounded)
-                            .foregroundStyle(.secondary)
+                            .fontWeight(.bold)
                         
                         if vm.customImages(appImages: appImages, type: .background).isEmpty {
                             UploadOnCompanionApp()
@@ -105,7 +106,7 @@ struct OptionsView: View {
                                             OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .background)
                                         }
                                         .buttonStyle(OptionsRowButtonStyle())
-                                        .clipShape(RoundedRectangle(cornerRadius: 10))
+
                                     }
                                 })
                             }
@@ -114,7 +115,8 @@ struct OptionsView: View {
                         
                         Text("Now Playing")
                             .fontDesign(.rounded)
-                            .foregroundStyle(.secondary)
+                            .fontWeight(.bold)
+                            
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: [GridItem()], content: {
                                 Button {
@@ -123,24 +125,8 @@ struct OptionsView: View {
                                         homeVM.backgroundMode = .nowPlaying1
                                     }
                                 } label: {
-                                    ZStack {
-                                        Rectangle()
-                                            .aspectRatio(16/9, contentMode: .fit)
-                                            .frame(height: 150)
-                                            .foregroundStyle(.accent.gradient)
-                                            .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
-                                        
+                                    ModeButtonLabel(homeVM: homeVM, mode: .nowPlaying1) {
                                         Text("Now Playing 1")
-                                    }
-                                    .overlay {
-                                        ZStack {
-                                            Color.black.opacity(0.5)
-                                            Image(systemName: "checkmark.circle.fill").resizable().scaledToFit()
-                                                .frame(height: 150 * 0.6)
-                                                .foregroundStyle(.white)
-                                                .shadow(radius: 4)
-                                        }
-                                        .opacity(homeVM.backgroundMode == .nowPlaying1 ? 1 : 0)
                                     }
                                 }
                                 .buttonStyle(OptionsRowButtonStyle())
@@ -151,24 +137,8 @@ struct OptionsView: View {
                                         homeVM.backgroundMode = .nowPlaying2
                                     }
                                 } label: {
-                                    ZStack {
-                                        Rectangle()
-                                            .aspectRatio(16/9, contentMode: .fit)
-                                            .frame(height: 150)
-                                            .foregroundStyle(.accent.gradient)
-                                            .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
-                                        
+                                    ModeButtonLabel(homeVM: homeVM, mode: .nowPlaying2) {
                                         Text("Now Playing 2")
-                                    }
-                                    .overlay {
-                                        ZStack {
-                                            Color.black.opacity(0.5)
-                                            Image(systemName: "checkmark.circle.fill").resizable().scaledToFit()
-                                                .frame(height: 150 * 0.6)
-                                                .foregroundStyle(.white)
-                                                .shadow(radius: 4)
-                                        }
-                                        .opacity(homeVM.backgroundMode == .nowPlaying2 ? 1 : 0)
                                     }
                                 }
                                 .buttonStyle(OptionsRowButtonStyle())
@@ -179,24 +149,8 @@ struct OptionsView: View {
                                         homeVM.backgroundMode = .nowPlaying3
                                     }
                                 } label: {
-                                    ZStack {
-                                        Rectangle()
-                                            .aspectRatio(16/9, contentMode: .fit)
-                                            .frame(height: 150)
-                                            .foregroundStyle(.accent.gradient)
-                                            .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
-                                        
+                                    ModeButtonLabel(homeVM: homeVM, mode: .nowPlaying3) {
                                         Text("Now Playing 3")
-                                    }
-                                    .overlay {
-                                        ZStack {
-                                            Color.black.opacity(0.5)
-                                            Image(systemName: "checkmark.circle.fill").resizable().scaledToFit()
-                                                .frame(height: 150 * 0.6)
-                                                .foregroundStyle(.white)
-                                                .shadow(radius: 4)
-                                        }
-                                        .opacity(homeVM.backgroundMode == .nowPlaying3 ? 1 : 0)
                                     }
                                 }
                                 .buttonStyle(OptionsRowButtonStyle())
@@ -215,7 +169,9 @@ struct OptionsView: View {
                             .labelStyle(.titleOnly)
                     }
                     ToolbarItem(placement: .confirmationAction) {
-                        Button("Close") { dismiss() }
+                        Button("Close", systemImage: "xmark") { dismiss() }
+                            .fontDesign(.rounded)
+                            .labelStyle(.titleOnly)
                     }
                 }
                 .navigationTitle("Setup")
