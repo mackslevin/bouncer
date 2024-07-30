@@ -27,6 +27,7 @@ struct OptionsView: View {
                         Text("Preset Images")
                             .fontDesign(.rounded)
                             .fontWeight(.bold)
+                            
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: [GridItem()], content: {
                                 ForEach(vm.presetImages(appImages: appImages, type: .boxImage)) { userImage in
@@ -44,6 +45,7 @@ struct OptionsView: View {
                         Text("Clock")
                             .fontDesign(.rounded)
                             .fontWeight(.bold)
+                            .padding(.top)
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: [GridItem()], content: {
                                 Button {
@@ -55,13 +57,14 @@ struct OptionsView: View {
                                     Clock1View()
                                 }
                                 .buttonStyle(OptionsRowButtonStyle())
+                                .frame(height: 150)
                             })
                         }
                         
                         Text("My Images")
                             .fontDesign(.rounded)
                             .fontWeight(.bold)
-                            
+                            .padding(.top)
                         if vm.customImages(appImages: appImages, type: .boxImage).isEmpty {
                             UploadOnCompanionApp()
                         } else {
@@ -75,7 +78,6 @@ struct OptionsView: View {
                                             OptionsRowButtonLabel(homeVM: homeVM, image: userImage, imageType: .boxImage)
                                         }
                                         .buttonStyle(OptionsRowButtonStyle())
-
                                     }
                                 })
                             }
@@ -91,6 +93,7 @@ struct OptionsView: View {
                         Text("Preset Images")
                             .fontDesign(.rounded)
                             .fontWeight(.bold)
+                            
                         
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: [GridItem()], content: {
@@ -112,6 +115,7 @@ struct OptionsView: View {
                         Text("Now Playing")
                             .fontDesign(.rounded)
                             .fontWeight(.bold)
+                            .padding(.top)
                             
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: [GridItem()], content: {
@@ -156,6 +160,7 @@ struct OptionsView: View {
                         Text("My Images")
                             .fontDesign(.rounded)
                             .fontWeight(.bold)
+                            .padding(.top)
                         
                         if vm.customImages(appImages: appImages, type: .background).isEmpty {
                             UploadOnCompanionApp()

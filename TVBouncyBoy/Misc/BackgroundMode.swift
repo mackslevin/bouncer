@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum BackgroundMode: String, Codable {
+enum BackgroundMode: String, Codable, CaseIterable {
     // The `standardBounce` mode is the one where the background is a static image, either from the user or a preset. Static background images are ignored for the other modes.
 
     case standardBounce = "standardBounce"

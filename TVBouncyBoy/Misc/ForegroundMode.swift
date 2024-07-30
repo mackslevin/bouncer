@@ -9,7 +9,7 @@ import Foundation
 
 
 
-enum ForegroundMode: String, Codable {
+enum ForegroundMode: String, Codable, CaseIterable {
     // The `standardBounce` mode is the one where the bouncy box is a static image, either from the user or a preset. Static box images are ignored for the other modes.
 
     case standardBounce = "standardBounce"

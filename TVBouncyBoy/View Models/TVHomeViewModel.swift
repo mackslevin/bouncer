@@ -13,9 +13,16 @@ final class TVHomeViewModel {
     var isShowingOptions = false
     var isShowingOverview = false
     
-    var backgroundMode: BackgroundMode = .nowPlaying3
-    
-    var foregroundMode: ForegroundMode = .clock1
+    var backgroundMode: BackgroundMode = .standardBounce {
+        didSet {
+            UserDefaults.standard.setValue(backgroundMode.rawValue, forKey: StorageKeys.backgroundMode.rawValue)
+        }
+    }
+    var foregroundMode: ForegroundMode = .standardBounce {
+        didSet {
+            UserDefaults.standard.setValue(foregroundMode.rawValue, forKey: StorageKeys.foregroundMode.rawValue)
+        }
+    }
     
     var backgroundImage: AppImage? {
         didSet {
@@ -54,6 +61,22 @@ final class TVHomeViewModel {
             UserDefaults.standard.setValue(false, forKey: StorageKeys.isFirstRun.rawValue)
         }
         
+        if let storedBackgroundMode: String = UserDefaults.standard.string(forKey: StorageKeys.backgroundMode.rawValue) {
+            for bgMode in BackgroundMode.allCases {
+                if bgMode.rawValue == storedBackgroundMode {
+                    self.backgroundMode = bgMode
+                }
+            }
+        }
+        
+        if let storedForegroundMode = UserDefaults.standard.string(forKey: StorageKeys.foregroundMode.rawValue) {
+            for fgMode in ForegroundMode.allCases {
+                if fgMode.rawValue == storedForegroundMode {
+                    foregroundMode = fgMode
+                }
+            }
+        }
+        
         Task {
             try? await setImages()
         }
@@ -65,17 +88,21 @@ final class TVHomeViewModel {
             return
         }
         
-        let savedBackgroundID = UserDefaults.standard.value(forKey: StorageKeys.currentBackgroundID.rawValue) as? String
-        if let savedBackgroundID, let bgImage = allImages.first(where: {$0.id.uuidString == savedBackgroundID}) {
-            self.backgroundImage = bgImage
-        } else if let firstImage = allImages.first(where: {$0.imageType == .background}) {
-            self.backgroundImage = firstImage
+        if backgroundMode == .standardBounce {
+            let savedBackgroundID = UserDefaults.standard.value(forKey: StorageKeys.currentBackgroundID.rawValue) as? String
+            if let savedBackgroundID, let bgImage = allImages.first(where: {$0.id.uuidString == savedBackgroundID}) {
+                self.backgroundImage = bgImage
+            } else if let firstImage = allImages.first(where: {$0.imageType == .background}) {
+                self.backgroundImage = firstImage
+            }
         }
         
-        if let savedBoxID = UserDefaults.standard.value(forKey: StorageKeys.currentBoxImageID.rawValue) as? String, let boxImg = allImages.first(where: {$0.id.uuidString == savedBoxID}) {
-            self.boxImage = boxImg
-        } else if let firstImage = allImages.first(where: {$0.imageType == .boxImage}) {
-            self.boxImage = firstImage
+        if foregroundMode == .standardBounce {
+            if let savedBoxID = UserDefaults.standard.value(forKey: StorageKeys.currentBoxImageID.rawValue) as? String, let boxImg = allImages.first(where: {$0.id.uuidString == savedBoxID}) {
+                self.boxImage = boxImg
+            } else if let firstImage = allImages.first(where: {$0.imageType == .boxImage}) {
+                self.boxImage = firstImage
+            }
         }
     }
     

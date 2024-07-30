@@ -20,6 +20,7 @@ struct Clock1View: View {
                 .font(.displayFont(size: 196))
                 .minimumScaleFactor(0.1)
                 .padding()
+                .aspectRatio(16/9, contentMode: .fill)
         }
         .onAppear {
             timeString = Utility.simpleFormattedTime()
