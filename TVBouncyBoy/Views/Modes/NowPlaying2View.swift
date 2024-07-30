@@ -14,9 +14,7 @@ struct NowPlaying2View: View {
     var body: some View {
         if !vm.someNowPlayingInfoExists() {
             NothingPlayingView()
-                
         } else {
-            
             ZStack {
                 if let uiImage = vm.nowPlayingArtwork {
                     Image(uiImage: uiImage).resizable().scaledToFill()
@@ -26,7 +24,6 @@ struct NowPlaying2View: View {
                 }
                 
                 VStack {
-                    
                     RoundedRectangle(cornerRadius: Utility.defaultCornerRadius)
                         .foregroundStyle(
                             LinearGradient(colors: [.accent, .black], startPoint: .topLeading, endPoint: .bottomTrailing)

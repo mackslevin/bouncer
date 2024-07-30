@@ -14,4 +14,8 @@ enum ForegroundMode: String, Codable, CaseIterable {
 
     case standardBounce = "standardBounce"
     case clock1 = "clock1"
+    case clock2 = "clock2"
+    case clock3 = "clock3"
+    case clock4 = "clock4"
+    case clock5 = "clock5"
 }

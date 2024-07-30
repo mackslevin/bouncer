@@ -79,6 +79,14 @@ struct BouncingForegroundView<Content: View>: View {
                                     }
                                 case .clock1:
                                     Clock1View()
+                                case .clock2:
+                                    Clock2View()
+                                case .clock3:
+                                    Clock3View()
+                                case .clock4:
+                                    Clock4View()
+                                case .clock5:
+                                    Clock5View()
                             }
                         }
                         

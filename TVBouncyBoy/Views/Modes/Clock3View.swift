@@ -1,14 +1,15 @@
 //
-//  Clock1View.swift
+//  Clock3View.swift
 //  TVBouncyBoy
 //
-//  Created by Mack Slevin on 7/29/24.
+//  Created by Mack Slevin on 7/30/24.
 //
 
 import SwiftUI
 
-struct Clock1View: View {
+struct Clock3View: View {
     @State private var timeString = "04:20"
+    @State private var timer: Timer?
     
     var body: some View {
         ZStack {
@@ -17,7 +18,8 @@ struct Clock1View: View {
             
             Text(timeString)
                 .foregroundStyle(.black)
-                .font(.displayFont(size: 196))
+                .font(.system(size: 196))
+                .fontDesign(.rounded)
                 .minimumScaleFactor(0.1)
                 .padding()
                 .aspectRatio(16/9, contentMode: .fill)
@@ -26,15 +28,14 @@ struct Clock1View: View {
             timeString = Utility.simpleFormattedTime()
             startTimer()
         }
+        .onDisappear {
+            timer?.invalidate()
+        }
     }
     
     func startTimer() {
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
             timeString = Utility.simpleFormattedTime()
         }
     }
-}
-
-#Preview {
-    Clock1View()
 }

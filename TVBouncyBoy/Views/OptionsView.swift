@@ -58,6 +58,59 @@ struct OptionsView: View {
                                         .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .clock1))
                                 }
                                 .buttonStyle(OptionsRowButtonStyle())
+                                .aspectRatio(16/9, contentMode: .fit)
+                                .frame(height: Utility.tvAppOptionsButtonHeight)
+                                
+                                Button {
+                                    withAnimation {
+                                        homeVM.foregroundMode = .clock2
+                                        homeVM.boxImage = nil
+                                    }
+                                } label: {
+                                    Clock2View()
+                                        .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .clock2))
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
+                                .aspectRatio(16/9, contentMode: .fit)
+                                .frame(height: Utility.tvAppOptionsButtonHeight)
+                                
+                                Button {
+                                    withAnimation {
+                                        homeVM.foregroundMode = .clock3
+                                        homeVM.boxImage = nil
+                                    }
+                                } label: {
+                                    Clock3View()
+                                        .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .clock3))
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
+                                .aspectRatio(16/9, contentMode: .fit)
+                                .frame(height: Utility.tvAppOptionsButtonHeight)
+                                
+                                Button {
+                                    withAnimation {
+                                        homeVM.foregroundMode = .clock4
+                                        homeVM.boxImage = nil
+                                    }
+                                } label: {
+                                    Clock4View()
+                                        .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .clock4))
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
+                                .aspectRatio(16/9, contentMode: .fit)
+                                .frame(height: Utility.tvAppOptionsButtonHeight)
+                                
+                                Button {
+                                    withAnimation {
+                                        homeVM.foregroundMode = .clock5
+                                        homeVM.boxImage = nil
+                                    }
+                                } label: {
+                                    Clock5View()
+                                        .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .clock5))
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
+                                .aspectRatio(16/9, contentMode: .fit)
                                 .frame(height: Utility.tvAppOptionsButtonHeight)
                             })
                         }
