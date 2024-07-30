@@ -65,4 +65,6 @@ struct Utility {
         formatter.dateFormat = "hh:mm"
         return formatter.string(from: .now)
     }
+    
+    static let tvAppOptionsButtonHeight: CGFloat = 150
 }

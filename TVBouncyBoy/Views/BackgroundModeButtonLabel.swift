@@ -25,7 +25,7 @@ struct BackgroundModeButtonLabel<Content: View>: View {
         ZStack {
             Rectangle()
                 .aspectRatio(16/9, contentMode: .fit)
-                .frame(height: 150)
+                .frame(height: Utility.tvAppOptionsButtonHeight)
                 .foregroundStyle(.accent.gradient)
                 .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
             
@@ -35,7 +35,7 @@ struct BackgroundModeButtonLabel<Content: View>: View {
             ZStack {
                 Color.black.opacity(0.5)
                 Image(systemName: "checkmark.circle.fill").resizable().scaledToFit()
-                    .frame(height: 150 * 0.6)
+                    .frame(height: Utility.tvAppOptionsButtonHeight * 0.6)
                     .foregroundStyle(.white)
                     .shadow(radius: 4)
             }

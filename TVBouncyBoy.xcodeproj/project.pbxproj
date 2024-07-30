@@ -10,9 +10,10 @@
 		01048BF72C581FE20057111D /* BackgroundModeButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01048BF62C581FE20057111D /* BackgroundModeButtonLabel.swift */; };
 		01048BF92C583B2C0057111D /* ForegroundMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01048BF82C583B2C0057111D /* ForegroundMode.swift */; };
 		01048BFB2C583B810057111D /* Clock1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01048BFA2C583B810057111D /* Clock1View.swift */; };
-		01048BFD2C584D5D0057111D /* ForegroundModeButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01048BFC2C584D5D0057111D /* ForegroundModeButtonLabel.swift */; };
 		01048BFF2C5954A80057111D /* UserDefaults-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01048BFE2C5954A80057111D /* UserDefaults-Ext.swift */; };
 		01048C002C5954A80057111D /* UserDefaults-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01048BFE2C5954A80057111D /* UserDefaults-Ext.swift */; };
+		01048C022C595ECF0057111D /* OptionButtonSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01048C012C595ECF0057111D /* OptionButtonSelected.swift */; };
+		01048C032C595ECF0057111D /* OptionButtonSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01048C012C595ECF0057111D /* OptionButtonSelected.swift */; };
 		010BD2882C5431F600C522A8 /* SpaceGrotesk-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 010BD2862C5431F600C522A8 /* SpaceGrotesk-Bold.ttf */; };
 		010BD28B2C54323400C522A8 /* Font-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010BD28A2C54323400C522A8 /* Font-Ext.swift */; };
 		010BD28C2C54323400C522A8 /* Font-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010BD28A2C54323400C522A8 /* Font-Ext.swift */; };
@@ -70,8 +71,8 @@
 		01048BF62C581FE20057111D /* BackgroundModeButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundModeButtonLabel.swift; sourceTree = "<group>"; };
 		01048BF82C583B2C0057111D /* ForegroundMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForegroundMode.swift; sourceTree = "<group>"; };
 		01048BFA2C583B810057111D /* Clock1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock1View.swift; sourceTree = "<group>"; };
-		01048BFC2C584D5D0057111D /* ForegroundModeButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForegroundModeButtonLabel.swift; sourceTree = "<group>"; };
 		01048BFE2C5954A80057111D /* UserDefaults-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults-Ext.swift"; sourceTree = "<group>"; };
+		01048C012C595ECF0057111D /* OptionButtonSelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButtonSelected.swift; sourceTree = "<group>"; };
 		010BD2862C5431F600C522A8 /* SpaceGrotesk-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Bold.ttf"; sourceTree = "<group>"; };
 		010BD2892C54320B00C522A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		010BD28A2C54323400C522A8 /* Font-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font-Ext.swift"; sourceTree = "<group>"; };
@@ -154,7 +155,6 @@
 				0133D5B72C557C9C006B7C15 /* NowPlaying3View.swift */,
 				01048BF62C581FE20057111D /* BackgroundModeButtonLabel.swift */,
 				01048BFA2C583B810057111D /* Clock1View.swift */,
-				01048BFC2C584D5D0057111D /* ForegroundModeButtonLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +177,7 @@
 				0114ADB32C405691008E5114 /* BlankButtonStyle.swift */,
 				0133D5A92C546628006B7C15 /* BackgroundMode.swift */,
 				01048BF82C583B2C0057111D /* ForegroundMode.swift */,
+				01048C012C595ECF0057111D /* OptionButtonSelected.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -389,7 +390,6 @@
 			files = (
 				015EC8D32C51A198002E05F2 /* UploadOnCompanionApp.swift in Sources */,
 				01048BF72C581FE20057111D /* BackgroundModeButtonLabel.swift in Sources */,
-				01048BFD2C584D5D0057111D /* ForegroundModeButtonLabel.swift in Sources */,
 				0133D5A32C5464B2006B7C15 /* TVHomeView.swift in Sources */,
 				0133D5AA2C546628006B7C15 /* BackgroundMode.swift in Sources */,
 				01ADC91D2C4989D2006A2214 /* Utility.swift in Sources */,
@@ -405,6 +405,7 @@
 				015EC8D12C519B21002E05F2 /* OptionsViewModel.swift in Sources */,
 				0114ADB42C405691008E5114 /* BlankButtonStyle.swift in Sources */,
 				015E4FF02C39E77600AFD64E /* TVBouncyBoyApp.swift in Sources */,
+				01048C022C595ECF0057111D /* OptionButtonSelected.swift in Sources */,
 				01ADC9202C498B12006A2214 /* DataManager.swift in Sources */,
 				0114ADBC2C406FDC008E5114 /* OptionsRowButtonStyle.swift in Sources */,
 				01048BFB2C583B810057111D /* Clock1View.swift in Sources */,
@@ -437,6 +438,7 @@
 				01ADC90C2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift in Sources */,
 				01B6BF052C4B41CC00F447BF /* CheckCircle.swift in Sources */,
 				01B6BF082C4C3F3F00F447BF /* StorageKeys.swift in Sources */,
+				01048C032C595ECF0057111D /* OptionButtonSelected.swift in Sources */,
 				01B3FD882C49F9EC00BCCA3E /* HomeView.swift in Sources */,
 				01A4571C2C4F220100A3B8DB /* WidescreenImageView.swift in Sources */,
 				01ADC91B2C49858C006A2214 /* AppImage.swift in Sources */,

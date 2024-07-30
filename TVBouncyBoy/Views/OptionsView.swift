@@ -55,9 +55,10 @@ struct OptionsView: View {
                                     }
                                 } label: {
                                     Clock1View()
+                                        .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .clock1))
                                 }
                                 .buttonStyle(OptionsRowButtonStyle())
-                                .frame(height: 150)
+                                .frame(height: Utility.tvAppOptionsButtonHeight)
                             })
                         }
                         

@@ -12,7 +12,7 @@ struct OptionsRowButtonLabel: View {
     let image: AppImage
     let imageType: AppImage.ImageType
     
-    let labelHeight: CGFloat = 150
+    let labelHeight: CGFloat = Utility.tvAppOptionsButtonHeight
     
     var body: some View {
         Rectangle()
@@ -21,15 +21,9 @@ struct OptionsRowButtonLabel: View {
                     if let imageValue = image.imageValue {
                         imageValue.resizable().scaledToFill()
                     }
-                    
-                    if isSelected() {
-                        Color.black.opacity(0.5)
-                        Image(systemName: "checkmark.circle.fill").resizable().scaledToFit()
-                            .frame(height: labelHeight * 0.6)
-                            .foregroundStyle(.white)
-                            .shadow(radius: 4)
-                    }
                 }
+                .modifier(OptionButtonSelected(isSelected: isSelected()))
+                
             }
             .clipped()
             .aspectRatio(16/9, contentMode: .fit)
