@@ -22,6 +22,7 @@ struct OptionsRowButtonStyle: ButtonStyle {
                     Color.white,
                     width: isFocused ? 10 : 0
                 )
+                .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
         }
         
     }

@@ -22,8 +22,8 @@ struct TVBouncyBoyApp: App {
     
     var body: some Scene {
         WindowGroup {
-            BounceView()
-//                .fontDesign(.rounded)
+            TVHomeView()
+                .environment(TVHomeViewModel())
         }
         .modelContainer(sharedModelContainer)
     }
