@@ -93,7 +93,7 @@ struct ContentView: View {
                             ForEach(userImages.filter({
                                 $0.imageType == .background && $0.presetName == nil
                             }).sorted()) { userImage in
-                                if let image = userImage.imageValue {
+                                
                                     if let image = userImage.imageValue {
                                         Button {
                                             vm.selectedImage = userImage
@@ -104,7 +104,7 @@ struct ContentView: View {
                                         .buttonStyle(.plain)
                                         .frame(height: vm.rowHeight)
                                     }
-                                }
+                                
                             }
                         })
                         .scrollTargetLayout()
@@ -115,7 +115,6 @@ struct ContentView: View {
                 }
                 .padding(.vertical)
             }
-            .toolbarTitleDisplayMode(.inline)
             .sheet(isPresented: $vm.isShowingImageDetail, content: {
                 AppImageDetailView(appImage: $vm.selectedImage) {
                     // Callback on user selecting "delete"
@@ -137,12 +136,6 @@ struct ContentView: View {
                         vm.isShowingOverview.toggle()
                     }
                 }
-                ToolbarItem(placement: .principal) {
-                    Image("logo-accent")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 24)
-                }
             }
             .sheet(isPresented: $vm.isShowingSettings, content: {
                 SettingsView()
@@ -150,6 +143,7 @@ struct ContentView: View {
             .sheet(isPresented: $vm.isShowingOverview, content: {
                 CompanionAppOverviewView()
             })
+            .navigationTitle("Uploads")
         }
     }
 }

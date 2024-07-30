@@ -15,7 +15,7 @@ final class ContentViewModel {
     var selectedImage: AppImage? = nil
     var isShowingImageDetail = false
     var isShowingSettings = false
-    let horizontalPadding: CGFloat = 14
+    let horizontalPadding: CGFloat = 18
     var isShowingOverview = false
     
     func toggleSelected(_ ai: AppImage?) {

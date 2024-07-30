@@ -24,8 +24,6 @@ struct OverviewView: View {
                         .padding(.bottom, 80)
                     
                     VStack(alignment: .leading, spacing: 80) {
-                        
-                        
                         HStack(alignment: .center, spacing: 26) {
                             Image(systemName: "rectangle.inset.bottomleft.filled").resizable().scaledToFit()
                                 .frame(width: 50)
@@ -38,7 +36,7 @@ struct OverviewView: View {
                             Image(systemName: "photo.fill.on.rectangle.fill").resizable().scaledToFit()
                                 .frame(width: 50)
                                 .foregroundStyle(.accent)
-                            Text("Choose images from our preset options. **Watch them bounce**.")
+                            Text("Press the center button on your remote to configure. Choose images from our preset options. **Watch them bounce**.")
                                 .multilineTextAlignment(.leading)
                         }
                         

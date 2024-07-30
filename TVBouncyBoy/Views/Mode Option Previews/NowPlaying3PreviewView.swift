@@ -5,10 +5,6 @@ struct NowPlaying3PreviewView: View {
     var body: some View {
         ZStack {
             Rectangle().foregroundStyle(Color.accent.gradient)
-            
-            
-                
-                
                 VStack(alignment: .leading, spacing: 4) {
                     Rectangle()
                         .frame(height: Utility.tvAppOptionsButtonHeight/4)
@@ -19,8 +15,6 @@ struct NowPlaying3PreviewView: View {
                         .padding(.trailing, 40)
                 }
                 .padding(20)
-                
-            
         }
     }
 }

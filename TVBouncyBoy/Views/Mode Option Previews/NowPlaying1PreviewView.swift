@@ -21,7 +21,6 @@ struct NowPlaying1PreviewView: View {
                     .frame(width: Utility.tvAppOptionsButtonHeight / 3.5)
                     .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
                 
-                
                 VStack(alignment: .leading, spacing: 4) {
                     Rectangle()
                         .frame(width: 80, height: 4)
@@ -30,12 +29,9 @@ struct NowPlaying1PreviewView: View {
                     Rectangle()
                         .frame(width: 60, height: 4)
                 }
-                
             }
             .padding()
         }
-
-//        .frame(height: Utility.tvAppOptionsButtonHeight)
     }
 }
 

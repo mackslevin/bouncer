@@ -20,22 +20,21 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             Form {
-                if Utility.isTV() {
-                    
-                    HStack {
-                        Spacer()
-                        Image("logo-accent")
-                            .resizable().scaledToFit()
-                            .padding()
-                            
-                            .frame(maxWidth: 500)
-                        Spacer()
+                HStack {
+                    Spacer()
+                    Image("logo-accent")
+                        .resizable().scaledToFit()
+                        .padding()
                         
-                    }
-                    .listRowBackground(EmptyView())
-                    .padding(.bottom)
+                        .frame(maxWidth: 500)
+                    Spacer()
                     
+                }
+                .listRowBackground(EmptyView())
+                .padding(.bottom, Utility.isTV() ? 10 : -20)
+                .padding(.top, Utility.isTV() ? 0 : -20)
                     
+                if Utility.isTV() {
                     Section {
                         Toggle(isOn: $roundedCorners, label: {
                             VStack(alignment: .leading) {
@@ -76,6 +75,7 @@ struct SettingsView: View {
             }
             .tint(Utility.isTV() ? .primary : .accent)
             .navigationTitle("Settings")
+            .toolbarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem {
                     Button("Done") { dismiss() }.bold()

@@ -7,7 +7,7 @@ struct Clock4View: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundStyle(Color.black)
+                .foregroundStyle(Color.black.gradient)
             
             Text(timeString)
                 .foregroundStyle(.white)

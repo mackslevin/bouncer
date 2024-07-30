@@ -138,6 +138,12 @@ struct OptionsView: View {
                             .padding(.bottom)
                         }
                     }
+                    .padding()
+                    .background {
+                        RoundedRectangle(cornerRadius: Utility.defaultCornerRadius)
+                            .foregroundStyle(.regularMaterial)
+                    }
+                    .padding(.top)
                     
                     VStack(alignment: .leading) {
                         Text("Background")
@@ -249,6 +255,11 @@ struct OptionsView: View {
                         }
                         
                         
+                    }
+                    .padding()
+                    .background {
+                        RoundedRectangle(cornerRadius: Utility.defaultCornerRadius)
+                            .foregroundStyle(.regularMaterial)
                     }
                     
                     Spacer()
