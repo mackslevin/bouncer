@@ -27,9 +27,11 @@ struct BackgroundModeButtonLabel<Content: View>: View {
                 .aspectRatio(16/9, contentMode: .fit)
                 .frame(height: Utility.tvAppOptionsButtonHeight)
                 .foregroundStyle(.accent.gradient)
+                .overlay {
+                    content
+                        .aspectRatio(16/9, contentMode: .fill)
+                }
                 .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
-            
-            content
         }
         .overlay {
             ZStack {

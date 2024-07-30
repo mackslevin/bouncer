@@ -173,41 +173,52 @@ struct OptionsView: View {
                             
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: [GridItem()], content: {
-                                Button {
-                                    withAnimation { 
-                                        homeVM.backgroundMode = .nowPlaying1
-                                        homeVM.backgroundImage = nil
+                                VStack {
+                                    Button {
+                                        withAnimation {
+                                            homeVM.backgroundMode = .nowPlaying1
+                                            homeVM.backgroundImage = nil
+                                        }
+                                    } label: {
+                                        BackgroundModeButtonLabel(homeVM: homeVM, mode: .nowPlaying1) {
+                                            NowPlaying1PreviewView()
+                                        }
                                     }
-                                } label: {
-                                    BackgroundModeButtonLabel(homeVM: homeVM, mode: .nowPlaying1) {
-                                        Text("Now Playing 1")
-                                    }
+                                    .buttonStyle(OptionsRowButtonStyle())
+                                    Text("Minimal")
+                                        .font(.caption2).foregroundStyle(.secondary)
                                 }
-                                .buttonStyle(OptionsRowButtonStyle())
                                 
-                                Button {
-                                    withAnimation {
-                                        homeVM.backgroundMode = .nowPlaying2
-                                        homeVM.backgroundImage = nil
+                                VStack {
+                                    Button {
+                                        withAnimation {
+                                            homeVM.backgroundMode = .nowPlaying2
+                                            homeVM.backgroundImage = nil
+                                        }
+                                    } label: {
+                                        BackgroundModeButtonLabel(homeVM: homeVM, mode: .nowPlaying2) {
+                                            NowPlaying2PreviewView()
+                                        }
                                     }
-                                } label: {
-                                    BackgroundModeButtonLabel(homeVM: homeVM, mode: .nowPlaying2) {
-                                        Text("Now Playing 2")
-                                    }
+                                    .buttonStyle(OptionsRowButtonStyle())
+                                    Text("Big Cover").font(.caption2).foregroundStyle(.secondary)
                                 }
-                                .buttonStyle(OptionsRowButtonStyle())
                                 
-                                Button {
-                                    withAnimation {
-                                        homeVM.backgroundMode = .nowPlaying3
-                                        homeVM.backgroundImage = nil
+                                VStack {
+                                    Button {
+                                        withAnimation {
+                                            homeVM.backgroundMode = .nowPlaying3
+                                            homeVM.backgroundImage = nil
+                                        }
+                                    } label: {
+                                        BackgroundModeButtonLabel(homeVM: homeVM, mode: .nowPlaying3) {
+                                            NowPlaying3PreviewView()
+                                        }
                                     }
-                                } label: {
-                                    BackgroundModeButtonLabel(homeVM: homeVM, mode: .nowPlaying3) {
-                                        Text("Now Playing 3")
-                                    }
+                                    .buttonStyle(OptionsRowButtonStyle())
+                                    Text("Big Text").font(.caption2).foregroundStyle(.secondary)
                                 }
-                                .buttonStyle(OptionsRowButtonStyle())
+                                
                             })
                         }
                         
