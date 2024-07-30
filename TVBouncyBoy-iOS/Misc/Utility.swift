@@ -27,15 +27,15 @@ struct Utility {
     }
     
     static let backgroundImagePresets = [
-        AppImage(presetName: "lake"),
-        AppImage(presetName: "blue-cloth"),
-        AppImage(presetName: "test"),
-        AppImage(presetName: "color-puffs")
+        AppImage(presetName: "dark-purple-abstract"),
+        AppImage(presetName: "mars"),
+        AppImage(presetName: "mountains-trees"),
+        AppImage(presetName: "sky-flowers")
     ]
 
     static let boxImagePresets = [
-        AppImage(presetName: "randy", imageType: .boxImage),
-        AppImage(presetName: "used-to-this", imageType: .boxImage)
+        AppImage(presetName: "indy", imageType: .boxImage),
+        AppImage(presetName: "cat", imageType: .boxImage)
     ]
     
     static func isTV() -> Bool {
