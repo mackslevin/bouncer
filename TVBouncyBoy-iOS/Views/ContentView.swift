@@ -47,23 +47,14 @@ struct ContentView: View {
                                 $0.imageType == .boxImage && $0.presetName == nil
                             }).sorted()) { userImage in
                                 if let image = userImage.imageValue {
-                                    WidescreenImageView(image: image)
-                                        .frame(height: vm.rowHeight)
-                                        .overlay {
-                                            VStack {
-                                                Button {
-                                                    vm.selectedImage = userImage
-                                                    vm.isShowingImageDetail = true
-                                                } label: {
-                                                    Image(systemName: "ellipsis.circle.fill")
-                                                        .resizable().scaledToFit()
-                                                        .foregroundStyle(.regularMaterial)
-                                                        .frame(width: vm.rowHeight/4)
-                                                        .padding(6)
-                                                }
-                                            }
-                                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                                        }
+                                    Button {
+                                        vm.selectedImage = userImage
+                                        vm.isShowingImageDetail = true
+                                    } label: {
+                                        WidescreenImageView(image: image)
+                                    }
+                                    .buttonStyle(.plain)
+                                    .frame(height: vm.rowHeight)
                                 }
                             }
                         })
@@ -103,23 +94,16 @@ struct ContentView: View {
                                 $0.imageType == .background && $0.presetName == nil
                             }).sorted()) { userImage in
                                 if let image = userImage.imageValue {
-                                    WidescreenImageView(image: image)
-                                        .frame(height: vm.rowHeight)
-                                        .overlay {
-                                            VStack {
-                                                Button {
-                                                    vm.selectedImage = userImage
-                                                    vm.isShowingImageDetail = true
-                                                } label: {
-                                                    Image(systemName: "ellipsis.circle.fill")
-                                                        .resizable().scaledToFit()
-                                                        .foregroundStyle(.regularMaterial)
-                                                        .frame(width: vm.rowHeight/4)
-                                                        .padding(6)
-                                                }
-                                            }
-                                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                                    if let image = userImage.imageValue {
+                                        Button {
+                                            vm.selectedImage = userImage
+                                            vm.isShowingImageDetail = true
+                                        } label: {
+                                            WidescreenImageView(image: image)
                                         }
+                                        .buttonStyle(.plain)
+                                        .frame(height: vm.rowHeight)
+                                    }
                                 }
                             }
                         })
@@ -144,12 +128,12 @@ struct ContentView: View {
             })
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button("Settings", systemImage: "gear") {
+                    Button("Settings", systemImage: "gear.circle.fill") {
                         vm.isShowingSettings.toggle()
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Overview", systemImage: "questionmark.circle") {
+                    Button("Overview", systemImage: "questionmark.circle.fill") {
                         vm.isShowingOverview.toggle()
                     }
                 }
