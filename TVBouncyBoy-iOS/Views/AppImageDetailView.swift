@@ -21,6 +21,8 @@ struct AppImageDetailView: View {
                 if let img = appImage?.imageValue {
                     VStack {
                         WidescreenImageView(image: img)
+                            .shadow(radius: 2, x: 1, y: 1)
+                        
                         if let dims = appImage?.dimensions() {
                             Text(dims)
                                 .foregroundStyle(.secondary)
@@ -55,6 +57,15 @@ struct AppImageDetailView: View {
             }
             .padding()
             .fontDesign(.rounded)
+            .background {
+                if let image = appImage?.imageValue {
+                    ZStack {
+                        image.resizable().scaledToFill()
+                        Rectangle().foregroundStyle(.thickMaterial)
+                    }
+                    .ignoresSafeArea()
+                }
+            }
         }
     }
 }
