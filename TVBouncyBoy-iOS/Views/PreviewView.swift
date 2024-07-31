@@ -140,6 +140,24 @@ struct PreviewView: View {
             .sheet(isPresented: $isShowingBoxImageChooser, content: {
                 AppImageChooser(previewVM: vm, imageType: .boxImage)
             })
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Settings", systemImage: "gear.circle.fill") {
+                        vm.isShowingSettings.toggle()
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Overview", systemImage: "questionmark.circle.fill") {
+                        vm.isShowingOverview.toggle()
+                    }
+                }
+            }
+            .sheet(isPresented: $vm.isShowingSettings, content: {
+                SettingsView()
+            })
+            .sheet(isPresented: $vm.isShowingOverview, content: {
+                CompanionAppOverviewView()
+            })
         }
     }
 }

@@ -16,6 +16,9 @@ final class PreviewViewModel {
     var velocity: CGSize = CGSize(width: 1, height: 1)
     var position: CGPoint = CGPoint(x: 30, y: 16)
     
+    var isShowingSettings = false
+    var isShowingOverview = false
+    
     // When the selected AppImage values change, the proxy versions are set in the view via onChange modifiers
     var selectedBackgroundImage: AppImage?
     var selectedBoxImage: AppImage?
