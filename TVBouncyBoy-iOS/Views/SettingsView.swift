@@ -16,6 +16,7 @@ struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
     
     @State private var isShowingOverview = false
+    @State private var isShowingPhotoCredits = false
     
     var body: some View {
         NavigationStack {
@@ -71,6 +72,13 @@ struct SettingsView: View {
                     }
                 }
                 
+                Section {
+                    Button("Photo Credits", systemImage: "photo") {
+                        isShowingPhotoCredits.toggle()
+                    }
+                    .tint(.accent)
+                }
+                
                 
             }
             .tint(Utility.isTV() ? .primary : .accent)
@@ -87,6 +95,11 @@ struct SettingsView: View {
                 #endif
             })
             .fontDesign(.rounded)
+            .sheet(isPresented: $isShowingPhotoCredits, content: {
+                
+                PhotoCreditsView()
+                
+            })
         }
     }
 }
