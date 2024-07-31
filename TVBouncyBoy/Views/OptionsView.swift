@@ -176,6 +176,11 @@ struct OptionsView: View {
                             .fontDesign(.rounded)
                             .fontWeight(.bold)
                             .padding(.top)
+                        
+                        Text("If you're playing from the Music app, these backgrounds will display info about the current song.")
+                            .fontDesign(.rounded)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
                             
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: [GridItem()], content: {

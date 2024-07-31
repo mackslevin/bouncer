@@ -16,6 +16,7 @@ struct OptionsRowButtonLabel: View {
     
     var body: some View {
         Rectangle()
+            .foregroundStyle(Color.clear)
             .overlay {
                 ZStack {
                     if let imageValue = image.imageValue {

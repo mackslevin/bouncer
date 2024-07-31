@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UploadOnCompanionApp: View {
     var body: some View {
-        Text("Custom images may be uploaded in the companion iOS app.")
+        Text("Custom images may be added from the companion iOS app.")
 //            .fontDesign(.rounded)
             .italic()
             .foregroundStyle(.secondary)

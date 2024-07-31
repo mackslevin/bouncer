@@ -24,6 +24,9 @@ struct TVBouncyBoyApp: App {
         WindowGroup {
             TVHomeView()
                 .environment(TVHomeViewModel())
+//                .onAppear(perform: {
+//                    try? sharedModelContainer.mainContext.delete(model: AppImage.self)
+//                })
         }
         .modelContainer(sharedModelContainer)
     }

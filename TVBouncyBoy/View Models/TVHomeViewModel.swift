@@ -36,8 +36,6 @@ final class TVHomeViewModel {
     }
     
     init() {
-        print("^^ Initializing tv home view model")
-        
         // Add presets to data model on first run
         let isFirstRun = UserDefaults.standard.value(forKey: StorageKeys.isFirstRun.rawValue) as? Bool
         if isFirstRun != false {

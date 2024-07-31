@@ -67,6 +67,7 @@ struct BouncingForegroundView<Content: View>: View {
                     .tag(0)
                 
                 Rectangle()
+                    .foregroundStyle(Color.clear)
                     .frame(width: bounceVM.rectangleSize.width, height: bounceVM.rectangleSize.height)
                     .clipShape(RoundedRectangle(cornerRadius: Utility.boxCornerRadius))
                     .shadow(radius: boxShadow ? 8 : 0)
