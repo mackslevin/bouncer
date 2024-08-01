@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "bg.jpg",
       "idiom" : "tv",
       "scale" : "1x"
     },
