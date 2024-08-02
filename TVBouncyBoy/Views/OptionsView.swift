@@ -24,7 +24,7 @@ struct OptionsView: View {
                             .font(Font.displayFont(size: 48))
                             .foregroundStyle(.accent)
                         
-                        Text("Preset Images")
+                        Text("Stills")
                             .fontDesign(.rounded)
                             .fontWeight(.bold)
                             
@@ -150,7 +150,7 @@ struct OptionsView: View {
                             .font(Font.displayFont(size: 48))
                             .foregroundStyle(.accent)
                         
-                        Text("Preset Images")
+                        Text("Stills")
                             .fontDesign(.rounded)
                             .fontWeight(.bold)
                             
@@ -168,6 +168,19 @@ struct OptionsView: View {
                                     .buttonStyle(OptionsRowButtonStyle())
 
                                 }
+                                
+                                Button {
+                                    withAnimation {
+                                        homeVM.backgroundImage = nil
+                                        homeVM.backgroundMode = .colorBars
+                                    }
+                                } label: {
+                                    ColorBarsView()
+                                        .frame(height: Utility.tvAppOptionsButtonHeight)
+                                        .aspectRatio(16/9, contentMode: .fill)
+                                        .modifier(OptionButtonSelected(isSelected: homeVM.backgroundMode == .colorBars))
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
                             })
                         }
                         .padding(.bottom)
