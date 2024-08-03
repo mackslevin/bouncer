@@ -39,29 +39,11 @@ final class TVHomeViewModel {
         // Add presets to data model on first run
         let isFirstRun = UserDefaults.standard.value(forKey: StorageKeys.isFirstRun.rawValue) as? Bool
         if isFirstRun != false {
-//            for appImage in Utility.backgroundImagePresets {
-//                Task {
-//                    await MainActor.run {
-//                        DataManager.shared.addAppImage(appImage)
-//                    }
-//                }
-//            }
-//            for appImage in Utility.boxImagePresets {
-//                Task {
-//                    await MainActor.run {
-//                        DataManager.shared.addAppImage(appImage)
-//                    }
-//                }
-//            }
-            
             self.isShowingOverview = true
-            
             UserDefaults.standard.setValue(false, forKey: StorageKeys.isFirstRun.rawValue)
         }
         
-        
         syncPresets()
-        
         
         if let storedBackgroundMode: String = UserDefaults.standard.string(forKey: StorageKeys.backgroundMode.rawValue) {
             for bgMode in BackgroundMode.allCases {

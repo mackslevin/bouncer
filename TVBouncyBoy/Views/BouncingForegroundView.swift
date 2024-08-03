@@ -88,6 +88,8 @@ struct BouncingForegroundView<Content: View>: View {
                                     Clock4View()
                                 case .clock5:
                                     Clock5View()
+                                case .emoji1:
+                                    Emoji1View(bounceVM: bounceVM)
                             }
                         }
                         

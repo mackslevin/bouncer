@@ -115,6 +115,30 @@ struct OptionsView: View {
                             })
                         }
                         
+                        
+                        Text("Emoji")
+                            .fontDesign(.rounded)
+                            .fontWeight(.bold)
+                            .padding(.top)
+                        ScrollView(.horizontal) {
+                            LazyHGrid(rows: [GridItem()], content: {
+                                
+                                Button {
+                                    withAnimation {
+                                        homeVM.boxImage = nil
+                                        homeVM.foregroundMode = .emoji1
+                                    }
+                                } label: {
+                                    Emoji1View(bounceVM: BounceViewModel())
+                                        .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .emoji1))
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
+                                .aspectRatio(16/9, contentMode: .fit)
+                                .frame(height: Utility.tvAppOptionsButtonHeight)
+                            })
+                        }
+                        
+                        
                         Text("My Images")
                             .fontDesign(.rounded)
                             .fontWeight(.bold)
