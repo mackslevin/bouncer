@@ -23,7 +23,7 @@ struct TVBouncyBoyApp: App {
     var body: some Scene {
         WindowGroup {
             TVHomeView()
-                .environment(TVHomeViewModel())
+//                .environment(TVHomeViewModel())
 //                .onAppear(perform: {
 //                    try? sharedModelContainer.mainContext.delete(model: AppImage.self)
 //                    UserDefaults.standard.setValue(true, forKey: StorageKeys.isFirstRun.rawValue)

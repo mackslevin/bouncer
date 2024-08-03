@@ -13,20 +13,20 @@ struct ColorBarsView: View {
         Color.white,
         Color(red: 1, green: 1, blue: 0),
         Color(red: 0, green: 1, blue: 1),
-        Color(red: 0, green: 1, blue: 0),
-        Color(red: 1, green: 0, blue: 1),
+        Color(red: 0, green: 1, blue: 0.001),
+        Color(red: 1, green: 0.001, blue: 1),
         Color(red: 1, green: 0, blue: 0),
-        Color(red: 0, green: 0, blue: 1)
+        Color(red: 0, green: 0, blue: 0.99)
     ]
     
     let middleRowColors: [Color] = [
-        Color(red: 0, green: 0, blue: 1),
-        Color(red: 0, green: 0, blue: 0),
-        Color(red: 1, green: 0, blue: 1),
-        Color(red: 0, green: 0, blue: 0),
-        Color(red: 0, green: 1, blue: 1),
-        Color(red: 0, green: 0, blue: 0),
-        Color(red: 1, green: 1, blue: 1)
+        Color(red: 0, green: 0.001, blue: 1),
+        Color(red: 0, green: 0, blue: 0.001),
+        Color(red: 1, green: 0.001, blue: 1),
+        Color(red: 0, green: 0.001, blue: 0),
+        Color(red: 0.001, green: 1, blue: 1),
+        Color(red: 0, green: 0.001, blue: 0),
+        Color(red: 1, green: 1, blue: 0.99)
     ]
     
     var body: some View {

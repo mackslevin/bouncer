@@ -29,6 +29,7 @@
 		010BD28B2C54323400C522A8 /* Font-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010BD28A2C54323400C522A8 /* Font-Ext.swift */; };
 		010BD28C2C54323400C522A8 /* Font-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010BD28A2C54323400C522A8 /* Font-Ext.swift */; };
 		01118EC42C5D93C200EF36A5 /* ColorBarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01118EC32C5D93C200EF36A5 /* ColorBarsView.swift */; };
+		01118EC52C5DA1E900EF36A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015E4FF32C39E77700AFD64E /* Assets.xcassets */; };
 		0114ADB22C404D4B008E5114 /* BounceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADB12C404D4B008E5114 /* BounceViewModel.swift */; };
 		0114ADB42C405691008E5114 /* BlankButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADB32C405691008E5114 /* BlankButtonStyle.swift */; };
 		0114ADBA2C406499008E5114 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADB92C406499008E5114 /* OptionsView.swift */; };
@@ -433,6 +434,7 @@
 			files = (
 				010BD2882C5431F600C522A8 /* SpaceGrotesk-Bold.ttf in Resources */,
 				01ADC9152C498430006A2214 /* Preview Assets.xcassets in Resources */,
+				01118EC52C5DA1E900EF36A5 /* Assets.xcassets in Resources */,
 				01ADC9122C498430006A2214 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

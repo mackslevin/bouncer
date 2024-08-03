@@ -29,7 +29,7 @@ final class DataManager {
     
     
     func allUserImages() throws -> [AppImage] {
-        let context = ModelContext(self.container)
+        let context = container.mainContext
         let items = try context.fetch(FetchDescriptor<AppImage>())
         return items
     }
@@ -44,5 +44,22 @@ final class DataManager {
     func addAppImage(_ ai: AppImage) {
         container.mainContext.insert(ai)
         try? container.mainContext.save()
+    }
+    
+    func deleteAppImage(_ ai: AppImage) {
+        container.mainContext.delete(ai)
+        do {
+//            print("^^ Deleting \(ai.title ?? "?")")
+//            try container.mainContext.save()
+            let context = ModelContext(self.container)
+            context.delete(ai)
+            try context.save()
+            
+            let all = try self.allUserImages()
+            print("^^ All \(all.compactMap({$0.title}))")
+        } catch {
+            print("^^ Error deleting")
+            print(error)
+        }
     }
 }

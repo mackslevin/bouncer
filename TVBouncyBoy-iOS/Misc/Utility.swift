@@ -32,8 +32,8 @@ struct Utility {
         AppImage(presetName: "mountains-trees"),
         AppImage(presetName: "sky-flowers"),
         AppImage(presetName: "black"),
-        AppImage(presetName: "black-drywall"),
-        AppImage(presetName: "space")
+        AppImage(presetName: "space"),
+        AppImage(presetName: "plaster")
     ]
 
     static let boxImagePresets = [

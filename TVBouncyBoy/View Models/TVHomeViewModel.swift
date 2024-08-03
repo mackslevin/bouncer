@@ -39,25 +39,29 @@ final class TVHomeViewModel {
         // Add presets to data model on first run
         let isFirstRun = UserDefaults.standard.value(forKey: StorageKeys.isFirstRun.rawValue) as? Bool
         if isFirstRun != false {
-            for appImage in Utility.backgroundImagePresets {
-                Task {
-                    await MainActor.run {
-                        DataManager.shared.addAppImage(appImage)
-                    }
-                }
-            }
-            for appImage in Utility.boxImagePresets {
-                Task {
-                    await MainActor.run {
-                        DataManager.shared.addAppImage(appImage)
-                    }
-                }
-            }
+//            for appImage in Utility.backgroundImagePresets {
+//                Task {
+//                    await MainActor.run {
+//                        DataManager.shared.addAppImage(appImage)
+//                    }
+//                }
+//            }
+//            for appImage in Utility.boxImagePresets {
+//                Task {
+//                    await MainActor.run {
+//                        DataManager.shared.addAppImage(appImage)
+//                    }
+//                }
+//            }
             
             self.isShowingOverview = true
             
             UserDefaults.standard.setValue(false, forKey: StorageKeys.isFirstRun.rawValue)
         }
+        
+        
+        syncPresets()
+        
         
         if let storedBackgroundMode: String = UserDefaults.standard.string(forKey: StorageKeys.backgroundMode.rawValue) {
             for bgMode in BackgroundMode.allCases {
@@ -100,6 +104,46 @@ final class TVHomeViewModel {
                 self.boxImage = boxImg
             } else if let firstImage = allImages.first(where: {$0.imageType == .boxImage}) {
                 self.boxImage = firstImage
+            }
+        }
+    }
+    
+    private func syncPresets() {
+        
+        
+        
+        Task {
+            do {
+                // Save any image among the presets which isn't already saved
+                let allAppImages = try await DataManager.shared.allUserImages()
+                
+                print("^^ Saved: \(allAppImages.compactMap({$0.title}))")
+                
+                for bg in Utility.backgroundImagePresets {
+                    if !allAppImages.filter({$0.imageType == .background}).contains(where: {$0.title == bg.title}) {
+                        print("^^ Adding \(bg.title ?? "?")")
+                        await DataManager.shared.addAppImage(bg)
+                    }
+                }
+                for fg in Utility.boxImagePresets {
+                    if !allAppImages.filter({$0.imageType == .boxImage}).contains(where: {$0.title == fg.title}) {
+                        print("^^ Adding \(fg.title ?? "?")")
+                        await DataManager.shared.addAppImage(fg)
+                    }
+                }
+                // Remove saved images that are no longer among the current presets
+                var allPresets = Utility.backgroundImagePresets
+                allPresets.append(contentsOf: Utility.boxImagePresets)
+                print("^^ Combined: \(allPresets.compactMap({$0.title}))")
+                for ai in allAppImages {
+                    if !allPresets.contains(where: {$0.title == ai.title}) {
+                        print("^^ Deleting \(ai.title ?? "")")
+                        await DataManager.shared.deleteAppImage(ai)
+                    }
+                }
+            } catch {
+                print("^^ Sync presets error")
+                print(error.localizedDescription)
             }
         }
     }
