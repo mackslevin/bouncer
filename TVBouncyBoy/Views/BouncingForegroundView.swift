@@ -78,6 +78,8 @@ struct BouncingForegroundView<Content: View>: View {
                                     if let boxImg = boxImageProxy {
                                         boxImg.resizable().scaledToFill()
                                     }
+                                    
+                                // MARK: Foreground modes
                                 case .clock1:
                                     Clock1View()
                                 case .clock2:
