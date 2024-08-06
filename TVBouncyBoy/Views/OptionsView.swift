@@ -135,6 +135,20 @@ struct OptionsView: View {
                                 .buttonStyle(OptionsRowButtonStyle())
                                 .aspectRatio(16/9, contentMode: .fit)
                                 .frame(height: Utility.tvAppOptionsButtonHeight)
+                                
+                                Button {
+                                    withAnimation {
+                                        homeVM.boxImage = nil
+                                        homeVM.foregroundMode = .emoji2
+                                    }
+                                } label: {
+                                    Emoji2View(bounceVM: BounceViewModel())
+                                        .frame(width: Utility.tvAppOptionsButtonHeight * 1.77, height: Utility.tvAppOptionsButtonHeight)
+                                        .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .emoji2))
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
+                                
+                                
                             })
                         }
                         

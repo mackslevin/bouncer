@@ -53,6 +53,7 @@
 		015EC8D32C51A198002E05F2 /* UploadOnCompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015EC8D22C51A198002E05F2 /* UploadOnCompanionApp.swift */; };
 		015EC8D52C530B95002E05F2 /* CompanionAppOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015EC8D42C530B95002E05F2 /* CompanionAppOverviewView.swift */; };
 		015EC8D72C531C92002E05F2 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015EC8D62C531C92002E05F2 /* OverviewView.swift */; };
+		019D8CD72C61B89A000F5D21 /* Emoji2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D8CD62C61B89A000F5D21 /* Emoji2View.swift */; };
 		01A4571B2C4F220100A3B8DB /* WidescreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4571A2C4F220100A3B8DB /* WidescreenImageView.swift */; };
 		01A4571C2C4F220100A3B8DB /* WidescreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4571A2C4F220100A3B8DB /* WidescreenImageView.swift */; };
 		01ADC90C2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC90B2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift */; };
@@ -127,6 +128,7 @@
 		015EC8D22C51A198002E05F2 /* UploadOnCompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadOnCompanionApp.swift; sourceTree = "<group>"; };
 		015EC8D42C530B95002E05F2 /* CompanionAppOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionAppOverviewView.swift; sourceTree = "<group>"; };
 		015EC8D62C531C92002E05F2 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
+		019D8CD62C61B89A000F5D21 /* Emoji2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji2View.swift; sourceTree = "<group>"; };
 		01A4571A2C4F220100A3B8DB /* WidescreenImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidescreenImageView.swift; sourceTree = "<group>"; };
 		01ADC9092C49842F006A2214 /* TVBouncyBoy-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TVBouncyBoy-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01ADC90B2C49842F006A2214 /* TVBouncyBoy_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVBouncyBoy_iOSApp.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				01048C0E2C596AEE0057111D /* Clock5View.swift */,
 				01118EC32C5D93C200EF36A5 /* ColorBarsView.swift */,
 				01118EC62C5DB3CE00EF36A5 /* Emoji1View.swift */,
+				019D8CD62C61B89A000F5D21 /* Emoji2View.swift */,
 			);
 			path = Modes;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				01B9B7302C5AEFF700BB3A6F /* PhotoCredit.swift in Sources */,
 				01048BF92C583B2C0057111D /* ForegroundMode.swift in Sources */,
 				015EC8D72C531C92002E05F2 /* OverviewView.swift in Sources */,
+				019D8CD72C61B89A000F5D21 /* Emoji2View.swift in Sources */,
 				010BD28B2C54323400C522A8 /* Font-Ext.swift in Sources */,
 				01048C172C5994820057111D /* NowPlaying3PreviewView.swift in Sources */,
 				0133D5B62C556A7A006B7C15 /* NothingPlayingView.swift in Sources */,

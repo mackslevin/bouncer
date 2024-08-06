@@ -69,8 +69,6 @@ struct BouncingForegroundView<Content: View>: View {
                 Rectangle()
                     .foregroundStyle(Color.clear)
                     .frame(width: bounceVM.rectangleSize.width, height: bounceVM.rectangleSize.height)
-                    .clipShape(RoundedRectangle(cornerRadius: Utility.boxCornerRadius))
-                    .shadow(radius: boxShadow ? 8 : 0)
                     .overlay {
                         Group {
                             switch homeVM.foregroundMode {
@@ -92,12 +90,16 @@ struct BouncingForegroundView<Content: View>: View {
                                     Clock5View()
                                 case .emoji1:
                                     Emoji1View(bounceVM: bounceVM)
+                                case .emoji2:
+                                    Emoji2View(bounceVM: bounceVM)
                             }
                         }
-                        
-                        
                     }
                     .clipShape(RoundedRectangle(cornerRadius: Utility.boxCornerRadius))
+                    .background {
+                        RoundedRectangle(cornerRadius: Utility.boxCornerRadius)
+                            .shadow(radius: boxShadow ? 10 : 0)
+                    }
                     .tag(1)
                     .opacity(bounceVM.isLoading ? 0 : 1)
             }
