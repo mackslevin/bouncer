@@ -21,7 +21,11 @@ struct Emoji2View: View {
         .red,
         .purple,
         .green,
-        .cyan
+        .cyan,
+        .brown,
+        .mint,
+        .orange,
+        .teal
     ]
     
     var body: some View {
@@ -59,15 +63,13 @@ struct Emoji2View: View {
                     .padding()
             }
         }
-        
         .onChange(of: bounceVM.position) { _, newValue in
             if
                 (newValue.x - bounceVM.rectangleSize.width/2 == 0 ||
                 newValue.x + bounceVM.rectangleSize.width/2 == bounceVM.screenSize.width ||
                 newValue.y - bounceVM.rectangleSize.height/2 == 0 ||
                 newValue.y + bounceVM.rectangleSize.height/2 == bounceVM.screenSize.height) &&
-                Date().timeIntervalSince(lastCollision) > 0.1 // To get around bug where emoji would rapidly change twice during a single collision
-                
+                Date().timeIntervalSince(lastCollision) > 0.1 // To get around issue where emoji would rapidly change twice during a single collision
             {
                 handleBounce()
                 lastCollision = .now

@@ -91,16 +91,31 @@ final class TVHomeViewModel {
     }
     
     private func syncPresets() {
-        
-        
-        
         Task {
             do {
-                // Save any image among the presets which isn't already saved
                 let allAppImages = try await DataManager.shared.allUserImages()
+                var allPresets = Utility.backgroundImagePresets
+                allPresets.append(contentsOf: Utility.boxImagePresets)
                 
-                print("^^ Saved: \(allAppImages.compactMap({$0.title}))")
+                for ai in allAppImages.filter({$0.presetName != nil}) {
+                    // Remove saved images that are no longer among the current presets
+                    if !allPresets.contains(where: {$0.title == ai.title})  {
+                        print("^^ Deleting \(ai.title ?? "")")
+                        await DataManager.shared.deleteAppImage(ai)
+                    }
+                    
+                    // Delete any duplicates
+                    var duplicates = allAppImages.filter({$0.presetName == ai.presetName && $0.imageType == ai.imageType})
+                    if duplicates.count > 1 {
+                        let otherDups = duplicates.filter({$0.id != ai.id})
+                        for dup in otherDups {
+                            await DataManager.shared.deleteAppImage(dup)
+                        }
+                    }
+                }
                 
+                
+                // Save any image among the presets which isn't already saved
                 for bg in Utility.backgroundImagePresets {
                     if !allAppImages.filter({$0.imageType == .background}).contains(where: {$0.title == bg.title}) {
                         print("^^ Adding \(bg.title ?? "?")")
@@ -113,16 +128,8 @@ final class TVHomeViewModel {
                         await DataManager.shared.addAppImage(fg)
                     }
                 }
-                // Remove saved images that are no longer among the current presets
-                var allPresets = Utility.backgroundImagePresets
-                allPresets.append(contentsOf: Utility.boxImagePresets)
-                print("^^ Combined: \(allPresets.compactMap({$0.title}))")
-                for ai in allAppImages {
-                    if !allPresets.contains(where: {$0.title == ai.title}) {
-                        print("^^ Deleting \(ai.title ?? "")")
-                        await DataManager.shared.deleteAppImage(ai)
-                    }
-                }
+                
+                
             } catch {
                 print("^^ Sync presets error")
                 print(error.localizedDescription)

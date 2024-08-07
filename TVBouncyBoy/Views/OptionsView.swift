@@ -116,38 +116,57 @@ struct OptionsView: View {
                         }
                         
                         
-                        Text("Emoji")
+                        Text("More")
                             .fontDesign(.rounded)
                             .fontWeight(.bold)
                             .padding(.top)
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: [GridItem()], content: {
-                                
-                                Button {
-                                    withAnimation {
-                                        homeVM.boxImage = nil
-                                        homeVM.foregroundMode = .emoji1
+                                VStack {
+                                    Button {
+                                        withAnimation {
+                                            homeVM.boxImage = nil
+                                            homeVM.foregroundMode = .emoji1
+                                        }
+                                    } label: {
+                                        Emoji1View(bounceVM: BounceViewModel())
+                                            .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .emoji1))
                                     }
-                                } label: {
-                                    Emoji1View(bounceVM: BounceViewModel())
-                                        .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .emoji1))
+                                    .buttonStyle(OptionsRowButtonStyle())
+                                    .aspectRatio(16/9, contentMode: .fit)
+                                    .frame(height: Utility.tvAppOptionsButtonHeight)
+                                    Text("Emoji Faces").font(.caption2).foregroundStyle(.secondary)
                                 }
-                                .buttonStyle(OptionsRowButtonStyle())
-                                .aspectRatio(16/9, contentMode: .fit)
-                                .frame(height: Utility.tvAppOptionsButtonHeight)
                                 
-                                Button {
-                                    withAnimation {
-                                        homeVM.boxImage = nil
-                                        homeVM.foregroundMode = .emoji2
+                                VStack {
+                                    Button {
+                                        withAnimation {
+                                            homeVM.boxImage = nil
+                                            homeVM.foregroundMode = .emoji2
+                                        }
+                                    } label: {
+                                        Emoji2View(bounceVM: BounceViewModel())
+                                            .frame(width: Utility.tvAppOptionsButtonHeight * 1.77, height: Utility.tvAppOptionsButtonHeight)
+                                            .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .emoji2))
                                     }
-                                } label: {
-                                    Emoji2View(bounceVM: BounceViewModel())
-                                        .frame(width: Utility.tvAppOptionsButtonHeight * 1.77, height: Utility.tvAppOptionsButtonHeight)
-                                        .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .emoji2))
+                                    .buttonStyle(OptionsRowButtonStyle())
+                                    Text("Emoji Animals").font(.caption2).foregroundStyle(.secondary)
                                 }
-                                .buttonStyle(OptionsRowButtonStyle())
                                 
+                                VStack {
+                                    Button {
+                                        withAnimation {
+                                            homeVM.boxImage = nil
+                                            homeVM.foregroundMode = .trivia1
+                                        }
+                                    } label: {
+                                        Trivia1View()
+                                            .frame(width: Utility.tvAppOptionsButtonHeight * 1.77, height: Utility.tvAppOptionsButtonHeight)
+                                            .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .trivia1))
+                                    }
+                                    .buttonStyle(OptionsRowButtonStyle())
+                                    Text("Trivia").font(.caption2).foregroundStyle(.secondary)
+                                }
                                 
                             })
                         }

@@ -92,12 +92,15 @@ struct BouncingForegroundView<Content: View>: View {
                                     Emoji1View(bounceVM: bounceVM)
                                 case .emoji2:
                                     Emoji2View(bounceVM: bounceVM)
+                                case .trivia1:
+                                    Trivia1View()
                             }
                         }
                     }
                     .clipShape(RoundedRectangle(cornerRadius: Utility.boxCornerRadius))
                     .background {
                         RoundedRectangle(cornerRadius: Utility.boxCornerRadius)
+                            .foregroundStyle(Color.clear)
                             .shadow(radius: boxShadow ? 10 : 0)
                     }
                     .tag(1)

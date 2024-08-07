@@ -35,6 +35,8 @@
 		0114ADB42C405691008E5114 /* BlankButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADB32C405691008E5114 /* BlankButtonStyle.swift */; };
 		0114ADBA2C406499008E5114 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADB92C406499008E5114 /* OptionsView.swift */; };
 		0114ADBC2C406FDC008E5114 /* OptionsRowButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADBB2C406FDC008E5114 /* OptionsRowButtonStyle.swift */; };
+		011DAE5F2C62B93700B769AA /* Trivia1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011DAE5E2C62B93700B769AA /* Trivia1View.swift */; };
+		011DAE612C62E69500B769AA /* TriviaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011DAE602C62E69500B769AA /* TriviaViewModel.swift */; };
 		0133D5A12C543FFC006B7C15 /* SpaceGrotesk-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 010BD2862C5431F600C522A8 /* SpaceGrotesk-Bold.ttf */; };
 		0133D5A32C5464B2006B7C15 /* TVHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5A22C5464B2006B7C15 /* TVHomeView.swift */; };
 		0133D5AA2C546628006B7C15 /* BackgroundMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5A92C546628006B7C15 /* BackgroundMode.swift */; };
@@ -111,6 +113,8 @@
 		0114ADB32C405691008E5114 /* BlankButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankButtonStyle.swift; sourceTree = "<group>"; };
 		0114ADB92C406499008E5114 /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
 		0114ADBB2C406FDC008E5114 /* OptionsRowButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsRowButtonStyle.swift; sourceTree = "<group>"; };
+		011DAE5E2C62B93700B769AA /* Trivia1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trivia1View.swift; sourceTree = "<group>"; };
+		011DAE602C62E69500B769AA /* TriviaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaViewModel.swift; sourceTree = "<group>"; };
 		0133D5A22C5464B2006B7C15 /* TVHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVHomeView.swift; sourceTree = "<group>"; };
 		0133D5A92C546628006B7C15 /* BackgroundMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMode.swift; sourceTree = "<group>"; };
 		0133D5AB2C5466DE006B7C15 /* TVHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVHomeViewModel.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 				01118EC32C5D93C200EF36A5 /* ColorBarsView.swift */,
 				01118EC62C5DB3CE00EF36A5 /* Emoji1View.swift */,
 				019D8CD62C61B89A000F5D21 /* Emoji2View.swift */,
+				011DAE5E2C62B93700B769AA /* Trivia1View.swift */,
 			);
 			path = Modes;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				015EC8D02C519B21002E05F2 /* OptionsViewModel.swift */,
 				0133D5AB2C5466DE006B7C15 /* TVHomeViewModel.swift */,
 				0133D5B12C549A91006B7C15 /* NowPlayingViewModel.swift */,
+				011DAE602C62E69500B769AA /* TriviaViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -475,6 +481,7 @@
 				01048C132C5983860057111D /* NowPlaying1PreviewView.swift in Sources */,
 				015EC8D12C519B21002E05F2 /* OptionsViewModel.swift in Sources */,
 				0114ADB42C405691008E5114 /* BlankButtonStyle.swift in Sources */,
+				011DAE5F2C62B93700B769AA /* Trivia1View.swift in Sources */,
 				015E4FF02C39E77600AFD64E /* TVBouncyBoyApp.swift in Sources */,
 				01048C0F2C596AEE0057111D /* Clock5View.swift in Sources */,
 				01048C022C595ECF0057111D /* OptionButtonSelected.swift in Sources */,
@@ -493,6 +500,7 @@
 				019D8CD72C61B89A000F5D21 /* Emoji2View.swift in Sources */,
 				010BD28B2C54323400C522A8 /* Font-Ext.swift in Sources */,
 				01048C172C5994820057111D /* NowPlaying3PreviewView.swift in Sources */,
+				011DAE612C62E69500B769AA /* TriviaViewModel.swift in Sources */,
 				0133D5B62C556A7A006B7C15 /* NothingPlayingView.swift in Sources */,
 				0133D5AC2C5466DE006B7C15 /* TVHomeViewModel.swift in Sources */,
 			);
