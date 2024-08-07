@@ -42,12 +42,11 @@ struct CreditRow: View {
                 VStack(alignment: .leading, content: {
                     Text(credit.name)
                         .bold()
+                        .onTapGesture {
+                            print("^^ tap")
+                        }
                     
-                    Link(destination: credit.unsplashURL, label: {
-                        Label("Unsplash", systemImage: "arrow.up.forward.square")
-                    })
-                    .buttonStyle(.bordered)
-                    
+                    Label("Unsplash", systemImage: "arrow.up.forward.square")
                 })
             }
             

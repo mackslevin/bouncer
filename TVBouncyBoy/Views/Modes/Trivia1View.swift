@@ -23,13 +23,14 @@ struct Trivia1View: View {
                 VStack {
                     if vm.trivia == nil {
                         Image(systemName: "questionmark.circle.fill")
+                            
                     } else {
                         Text(vm.trivia!)
-                            .foregroundStyle(fgColor)
                             .padding()
                             .minimumScaleFactor(0.01)
                     }
                 }
+                .foregroundStyle(fgColor)
         }
         .onAppear {
             Task {

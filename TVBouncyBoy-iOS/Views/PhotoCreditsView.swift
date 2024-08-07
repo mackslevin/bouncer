@@ -26,14 +26,17 @@ struct PhotoCreditsView: View {
                     #else
                     VStack(alignment: .leading, spacing: 20) {
                         ForEach(PhotoCredit.credits) { credit in
-                            ZStack(alignment: .leading) {
-                                Rectangle()
-                                    .overlay{Image(credit.imageNames.first!)}
-                                Rectangle().foregroundStyle(.regularMaterial)
-                                CreditRow(credit: credit, imageHeight: imageHeight)
-                                    .padding(10)
+                            Link(destination: credit.unsplashURL) {
+                                ZStack(alignment: .leading) {
+                                    Rectangle()
+                                        .overlay{Image(credit.imageNames.first!)}
+                                    Rectangle().foregroundStyle(.regularMaterial)
+                                    CreditRow(credit: credit, imageHeight: imageHeight)
+                                        .padding(10)
+                                }
+                                .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
                             }
-                            .clipShape(RoundedRectangle(cornerRadius: Utility.defaultCornerRadius))
+                            
                             
                         }
                     }

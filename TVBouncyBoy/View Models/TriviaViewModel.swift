@@ -42,7 +42,7 @@ class TriviaViewModel {
                 triviaResponse.responseCode == 0,
                 let triviaItem = triviaResponse.results?.first(where: { $0.correctAnswer.lowercased() == "true" })
             {
-                
+                // Deal with API's string encoding by converting to attributed string
                 guard let data = triviaItem.question.data(using: .utf8) else { return }
                 let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
                     .documentType: NSAttributedString.DocumentType.html,
