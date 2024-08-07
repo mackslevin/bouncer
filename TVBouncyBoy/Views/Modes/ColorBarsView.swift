@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ColorBarsView: View {
     
+    // The weird values in these color arrays are due to the fact that we're iterating through these in a ForEach, and each value has to be unique in order to id by \.self
     let topRowColors: [Color] = [
         Color.white,
         Color(red: 1, green: 1, blue: 0),
@@ -18,7 +19,6 @@ struct ColorBarsView: View {
         Color(red: 1, green: 0, blue: 0),
         Color(red: 0, green: 0, blue: 0.99)
     ]
-    
     let middleRowColors: [Color] = [
         Color(red: 0, green: 0.001, blue: 1),
         Color(red: 0, green: 0, blue: 0.001),

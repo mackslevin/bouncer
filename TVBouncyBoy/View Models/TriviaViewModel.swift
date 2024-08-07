@@ -46,13 +46,14 @@ class TriviaViewModel {
                 guard let data = triviaItem.question.data(using: .utf8) else { return }
                 let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
                     .documentType: NSAttributedString.DocumentType.html,
-                    .characterEncoding: String.Encoding.utf8.rawValue,
+                    .characterEncoding: String.Encoding.utf8.rawValue
                 ]
                 guard let stringFromData = try? NSAttributedString(data: data, options: options, documentAttributes: nil) else {
                     return
                 }
                 var attributedString = AttributedString(stringFromData)
-                trivia = AttributedString(stringFromData)
+                attributedString.font = .displayFont(size: 400)
+                trivia = attributedString
                 
             } else if triviaResponse.responseCode == 3 || triviaResponse.responseCode == 4 {
                 await requestToken() // Refresh token if the response is not successful
