@@ -53,12 +53,14 @@ struct AppImageChooser: View {
                                 case .boxImage:
                                     $0.imageType == .boxImage
                             }
+                        }).filter({
+                            $0.presetName == nil
                         }).sorted(by: {
                             $0.dateAdded > $1.dateAdded
                         })) { ai in
                             Rectangle()
                                 .frame(height: cardHeight)
-                                .foregroundStyle(.secondary)
+                                .foregroundStyle(Color.clear)
                                 .overlay {
                                     if let img = ai.imageValue {
                                         img.resizable().scaledToFill()
