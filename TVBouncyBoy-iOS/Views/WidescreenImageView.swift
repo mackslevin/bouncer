@@ -12,6 +12,7 @@ struct WidescreenImageView: View {
     
     var body: some View {
         Rectangle()
+            .foregroundStyle(Color.clear)
             .aspectRatio(16/9, contentMode: .fit)
             .overlay {
                 image.resizable().scaledToFill()

@@ -34,7 +34,7 @@ struct PreviewView: View {
                                 }
                             } symbols: {
                                 Rectangle()
-                                    .foregroundStyle(.gray)
+                                    .foregroundStyle(vm.proxyBoxImage == nil ? Color.gray : Color.clear)
                                     .overlay {
                                         if let boxImg = vm.proxyBoxImage {
                                             boxImg.resizable().scaledToFill()
