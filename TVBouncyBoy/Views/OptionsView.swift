@@ -242,6 +242,28 @@ struct OptionsView: View {
                         }
                         .padding(.bottom)
                         
+                        Text("Colors/Gradients")
+                            .fontDesign(.rounded)
+                            .fontWeight(.bold)
+                        ScrollView(.horizontal) {
+                            LazyHGrid(rows: [GridItem()], content: {
+                                VStack {
+                                    Button {
+                                        withAnimation {
+                                            homeVM.backgroundImage = nil
+                                            homeVM.backgroundMode = .colorGrad1
+                                        }
+                                    } label: {
+                                        BackgroundModeButtonLabel(homeVM: homeVM, mode: .colorGrad1) {
+                                            ColorGrad1View()
+                                        }
+                                    }
+                                    .buttonStyle(OptionsRowButtonStyle())
+                                }
+                            })
+                        }
+                        
+                        
                         Text("Now Playing")
                             .fontDesign(.rounded)
                             .fontWeight(.bold)

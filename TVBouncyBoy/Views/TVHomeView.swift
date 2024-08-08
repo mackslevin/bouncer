@@ -25,30 +25,35 @@ struct TVHomeView: View {
                     BouncingForegroundView(homeVM: vm) {
                         NowPlaying1View()
                     }
-//                    .onPlayPauseCommand {
-//                        Utility.nowPlayingHandlePlayPauseButton()
-//                    }
+                    .onPlayPauseCommand {
+                        Utility.nowPlayingHandlePlayPauseButton()
+                    }
                 
                 case .nowPlaying2:
                     BouncingForegroundView(homeVM: vm) {
                         NowPlaying2View()
                     }
-//                    .onPlayPauseCommand {
-//                        Utility.nowPlayingHandlePlayPauseButton()
-//                    }
+                    .onPlayPauseCommand {
+                        Utility.nowPlayingHandlePlayPauseButton()
+                    }
                 
                 case .nowPlaying3:
                     BouncingForegroundView(homeVM: vm) {
                         NowPlaying3View()
                     }
-//                    .onPlayPauseCommand {
-//                        Utility.nowPlayingHandlePlayPauseButton()
-//                    }
+                    .onPlayPauseCommand {
+                        Utility.nowPlayingHandlePlayPauseButton()
+                    }
                     
                 case .colorBars:
                     BouncingForegroundView(homeVM: vm) {
                         ColorBarsView()
-                    }       
+                    }      
+                    
+                case .colorGrad1:
+                    BouncingForegroundView(homeVM: vm) {
+                        ColorGrad1View()
+                    }
             }
         }
         .onPlayPauseCommand {

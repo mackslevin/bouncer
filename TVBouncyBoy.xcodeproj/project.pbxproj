@@ -88,6 +88,7 @@
 		01B9B7352C5AFE5100BB3A6F /* CreditRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B9B7332C5AFE5100BB3A6F /* CreditRow.swift */; };
 		01CBF0732C50555D0015C327 /* AppImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBF0722C50555D0015C327 /* AppImageDetailView.swift */; };
 		01CBF0752C5068D00015C327 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBF0742C5068D00015C327 /* SettingsView.swift */; };
+		01F7D65F2C64513300490DC6 /* ColorGrad1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F7D65E2C64513300490DC6 /* ColorGrad1View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +159,7 @@
 		01B9B7332C5AFE5100BB3A6F /* CreditRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditRow.swift; sourceTree = "<group>"; };
 		01CBF0722C50555D0015C327 /* AppImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImageDetailView.swift; sourceTree = "<group>"; };
 		01CBF0742C5068D00015C327 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		01F7D65E2C64513300490DC6 /* ColorGrad1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGrad1View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				01118EC62C5DB3CE00EF36A5 /* Emoji1View.swift */,
 				019D8CD62C61B89A000F5D21 /* Emoji2View.swift */,
 				011DAE5E2C62B93700B769AA /* Trivia1View.swift */,
+				01F7D65E2C64513300490DC6 /* ColorGrad1View.swift */,
 			);
 			path = Modes;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				01B9B7322C5AFCA900BB3A6F /* PhotoCreditsView.swift in Sources */,
 				01ADC9202C498B12006A2214 /* DataManager.swift in Sources */,
 				0114ADBC2C406FDC008E5114 /* OptionsRowButtonStyle.swift in Sources */,
+				01F7D65F2C64513300490DC6 /* ColorGrad1View.swift in Sources */,
 				01048BFB2C583B810057111D /* Clock1View.swift in Sources */,
 				0133D5B02C5498A8006B7C15 /* NowPlaying1View.swift in Sources */,
 				01048C0C2C5969C80057111D /* Clock4View.swift in Sources */,

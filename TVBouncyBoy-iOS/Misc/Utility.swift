@@ -27,12 +27,11 @@ struct Utility {
     }
     
     static let backgroundImagePresets = [
+        AppImage(presetName: "space"),
         AppImage(presetName: "dark-purple-abstract"),
-        AppImage(presetName: "mars"),
-        AppImage(presetName: "mountains-trees"),
         AppImage(presetName: "sky-flowers"),
-        AppImage(presetName: "black"),
-        AppImage(presetName: "space")
+        AppImage(presetName: "mars"),
+        AppImage(presetName: "mountains-trees")
     ]
 
     static let boxImagePresets = [

@@ -16,4 +16,5 @@ enum BackgroundMode: String, Codable, CaseIterable {
     case nowPlaying2 = "nowPlaying2"
     case nowPlaying3 = "nowPlaying3"
     case colorBars = "colorBars"
+    case colorGrad1 = "colorGrad1"
 }
