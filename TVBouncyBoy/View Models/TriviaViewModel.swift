@@ -10,6 +10,8 @@ class TriviaViewModel {
     var timer: Timer? = nil
     let refreshEvery = 30 // In seconds, how often to grab a new trivia string.
     
+    let maxWhileAttempts = 20
+    
     func startTimer() {
         stopTimer()
         timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(refreshEvery), repeats: true) {  _ in
@@ -38,10 +40,19 @@ class TriviaViewModel {
             let (data, _) = try await URLSession.shared.data(from: requestURL)
             let triviaResponse = try JSONDecoder().decode(TriviaResponse.self, from: data)
             
-            if
-                triviaResponse.responseCode == 0,
-                let triviaItem = triviaResponse.results?.first(where: { $0.correctAnswer.lowercased() == "true" })
-            {
+            if triviaResponse.responseCode == 0 {
+                var triviaItem = triviaResponse.results?.first(where: { $0.correctAnswer.lowercased() == "true" })
+                
+                var attempts = 0
+                while triviaItem == nil && attempts < maxWhileAttempts {
+                    print("^^ whilin' \(attempts)")
+                    let (d, _) = try await URLSession.shared.data(from: requestURL)
+                    let tr = try JSONDecoder().decode(TriviaResponse.self, from: data)
+                    triviaItem = tr.results?.first(where: { $0.correctAnswer.lowercased() == "true" })
+                    attempts += 1
+                }
+                guard let triviaItem else { return }
+                
                 // Deal with API's string encoding by converting to attributed string
                 guard let data = triviaItem.question.data(using: .utf8) else { return }
                 let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
