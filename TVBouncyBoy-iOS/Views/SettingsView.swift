@@ -26,7 +26,7 @@ struct SettingsView: View {
                     Image("logo-accent")
                         .resizable().scaledToFit()
                         .padding()
-                        
+                    
                         .frame(maxWidth: 500)
                     Spacer()
                     
@@ -34,13 +34,13 @@ struct SettingsView: View {
                 .listRowBackground(EmptyView())
                 .padding(.bottom, Utility.isTV() ? 10 : -20)
                 .padding(.top, Utility.isTV() ? 0 : -20)
-                    
+                
                 if Utility.isTV() {
                     Section {
                         Toggle(isOn: $roundedCorners, label: {
                             VStack(alignment: .leading) {
                                 Text("Rounded Corners")
-                                    
+                                
                                 Text("When this setting is on, the bouncing box's corners will be slightly rounded.")
                                     .font(.caption2)
                                     .foregroundStyle(.secondary)
@@ -54,12 +54,12 @@ struct SettingsView: View {
                         Toggle("Dim Background", isOn: $dimBackground)
                             .bold()
                         
-
+                        
                         
                         Toggle(isOn: $hideBox, label: {
                             VStack(alignment: .leading) {
                                 Text("Hide the Bouncing Box")
-                                    
+                                
                                 Text("We won't tell Boxy. It'd break his heart.")
                                     .font(.caption2)
                                     .foregroundStyle(.secondary)
@@ -71,12 +71,12 @@ struct SettingsView: View {
                     }
                     
                     
-                    Section {
-                        Button("Show Overview", systemImage: "info.circle") {
-                            isShowingOverview.toggle()
-                        }
-                        .tint(.accent)
+                    
+                    Button("Show Overview", systemImage: "info.circle") {
+                        isShowingOverview.toggle()
                     }
+                    .tint(.accent)
+                    
                     
                     
                 } else {
@@ -85,12 +85,12 @@ struct SettingsView: View {
                     }
                 }
                 
-                Section {
-                    Button("Photo Credits", systemImage: "photo") {
-                        isShowingPhotoCredits.toggle()
-                    }
-                    .tint(.accent)
+                
+                Button("View Photo Credits", systemImage: "photo") {
+                    isShowingPhotoCredits.toggle()
                 }
+                .tint(.accent)
+                
                 
                 
             }
@@ -103,9 +103,9 @@ struct SettingsView: View {
                 }
             }
             .sheet(isPresented: $isShowingOverview, content: {
-                #if os(tvOS)
-                    OverviewView()
-                #endif
+#if os(tvOS)
+                OverviewView()
+#endif
             })
             .fontDesign(.rounded)
             .sheet(isPresented: $isShowingPhotoCredits, content: {

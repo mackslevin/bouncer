@@ -95,6 +95,7 @@
 		01CBF0732C50555D0015C327 /* AppImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBF0722C50555D0015C327 /* AppImageDetailView.swift */; };
 		01CBF0752C5068D00015C327 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBF0742C5068D00015C327 /* SettingsView.swift */; };
 		01F7D65F2C64513300490DC6 /* ColorGrad1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F7D65E2C64513300490DC6 /* ColorGrad1View.swift */; };
+		01FC69E02C6699CB00BAD81D /* OptionsInlineButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FC69DF2C6699CB00BAD81D /* OptionsInlineButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,6 +173,7 @@
 		01CBF0722C50555D0015C327 /* AppImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImageDetailView.swift; sourceTree = "<group>"; };
 		01CBF0742C5068D00015C327 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		01F7D65E2C64513300490DC6 /* ColorGrad1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGrad1View.swift; sourceTree = "<group>"; };
+		01FC69DF2C6699CB00BAD81D /* OptionsInlineButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsInlineButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				0114ADBB2C406FDC008E5114 /* OptionsRowButtonStyle.swift */,
+				01FC69DF2C6699CB00BAD81D /* OptionsInlineButtonStyle.swift */,
 				0114ADB32C405691008E5114 /* BlankButtonStyle.swift */,
 				0133D5A92C546628006B7C15 /* BackgroundMode.swift */,
 				01048BF82C583B2C0057111D /* ForegroundMode.swift */,
@@ -492,6 +495,7 @@
 				01B6BF072C4C3F3F00F447BF /* StorageKeys.swift in Sources */,
 				01A4571B2C4F220100A3B8DB /* WidescreenImageView.swift in Sources */,
 				01118EC42C5D93C200EF36A5 /* ColorBarsView.swift in Sources */,
+				01FC69E02C6699CB00BAD81D /* OptionsInlineButtonStyle.swift in Sources */,
 				01ADC91A2C49858C006A2214 /* AppImage.swift in Sources */,
 				0133D5B82C557C9C006B7C15 /* NowPlaying3View.swift in Sources */,
 				01B9B7342C5AFE5100BB3A6F /* CreditRow.swift in Sources */,

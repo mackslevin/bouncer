@@ -165,7 +165,32 @@ struct OptionsView: View {
                                             .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .trivia1))
                                     }
                                     .buttonStyle(OptionsRowButtonStyle())
-                                    Text("Trivia").font(.caption2).foregroundStyle(.secondary)
+                                    
+                                    HStack(spacing: 12) {
+                                        Text("Trivia").foregroundStyle(.secondary)
+                                        Button("Info", systemImage: "info.circle") {
+                                            vm.isShowingTriviaInfo.toggle()
+                                        }
+                                        .labelStyle(.iconOnly)
+                                        .buttonStyle(OptionsInlineButtonStyle())
+                                        .tint(.accentColor)
+                                        .sheet(isPresented: $vm.isShowingTriviaInfo) {
+                                            VStack(spacing: 24) {
+                                                Text("Trivia")
+                                                    .font(.displayFont(size: 64))
+                                                
+                                                Text("This mode cycles through random facts, changing every 30 seconds or so.\nThe data is sourced from the Useless Facts API (https://uselessfacts.jsph.pl)")
+                                                    .multilineTextAlignment(.center)
+                                                    .fontDesign(.rounded)
+                                                
+                                                Button("Close", systemImage: "xmark.circle") {
+                                                    vm.isShowingTriviaInfo = false
+                                                }.fontDesign(.rounded)
+                                            }
+                                        }
+                                    }
+                                    .font(.caption2)
+                                    
                                 }
                                 
                             })

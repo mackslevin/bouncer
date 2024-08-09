@@ -11,6 +11,7 @@ import Observation
 @Observable
 final class OptionsViewModel {
     var isShowingSettings = false
+    var isShowingTriviaInfo = false
     
     func customImages(appImages: [AppImage], type: AppImage.ImageType) -> [AppImage] {
         appImages.filter({
