@@ -17,7 +17,6 @@ struct BouncingForegroundView<Content: View>: View {
     
     @State private var boxImageProxy: Image? = nil
     @AppStorage(StorageKeys.dimBackground.rawValue) var dimBackground = false
-    @AppStorage(StorageKeys.boxShouldHaveShadow.rawValue) var boxShadow = false
     
     init(homeVM: TVHomeViewModel, @ViewBuilder content: () -> Content) {
         self.homeVM = homeVM
@@ -98,11 +97,6 @@ struct BouncingForegroundView<Content: View>: View {
                         }
                     }
                     .clipShape(RoundedRectangle(cornerRadius: Utility.boxCornerRadius))
-                    .background {
-                        RoundedRectangle(cornerRadius: Utility.boxCornerRadius)
-                            .foregroundStyle(Color.clear)
-                            .shadow(radius: boxShadow ? 10 : 0)
-                    }
                     .tag(1)
                     .opacity(bounceVM.isLoading ? 0 : 1)
             }

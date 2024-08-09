@@ -9,9 +9,8 @@ import SwiftUI
 
 struct SettingsView: View {
     @AppStorage(StorageKeys.warnBeforeDelete.rawValue) var warnBeforeDelete: Bool = true
-    @AppStorage(StorageKeys.boxShouldHaveRoundedCorners.rawValue) var roundedCorners = true
+    @AppStorage(StorageKeys.boxShouldHaveRoundedCorners.rawValue) var roundedCorners = false
     @AppStorage(StorageKeys.dimBackground.rawValue) var dimBackground = false
-    @AppStorage(StorageKeys.boxShouldHaveShadow.rawValue) var boxShadow = false
     
     @Environment(\.dismiss) var dismiss
     
@@ -42,15 +41,6 @@ struct SettingsView: View {
                                 Text("Rounded Corners")
                                     .bold()
                                 Text("When this setting is on, the bouncing box's corners will be slightly rounded.")
-                                    .foregroundStyle(.secondary)
-                            }
-                        })
-                        
-                        Toggle(isOn: $boxShadow, label: {
-                            VStack(alignment: .leading) {
-                                Text("Box Shadow")
-                                    .bold()
-                                Text("Do you want the little bouncing box to have a little shadow? 🤷‍♂️")
                                     .foregroundStyle(.secondary)
                             }
                         })

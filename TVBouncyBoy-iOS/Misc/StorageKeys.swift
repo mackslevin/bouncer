@@ -19,5 +19,4 @@ enum StorageKeys: String, CaseIterable {
     case warnBeforeDelete = "warnBeforeDelete"
     case boxShouldHaveRoundedCorners = "boxShouldHaveRoundedCorners"
     case dimBackground = "dimBackground"
-    case boxShouldHaveShadow = "boxShouldHaveShadow"
 }

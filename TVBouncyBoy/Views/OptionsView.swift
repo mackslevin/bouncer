@@ -116,7 +116,7 @@ struct OptionsView: View {
                         }
                         
                         
-                        Text("More")
+                        Text("Misc.")
                             .fontDesign(.rounded)
                             .fontWeight(.bold)
                             .padding(.top)
@@ -211,7 +211,6 @@ struct OptionsView: View {
                             .fontDesign(.rounded)
                             .fontWeight(.bold)
                             
-                        
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: [GridItem()], content: {
                                 ForEach(vm.presetImages(appImages: appImages, type: .background)) { userImage in
@@ -242,24 +241,95 @@ struct OptionsView: View {
                         }
                         .padding(.bottom)
                         
-                        Text("Colors/Gradients")
+                        Text("Colors")
                             .fontDesign(.rounded)
                             .fontWeight(.bold)
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: [GridItem()], content: {
-                                VStack {
-                                    Button {
-                                        withAnimation {
-                                            homeVM.backgroundImage = nil
-                                            homeVM.backgroundMode = .colorGrad1
-                                        }
-                                    } label: {
-                                        BackgroundModeButtonLabel(homeVM: homeVM, mode: .colorGrad1) {
-                                            ColorGrad1View()
-                                        }
+                                
+                                Button {
+                                    withAnimation {
+                                        homeVM.backgroundImage = nil
+                                        homeVM.backgroundMode = .colorGrad1
                                     }
-                                    .buttonStyle(OptionsRowButtonStyle())
+                                } label: {
+                                    BackgroundModeButtonLabel(homeVM: homeVM, mode: .colorGrad1) {
+                                        ColorGrad1View()
+                                    }
                                 }
+                                .buttonStyle(OptionsRowButtonStyle())
+                                
+                                Button {
+                                    withAnimation {
+                                        homeVM.backgroundImage = nil
+                                        homeVM.backgroundMode = .colorGrad2
+                                    }
+                                } label: {
+                                    BackgroundModeButtonLabel(homeVM: homeVM, mode: .colorGrad2) {
+                                        ColorGrad2View()
+                                    }
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
+                                
+                                Button {
+                                    withAnimation {
+                                        homeVM.backgroundImage = nil
+                                        homeVM.backgroundMode = .colorGrad3
+                                    }
+                                } label: {
+                                    BackgroundModeButtonLabel(homeVM: homeVM, mode: .colorGrad3) {
+                                        ColorGrad3View()
+                                    }
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
+                                
+                                Button {
+                                    withAnimation {
+                                        homeVM.backgroundImage = nil
+                                        homeVM.backgroundMode = .colorGrad4
+                                    }
+                                } label: {
+                                    BackgroundModeButtonLabel(homeVM: homeVM, mode: .colorGrad4) {
+                                        ColorGrad4View()
+                                    }
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
+                                
+                                Button {
+                                    withAnimation {
+                                        homeVM.backgroundImage = nil
+                                        homeVM.backgroundMode = .colorGrad5
+                                    }
+                                } label: {
+                                    BackgroundModeButtonLabel(homeVM: homeVM, mode: .colorGrad5) {
+                                        ColorGrad5View()
+                                    }
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
+                                
+                                Button {
+                                    withAnimation {
+                                        homeVM.backgroundImage = nil
+                                        homeVM.backgroundMode = .colorGrad6
+                                    }
+                                } label: {
+                                    BackgroundModeButtonLabel(homeVM: homeVM, mode: .colorGrad6) {
+                                        ColorGrad6View()
+                                    }
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
+                                
+                                Button {
+                                    withAnimation {
+                                        homeVM.backgroundImage = nil
+                                        homeVM.backgroundMode = .colorGrad7
+                                    }
+                                } label: {
+                                    BackgroundModeButtonLabel(homeVM: homeVM, mode: .colorGrad7) {
+                                        ColorGrad7View()
+                                    }
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
                             })
                         }
                         

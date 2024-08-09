@@ -54,6 +54,38 @@ struct TVHomeView: View {
                     BouncingForegroundView(homeVM: vm) {
                         ColorGrad1View()
                     }
+                    
+                case .colorGrad2:
+                    BouncingForegroundView(homeVM: vm) {
+                        ColorGrad2View()
+                    }
+                    
+                case .colorGrad3:
+                    BouncingForegroundView(homeVM: vm) {
+                        ColorGrad3View()
+                    }
+                    
+                case .colorGrad4:
+                    BouncingForegroundView(homeVM: vm) {
+                        ColorGrad4View()
+                    }
+                    
+                case .colorGrad5:
+                    BouncingForegroundView(homeVM: vm) {
+                        ColorGrad5View()
+                    }
+                    
+                case .colorGrad6:
+                    BouncingForegroundView(homeVM: vm) {
+                        ColorGrad6View()
+                    }
+                    
+                case .colorGrad7:
+                    BouncingForegroundView(homeVM: vm) {
+                        ColorGrad7View()
+                    }
+                    
+                    
             }
         }
         .onPlayPauseCommand {

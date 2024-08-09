@@ -30,8 +30,8 @@ struct Utility {
         AppImage(presetName: "space"),
         AppImage(presetName: "dark-purple-abstract"),
         AppImage(presetName: "sky-flowers"),
-        AppImage(presetName: "mars"),
-        AppImage(presetName: "mountains-trees")
+        AppImage(presetName: "veiny-road"),
+        AppImage(presetName: "coal-mine")
     ]
 
     static let boxImagePresets = [
@@ -40,7 +40,8 @@ struct Utility {
         AppImage(presetName: "hi-def-video", imageType: .boxImage),
         AppImage(presetName: "hi-def-video-filled", imageType: .boxImage),
         AppImage(presetName: "checkered-twirl", imageType: .boxImage),
-        AppImage(presetName: "no-signal", imageType: .boxImage)
+        AppImage(presetName: "no-signal", imageType: .boxImage),
+        AppImage(presetName: "transparent-circles", imageType: .boxImage)
     ]
     
     static func isTV() -> Bool {

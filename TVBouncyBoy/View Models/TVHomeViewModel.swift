@@ -43,8 +43,6 @@ final class TVHomeViewModel {
             UserDefaults.standard.setValue(false, forKey: StorageKeys.isFirstRun.rawValue)
         }
         
-        syncPresets()
-        
         if let storedBackgroundMode: String = UserDefaults.standard.string(forKey: StorageKeys.backgroundMode.rawValue) {
             for bgMode in BackgroundMode.allCases {
                 if bgMode.rawValue == storedBackgroundMode {
@@ -61,12 +59,11 @@ final class TVHomeViewModel {
             }
         }
         
-        Task {
-            try? await setImages()
-        }
+        syncPresets()
     }
     
     private func setImages() async throws {
+        print("^^ set imgs")
         guard let allImages = try? await DataManager.shared.allUserImages() else {
             print("^^ Couldn't fetch all images")
             return
@@ -105,7 +102,7 @@ final class TVHomeViewModel {
                     }
                     
                     // Delete any duplicates
-                    var duplicates = allAppImages.filter({$0.presetName == ai.presetName && $0.imageType == ai.imageType})
+                    let duplicates = allAppImages.filter({$0.presetName == ai.presetName && $0.imageType == ai.imageType})
                     if duplicates.count > 1 {
                         let otherDups = duplicates.filter({$0.id != ai.id})
                         for dup in otherDups {
@@ -134,6 +131,8 @@ final class TVHomeViewModel {
                 print("^^ Sync presets error")
                 print(error.localizedDescription)
             }
+            
+            try? await setImages()
         }
     }
     
