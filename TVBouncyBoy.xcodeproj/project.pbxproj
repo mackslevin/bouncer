@@ -174,6 +174,7 @@
 		01CBF0742C5068D00015C327 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		01F7D65E2C64513300490DC6 /* ColorGrad1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGrad1View.swift; sourceTree = "<group>"; };
 		01FC69DF2C6699CB00BAD81D /* OptionsInlineButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsInlineButtonStyle.swift; sourceTree = "<group>"; };
+		01FC69E12C66B09600BAD81D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +300,7 @@
 		015E4FE32C39E77600AFD64E = {
 			isa = PBXGroup;
 			children = (
+				01FC69E12C66B09600BAD81D /* PrivacyInfo.xcprivacy */,
 				015E4FEE2C39E77600AFD64E /* TVBouncyBoy */,
 				01ADC90A2C49842F006A2214 /* TVBouncyBoy-iOS */,
 				015E4FED2C39E77600AFD64E /* Products */,

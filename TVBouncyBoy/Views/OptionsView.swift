@@ -166,7 +166,7 @@ struct OptionsView: View {
                                     }
                                     .buttonStyle(OptionsRowButtonStyle())
                                     
-                                    HStack(spacing: 12) {
+                                    HStack(spacing: 8) {
                                         Text("Trivia").foregroundStyle(.secondary)
                                         Button("Info", systemImage: "info.circle") {
                                             vm.isShowingTriviaInfo.toggle()

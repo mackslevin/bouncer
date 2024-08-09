@@ -39,6 +39,7 @@ struct Utility {
         AppImage(presetName: "cat", imageType: .boxImage),
         AppImage(presetName: "hi-def-video", imageType: .boxImage),
         AppImage(presetName: "hi-def-video-filled", imageType: .boxImage),
+        AppImage(presetName: "tape", imageType: .boxImage),
         AppImage(presetName: "checkered-twirl", imageType: .boxImage),
         AppImage(presetName: "no-signal", imageType: .boxImage),
         AppImage(presetName: "transparent-circles", imageType: .boxImage)
