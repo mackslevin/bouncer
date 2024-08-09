@@ -7,17 +7,18 @@
 
 import SwiftUI
 
-
-
 struct Trivia1View: View {
     @State private var vm = TriviaViewModel()
-
-    
     @State private var bgColor = Color.black
     @State private var fgColor = Color.white
     
     var body: some View {
         ZStack {
+            if vm.encounteredAnError {
+                Rectangle().foregroundStyle(.black)
+                Text("Trivia is currently unavailable. Sorry :(")
+                    .padding().foregroundStyle(.white).fontDesign(.rounded)
+            } else {
                 Rectangle().foregroundStyle(bgColor.gradient)
                 
                 VStack {
@@ -31,17 +32,19 @@ struct Trivia1View: View {
                     }
                 }
                 .foregroundStyle(fgColor)
+            }
         }
         .onAppear {
             Task {
-                await vm.requestToken()
+                await vm.getTrivia()
+                vm.startTimer()
             }
         }
         .onDisappear {
             vm.stopTimer()
         }
         .onChange(of: vm.trivia) { oldValue, newValue in
-            // Swap background and foreground colors when we get a new trivia string. (Make it noticeable something changed.)
+            // Swap background and foreground colors when we get a new trivia string. (Just to make it noticeable that something changed.)
             if fgColor == .white { fgColor = .black } else { fgColor = .white }
             if bgColor == .white { bgColor = .black } else { bgColor = .white }
         }
