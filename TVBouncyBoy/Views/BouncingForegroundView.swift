@@ -17,6 +17,7 @@ struct BouncingForegroundView<Content: View>: View {
     
     @State private var boxImageProxy: Image? = nil
     @AppStorage(StorageKeys.dimBackground.rawValue) var dimBackground = false
+    @AppStorage(StorageKeys.hideBox.rawValue) var hideBox = false
     
     init(homeVM: TVHomeViewModel, @ViewBuilder content: () -> Content) {
         self.homeVM = homeVM
@@ -65,40 +66,43 @@ struct BouncingForegroundView<Content: View>: View {
                     .clipped()
                     .tag(0)
                 
-                Rectangle()
-                    .foregroundStyle(Color.clear)
-                    .frame(width: bounceVM.rectangleSize.width, height: bounceVM.rectangleSize.height)
-                    .overlay {
-                        Group {
-                            switch homeVM.foregroundMode {
-                                case .standardBounce:
-                                    if let boxImg = boxImageProxy {
-                                        boxImg.resizable().scaledToFill()
-                                    }
-                                    
-                                // MARK: Foreground modes
-                                case .clock1:
-                                    Clock1View()
-                                case .clock2:
-                                    Clock2View()
-                                case .clock3:
-                                    Clock3View()
-                                case .clock4:
-                                    Clock4View()
-                                case .clock5:
-                                    Clock5View()
-                                case .emoji1:
-                                    Emoji1View(bounceVM: bounceVM)
-                                case .emoji2:
-                                    Emoji2View(bounceVM: bounceVM)
-                                case .trivia1:
-                                    Trivia1View()
+                if !hideBox {
+                    Rectangle()
+                        .foregroundStyle(Color.clear)
+                        .frame(width: bounceVM.rectangleSize.width, height: bounceVM.rectangleSize.height)
+                        .overlay {
+                            Group {
+                                switch homeVM.foregroundMode {
+                                    case .standardBounce:
+                                        if let boxImg = boxImageProxy {
+                                            boxImg.resizable().scaledToFill()
+                                        }
+                                        
+                                    // MARK: Foreground modes
+                                    case .clock1:
+                                        Clock1View()
+                                    case .clock2:
+                                        Clock2View()
+                                    case .clock3:
+                                        Clock3View()
+                                    case .clock4:
+                                        Clock4View()
+                                    case .clock5:
+                                        Clock5View()
+                                    case .emoji1:
+                                        Emoji1View(bounceVM: bounceVM)
+                                    case .emoji2:
+                                        Emoji2View(bounceVM: bounceVM)
+                                    case .trivia1:
+                                        Trivia1View()
+                                }
                             }
                         }
-                    }
-                    .clipShape(RoundedRectangle(cornerRadius: Utility.boxCornerRadius))
-                    .tag(1)
-                    .opacity(bounceVM.isLoading ? 0 : 1)
+                        .clipShape(RoundedRectangle(cornerRadius: Utility.boxCornerRadius))
+                        .tag(1)
+                        .opacity(bounceVM.isLoading ? 0 : 1)
+                }
+                
             }
             .onAppear {
                 bounceVM.startTimer()

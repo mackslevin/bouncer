@@ -11,6 +11,7 @@ struct SettingsView: View {
     @AppStorage(StorageKeys.warnBeforeDelete.rawValue) var warnBeforeDelete: Bool = true
     @AppStorage(StorageKeys.boxShouldHaveRoundedCorners.rawValue) var roundedCorners = false
     @AppStorage(StorageKeys.dimBackground.rawValue) var dimBackground = false
+    @AppStorage(StorageKeys.hideBox.rawValue) var hideBox = false
     
     @Environment(\.dismiss) var dismiss
     
@@ -39,14 +40,34 @@ struct SettingsView: View {
                         Toggle(isOn: $roundedCorners, label: {
                             VStack(alignment: .leading) {
                                 Text("Rounded Corners")
-                                    .bold()
+                                    
                                 Text("When this setting is on, the bouncing box's corners will be slightly rounded.")
+                                    .font(.caption2)
                                     .foregroundStyle(.secondary)
+                                    .fontWeight(.medium)
                             }
                         })
+                        .bold()
+                        
+                        
                         
                         Toggle("Dim Background", isOn: $dimBackground)
                             .bold()
+                        
+
+                        
+                        Toggle(isOn: $hideBox, label: {
+                            VStack(alignment: .leading) {
+                                Text("Hide the Bouncing Box")
+                                    
+                                Text("We won't tell Boxy. It'd break his heart.")
+                                    .font(.caption2)
+                                    .foregroundStyle(.secondary)
+                                    .fontWeight(.medium)
+                            }
+                        })
+                        .bold()
+                        
                     }
                     
                     
@@ -56,6 +77,8 @@ struct SettingsView: View {
                         }
                         .tint(.accent)
                     }
+                    
+                    
                 } else {
                     Section {
                         Toggle("Warn before deleting images?", isOn: $warnBeforeDelete)
