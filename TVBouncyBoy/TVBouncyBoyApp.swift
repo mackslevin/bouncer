@@ -29,6 +29,6 @@ struct TVBouncyBoyApp: App {
 //                    UserDefaults.standard.setValue(true, forKey: StorageKeys.isFirstRun.rawValue)
 //                })
         }
-        .modelContainer(sharedModelContainer)
+        .modelContainer(DataManager.shared.container)
     }
 }
