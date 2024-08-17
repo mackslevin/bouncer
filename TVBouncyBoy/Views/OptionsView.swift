@@ -22,7 +22,8 @@ struct OptionsView: View {
                     VStack(alignment: .leading) {
                         Text("Bouncing Image")
                             .font(Font.displayFont(size: 48))
-                            .foregroundStyle(.accent)
+                            .shadow(color:.black ,radius: 2, x: 1, y:1)
+                            .padding(.bottom, 16)
                         
                         Text("Stills")
                             .fontDesign(.rounded)
@@ -220,17 +221,34 @@ struct OptionsView: View {
                             .padding(.bottom)
                         }
                     }
-                    .padding()
+                    .padding(.horizontal, 24)
+                    .padding(.vertical, 14)
                     .background {
-                        RoundedRectangle(cornerRadius: Utility.defaultCornerRadius)
-                            .foregroundStyle(.regularMaterial)
+                        ZStack {
+                            RoundedRectangle(cornerRadius: Utility.defaultCornerRadius)
+                                .foregroundStyle(Color.white)
+                                .opacity(0.5)
+
+                            RoundedRectangle(cornerRadius: Utility.defaultCornerRadius)
+                                .foregroundStyle(Color.black)
+                                .padding(3)
+                            
+                            RoundedRectangle(cornerRadius: Utility.defaultCornerRadius)
+                                .foregroundStyle(
+                                    Color.white.gradient
+                                )
+                                .opacity(0.3)
+                                .padding(5)
+                        }
+                        
                     }
                     .padding(.top)
                     
                     VStack(alignment: .leading) {
                         Text("Background")
                             .font(Font.displayFont(size: 48))
-                            .foregroundStyle(.accent)
+                            .shadow(color:.black ,radius: 2, x: 1, y:1)
+                            .padding(.bottom, 16)
                         
                         Text("Stills")
                             .fontDesign(.rounded)
@@ -450,8 +468,23 @@ struct OptionsView: View {
                     }
                     .padding()
                     .background {
-                        RoundedRectangle(cornerRadius: Utility.defaultCornerRadius)
-                            .foregroundStyle(.regularMaterial)
+                        ZStack {
+                            RoundedRectangle(cornerRadius: Utility.defaultCornerRadius)
+                                .foregroundStyle(Color.white)
+                                .opacity(0.5)
+
+                            RoundedRectangle(cornerRadius: Utility.defaultCornerRadius)
+                                .foregroundStyle(Color.black)
+                                .padding(3)
+                            
+                            RoundedRectangle(cornerRadius: Utility.defaultCornerRadius)
+                                .foregroundStyle(
+                                    Color.white.gradient
+                                )
+                                .opacity(0.3)
+                                .padding(5)
+                        }
+                        
                     }
                     
                     Spacer()
