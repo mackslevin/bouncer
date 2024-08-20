@@ -122,8 +122,17 @@ struct Oscars1View: View {
     @State private var posterURL: URL? = nil
     
     
+    
     let refreshInterval: TimeInterval = 30
     let gold = Color(red: 1, green: 215/255, blue: 0)
+    
+    
+    // For OptionsView
+    var isPreviewMode: Bool = false
+    init() {}
+    init(isPreviewMode: Bool) {
+        self.isPreviewMode = isPreviewMode
+    }
     
     var body: some View {
         VStack {
@@ -212,12 +221,15 @@ struct Oscars1View: View {
             }
         }
         .onAppear {
-            refreshMovie()
-            
-            timer = Timer.scheduledTimer(withTimeInterval: refreshInterval, repeats: true, block: { _ in
-                print("^^ Timer")
+            if isPreviewMode {
+                currentMovie = Movie(title: "Cool Movie", director: "Great Director", movieYear: "1999", oscarsYear: "2007")
+            } else {
                 refreshMovie()
-            })
+                
+                timer = Timer.scheduledTimer(withTimeInterval: refreshInterval, repeats: true, block: { _ in
+                    refreshMovie()
+                })
+            }
         }
         .onDisappear {
             timer?.invalidate()
@@ -277,7 +289,7 @@ struct Oscars1View: View {
     
     ZStack {
         Color.purple
-        Oscars1View()
+        Oscars1View(isPreviewMode: true)
             .frame(width: 390, height: 220)
             .clipped()
     }

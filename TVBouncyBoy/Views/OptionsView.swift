@@ -162,7 +162,7 @@ struct OptionsView: View {
                                             homeVM.foregroundMode = .oscars1
                                         }
                                     } label: {
-                                        Oscars1View()
+                                        Oscars1View(isPreviewMode: true)
                                             .frame(width: Utility.tvAppOptionsButtonHeight * 1.77, height: Utility.tvAppOptionsButtonHeight)
                                             .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .oscars1))
                                     }
