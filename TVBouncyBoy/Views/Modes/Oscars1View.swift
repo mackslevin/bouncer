@@ -132,6 +132,9 @@ struct Oscars1View: View {
                     Rectangle().foregroundStyle(.secondary)
                         .aspectRatio(2/3, contentMode: .fit)
                         .overlay {
+                            Image(systemName: "movieclapper.fill")
+                        }
+                        .overlay {
                             AsyncImage(url: posterURL) { phase in
                                 switch phase {
                                     case .success(let img):
@@ -200,14 +203,19 @@ struct Oscars1View: View {
                         Rectangle().foregroundStyle(.thinMaterial)
                     }
                 }
+                
             } else {
-                ProgressView()
+                Rectangle()
+                    .overlay {
+                        ProgressView()
+                    }
             }
         }
         .onAppear {
             refreshMovie()
             
             timer = Timer.scheduledTimer(withTimeInterval: refreshInterval, repeats: true, block: { _ in
+                print("^^ Timer")
                 refreshMovie()
             })
         }
@@ -216,59 +224,65 @@ struct Oscars1View: View {
         }
     }
     
-    @MainActor
+    
     func refreshMovie() {
-        var newMovie = Movie.bestPictureWinners.randomElement()
-        while newMovie?.id == currentMovie?.id {
-            newMovie = Movie.bestPictureWinners.randomElement()
-        }
-        if newMovie == nil {
-            return
-        } else {
-            Task {
+        Task {
+            var newMovie = Movie.bestPictureWinners.randomElement()
+            while newMovie?.id == currentMovie?.id {
+                newMovie = Movie.bestPictureWinners.randomElement()
+            }
+            
+
+            if newMovie == nil {
+                return
+            } else {
+                
                 guard
                     let newMovie,
                     let apiKey = Utility.secret(key: "tmdbKey"),
                     let url = URL(string: "https://api.themoviedb.org/3/search/movie?api_key=\(apiKey)&query=\(newMovie.title)&year=\(newMovie.movieYear)")
                 else {
-                    print("^^ pre request")
-                    withAnimation { currentMovie = newMovie }
+                    currentMovie = newMovie
                     return
                 }
                 do {
                     let (data, _) = try await URLSession.shared.data(from: url)
                     let response = try JSONDecoder().decode(TMDBMovieSearchResponse.self, from: data)
                     if let posterPath = response.results.first?.posterPath {
-                        withAnimation {
-                            posterURL = URL(string: "https://image.tmdb.org/t/p/w300/\(posterPath)")
-                            
-                            currentMovie = newMovie
-                            return
-                        }
+                        posterURL = URL(string: "https://image.tmdb.org/t/p/w300/\(posterPath)")
+                        
+                        currentMovie = newMovie
+                        return
                     }
                 } catch {
                     print(error.localizedDescription)
-                    withAnimation { currentMovie = newMovie }
+                    currentMovie = newMovie
+                    posterURL = nil
                     return
                 }
+                
+                
+                currentMovie = newMovie
+                posterURL = nil
             }
-            
-            withAnimation { currentMovie = newMovie }
         }
     }
+  
+    
+    
     
 }
 
-//#Preview {
-//    
-//    ZStack {
-//        Color.purple
-//        Oscars1View()
-//            .frame(width: 390, height: 220)
-//            .clipped()
-//    }
-//    
-//}
+#Preview {
+    
+    ZStack {
+        Color.purple
+        Oscars1View()
+            .frame(width: 390, height: 220)
+            .clipped()
+    }
+    
+}
 
 // Sloppily pasted in from another project 🥴...
 struct TMDBMovieSearchResponse: Codable {
