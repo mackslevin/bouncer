@@ -95,6 +95,8 @@ struct BouncingForegroundView<Content: View>: View {
                                         Emoji2View(bounceVM: bounceVM)
                                     case .trivia1:
                                         Trivia1View()
+                                    case .oscars1:
+                                        Oscars1View()
                                 }
                             }
                         }

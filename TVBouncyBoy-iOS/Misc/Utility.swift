@@ -74,4 +74,10 @@ struct Utility {
     }
     
     static let tvAppOptionsButtonHeight: CGFloat = 150
+    
+    static func secret(key: String) -> String? {
+        let path = Bundle.main.path(forResource: "secrets", ofType: "plist")
+        let secrets = NSDictionary(contentsOf: URL(fileURLWithPath: path ?? ""))
+        return secrets?.value(forKey: key) as? String
+    }
 }

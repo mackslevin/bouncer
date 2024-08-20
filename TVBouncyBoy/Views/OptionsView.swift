@@ -131,6 +131,7 @@ struct OptionsView: View {
                                         }
                                     } label: {
                                         Emoji1View(bounceVM: BounceViewModel())
+                                            .frame(width: Utility.tvAppOptionsButtonHeight * 1.77, height: Utility.tvAppOptionsButtonHeight)
                                             .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .emoji1))
                                     }
                                     .buttonStyle(OptionsRowButtonStyle())
@@ -158,41 +159,17 @@ struct OptionsView: View {
                                     Button {
                                         withAnimation {
                                             homeVM.boxImage = nil
-                                            homeVM.foregroundMode = .trivia1
+                                            homeVM.foregroundMode = .oscars1
                                         }
                                     } label: {
-                                        Trivia1View()
+                                        Oscars1View()
                                             .frame(width: Utility.tvAppOptionsButtonHeight * 1.77, height: Utility.tvAppOptionsButtonHeight)
-                                            .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .trivia1))
+                                            .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .oscars1))
                                     }
                                     .buttonStyle(OptionsRowButtonStyle())
-                                    
-                                    HStack(spacing: 8) {
-                                        Text("Trivia").foregroundStyle(.secondary)
-                                        Button("Info", systemImage: "info.circle") {
-                                            vm.isShowingTriviaInfo.toggle()
-                                        }
-                                        .labelStyle(.iconOnly)
-                                        .buttonStyle(OptionsInlineButtonStyle())
-                                        .tint(.accentColor)
-                                        .sheet(isPresented: $vm.isShowingTriviaInfo) {
-                                            VStack(spacing: 24) {
-                                                Text("Trivia")
-                                                    .font(.displayFont(size: 64))
-                                                
-                                                Text("This mode cycles through random facts, changing every 30 seconds or so.\nThe data is sourced from the Useless Facts API (https://uselessfacts.jsph.pl)")
-                                                    .multilineTextAlignment(.center)
-                                                    .fontDesign(.rounded)
-                                                
-                                                Button("Close", systemImage: "xmark.circle") {
-                                                    vm.isShowingTriviaInfo = false
-                                                }.fontDesign(.rounded)
-                                            }
-                                        }
-                                    }
-                                    .font(.caption2)
-                                    
+                                    Text("Best Picture Winners").font(.caption2).foregroundStyle(.secondary)
                                 }
+                                
                                 
                             })
                         }

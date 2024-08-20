@@ -103,9 +103,9 @@ struct SettingsView: View {
                 }
             }
             .sheet(isPresented: $isShowingOverview, content: {
-#if os(tvOS)
+            #if os(tvOS)
                 OverviewView()
-#endif
+            #endif
             })
             .fontDesign(.rounded)
             .sheet(isPresented: $isShowingPhotoCredits, content: {

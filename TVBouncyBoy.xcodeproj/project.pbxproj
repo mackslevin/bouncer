@@ -38,6 +38,8 @@
 		0114ADBC2C406FDC008E5114 /* OptionsRowButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114ADBB2C406FDC008E5114 /* OptionsRowButtonStyle.swift */; };
 		011DAE5F2C62B93700B769AA /* Trivia1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011DAE5E2C62B93700B769AA /* Trivia1View.swift */; };
 		011DAE612C62E69500B769AA /* TriviaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011DAE602C62E69500B769AA /* TriviaViewModel.swift */; };
+		012893292C740620005CD75F /* secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 012893282C740620005CD75F /* secrets.plist */; };
+		0128932A2C740620005CD75F /* secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 012893282C740620005CD75F /* secrets.plist */; };
 		0133D5A12C543FFC006B7C15 /* SpaceGrotesk-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 010BD2862C5431F600C522A8 /* SpaceGrotesk-Bold.ttf */; };
 		0133D5A32C5464B2006B7C15 /* TVHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5A22C5464B2006B7C15 /* TVHomeView.swift */; };
 		0133D5AA2C546628006B7C15 /* BackgroundMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5A92C546628006B7C15 /* BackgroundMode.swift */; };
@@ -92,6 +94,7 @@
 		01B9B7322C5AFCA900BB3A6F /* PhotoCreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B9B72D2C5ACD7100BB3A6F /* PhotoCreditsView.swift */; };
 		01B9B7342C5AFE5100BB3A6F /* CreditRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B9B7332C5AFE5100BB3A6F /* CreditRow.swift */; };
 		01B9B7352C5AFE5100BB3A6F /* CreditRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B9B7332C5AFE5100BB3A6F /* CreditRow.swift */; };
+		01BA4E7F2C73BD700035219F /* Oscars1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BA4E7E2C73BD700035219F /* Oscars1View.swift */; };
 		01CBF0732C50555D0015C327 /* AppImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBF0722C50555D0015C327 /* AppImageDetailView.swift */; };
 		01CBF0752C5068D00015C327 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBF0742C5068D00015C327 /* SettingsView.swift */; };
 		01F7D65F2C64513300490DC6 /* ColorGrad1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F7D65E2C64513300490DC6 /* ColorGrad1View.swift */; };
@@ -124,6 +127,7 @@
 		0114ADBB2C406FDC008E5114 /* OptionsRowButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsRowButtonStyle.swift; sourceTree = "<group>"; };
 		011DAE5E2C62B93700B769AA /* Trivia1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trivia1View.swift; sourceTree = "<group>"; };
 		011DAE602C62E69500B769AA /* TriviaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaViewModel.swift; sourceTree = "<group>"; };
+		012893282C740620005CD75F /* secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = secrets.plist; sourceTree = "<group>"; };
 		0133D5A22C5464B2006B7C15 /* TVHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVHomeView.swift; sourceTree = "<group>"; };
 		0133D5A92C546628006B7C15 /* BackgroundMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMode.swift; sourceTree = "<group>"; };
 		0133D5AB2C5466DE006B7C15 /* TVHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVHomeViewModel.swift; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 		01B9B72D2C5ACD7100BB3A6F /* PhotoCreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCreditsView.swift; sourceTree = "<group>"; };
 		01B9B72F2C5AEFF700BB3A6F /* PhotoCredit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCredit.swift; sourceTree = "<group>"; };
 		01B9B7332C5AFE5100BB3A6F /* CreditRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditRow.swift; sourceTree = "<group>"; };
+		01BA4E7E2C73BD700035219F /* Oscars1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oscars1View.swift; sourceTree = "<group>"; };
 		01CBF0722C50555D0015C327 /* AppImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImageDetailView.swift; sourceTree = "<group>"; };
 		01CBF0742C5068D00015C327 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		01F7D65E2C64513300490DC6 /* ColorGrad1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGrad1View.swift; sourceTree = "<group>"; };
@@ -217,6 +222,7 @@
 				0178B0782C65557F002D9A5D /* ColorGrad5View.swift */,
 				013D6FE02C65798800297B59 /* ColorGrad6View.swift */,
 				0109E8AA2C657EA700C94982 /* ColorGrad7View.swift */,
+				01BA4E7E2C73BD700035219F /* Oscars1View.swift */,
 			);
 			path = Modes;
 			sourceTree = "<group>";
@@ -301,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				01FC69E12C66B09600BAD81D /* PrivacyInfo.xcprivacy */,
+				012893282C740620005CD75F /* secrets.plist */,
 				015E4FEE2C39E77600AFD64E /* TVBouncyBoy */,
 				01ADC90A2C49842F006A2214 /* TVBouncyBoy-iOS */,
 				015E4FED2C39E77600AFD64E /* Products */,
@@ -460,6 +467,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				012893292C740620005CD75F /* secrets.plist in Resources */,
 				0133D5A12C543FFC006B7C15 /* SpaceGrotesk-Bold.ttf in Resources */,
 				015E4FF72C39E77700AFD64E /* Preview Assets.xcassets in Resources */,
 				015E4FF42C39E77700AFD64E /* Assets.xcassets in Resources */,
@@ -472,6 +480,7 @@
 			files = (
 				010BD2882C5431F600C522A8 /* SpaceGrotesk-Bold.ttf in Resources */,
 				01ADC9152C498430006A2214 /* Preview Assets.xcassets in Resources */,
+				0128932A2C740620005CD75F /* secrets.plist in Resources */,
 				01118EC52C5DA1E900EF36A5 /* Assets.xcassets in Resources */,
 				01ADC9122C498430006A2214 /* Assets.xcassets in Resources */,
 			);
@@ -533,6 +542,7 @@
 				019D8CD72C61B89A000F5D21 /* Emoji2View.swift in Sources */,
 				0178B0752C654162002D9A5D /* ColorGrad3View.swift in Sources */,
 				010BD28B2C54323400C522A8 /* Font-Ext.swift in Sources */,
+				01BA4E7F2C73BD700035219F /* Oscars1View.swift in Sources */,
 				01048C172C5994820057111D /* NowPlaying3PreviewView.swift in Sources */,
 				011DAE612C62E69500B769AA /* TriviaViewModel.swift in Sources */,
 				0133D5B62C556A7A006B7C15 /* NothingPlayingView.swift in Sources */,
