@@ -49,8 +49,6 @@ final class DataManager {
     func deleteAppImage(_ ai: AppImage) {
         container.mainContext.delete(ai)
         do {
-//            print("^^ Deleting \(ai.title ?? "?")")
-//            try container.mainContext.save()
             let context = ModelContext(self.container)
             context.delete(ai)
             try context.save()
