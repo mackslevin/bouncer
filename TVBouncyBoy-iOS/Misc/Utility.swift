@@ -19,11 +19,13 @@ struct Utility {
     
     static var boxCornerRadius: CGFloat {
         if let shouldBeRound = UserDefaults.standard.value(forKey: StorageKeys.boxShouldHaveRoundedCorners.rawValue) as? Bool {
-            if !shouldBeRound {
+            if shouldBeRound {
+               return 10
+            } else {
                 return 0
             }
         }
-        return 10
+        return 0
     }
     
     static let backgroundImagePresets = [

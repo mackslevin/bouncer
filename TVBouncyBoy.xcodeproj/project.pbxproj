@@ -48,8 +48,6 @@
 		0133D5B42C55656E006B7C15 /* NowPlaying2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5B32C55656E006B7C15 /* NowPlaying2View.swift */; };
 		0133D5B62C556A7A006B7C15 /* NothingPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5B52C556A7A006B7C15 /* NothingPlayingView.swift */; };
 		0133D5B82C557C9C006B7C15 /* NowPlaying3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133D5B72C557C9C006B7C15 /* NowPlaying3View.swift */; };
-		01393B062C939CEE008E9B4D /* TVBouncyBoy.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 01ADC9222C498DCD006A2214 /* TVBouncyBoy.entitlements */; };
-		01393B072C939D02008E9B4D /* TVBouncyBoy.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 01ADC9222C498DCD006A2214 /* TVBouncyBoy.entitlements */; };
 		013D6FE12C65798800297B59 /* ColorGrad6View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D6FE02C65798800297B59 /* ColorGrad6View.swift */; };
 		0150AB352C938C4F00BD3F40 /* secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0150AB342C938C4F00BD3F40 /* secrets.plist */; };
 		0150AB362C938C4F00BD3F40 /* secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0150AB342C938C4F00BD3F40 /* secrets.plist */; };
@@ -99,6 +97,8 @@
 		01BA4E7F2C73BD700035219F /* Oscars1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BA4E7E2C73BD700035219F /* Oscars1View.swift */; };
 		01CBF0732C50555D0015C327 /* AppImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBF0722C50555D0015C327 /* AppImageDetailView.swift */; };
 		01CBF0752C5068D00015C327 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBF0742C5068D00015C327 /* SettingsView.swift */; };
+		01DEC3972C93B01500C8D1F8 /* TVBouncyBoy.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 01ADC9222C498DCD006A2214 /* TVBouncyBoy.entitlements */; };
+		01DEC3982C93B01F00C8D1F8 /* TVBouncyBoy.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 01ADC9222C498DCD006A2214 /* TVBouncyBoy.entitlements */; };
 		01F7D65F2C64513300490DC6 /* ColorGrad1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F7D65E2C64513300490DC6 /* ColorGrad1View.swift */; };
 		01FC69E02C6699CB00BAD81D /* OptionsInlineButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FC69DF2C6699CB00BAD81D /* OptionsInlineButtonStyle.swift */; };
 /* End PBXBuildFile section */
@@ -469,7 +469,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01393B062C939CEE008E9B4D /* TVBouncyBoy.entitlements in Resources */,
+				01DEC3982C93B01F00C8D1F8 /* TVBouncyBoy.entitlements in Resources */,
 				0150AB352C938C4F00BD3F40 /* secrets.plist in Resources */,
 				0133D5A12C543FFC006B7C15 /* SpaceGrotesk-Bold.ttf in Resources */,
 				015E4FF72C39E77700AFD64E /* Preview Assets.xcassets in Resources */,
@@ -481,7 +481,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01393B072C939D02008E9B4D /* TVBouncyBoy.entitlements in Resources */,
+				01DEC3972C93B01500C8D1F8 /* TVBouncyBoy.entitlements in Resources */,
 				010BD2882C5431F600C522A8 /* SpaceGrotesk-Bold.ttf in Resources */,
 				01ADC9152C498430006A2214 /* Preview Assets.xcassets in Resources */,
 				0150AB362C938C4F00BD3F40 /* secrets.plist in Resources */,
