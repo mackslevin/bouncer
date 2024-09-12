@@ -99,6 +99,7 @@
 		01CBF0752C5068D00015C327 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBF0742C5068D00015C327 /* SettingsView.swift */; };
 		01DEC3972C93B01500C8D1F8 /* TVBouncyBoy.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 01ADC9222C498DCD006A2214 /* TVBouncyBoy.entitlements */; };
 		01DEC3982C93B01F00C8D1F8 /* TVBouncyBoy.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 01ADC9222C498DCD006A2214 /* TVBouncyBoy.entitlements */; };
+		01DEC39A2C93B33100C8D1F8 /* Clock6View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC3992C93B33100C8D1F8 /* Clock6View.swift */; };
 		01F7D65F2C64513300490DC6 /* ColorGrad1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F7D65E2C64513300490DC6 /* ColorGrad1View.swift */; };
 		01FC69E02C6699CB00BAD81D /* OptionsInlineButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FC69DF2C6699CB00BAD81D /* OptionsInlineButtonStyle.swift */; };
 /* End PBXBuildFile section */
@@ -179,6 +180,7 @@
 		01BA4E7E2C73BD700035219F /* Oscars1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oscars1View.swift; sourceTree = "<group>"; };
 		01CBF0722C50555D0015C327 /* AppImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImageDetailView.swift; sourceTree = "<group>"; };
 		01CBF0742C5068D00015C327 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		01DEC3992C93B33100C8D1F8 /* Clock6View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock6View.swift; sourceTree = "<group>"; };
 		01F7D65E2C64513300490DC6 /* ColorGrad1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGrad1View.swift; sourceTree = "<group>"; };
 		01FC69DF2C6699CB00BAD81D /* OptionsInlineButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsInlineButtonStyle.swift; sourceTree = "<group>"; };
 		01FC69E12C66B09600BAD81D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				01048C082C59690E0057111D /* Clock3View.swift */,
 				01048C0B2C5969C80057111D /* Clock4View.swift */,
 				01048C0E2C596AEE0057111D /* Clock5View.swift */,
+				01DEC3992C93B33100C8D1F8 /* Clock6View.swift */,
 				01118EC32C5D93C200EF36A5 /* ColorBarsView.swift */,
 				01118EC62C5DB3CE00EF36A5 /* Emoji1View.swift */,
 				019D8CD62C61B89A000F5D21 /* Emoji2View.swift */,
@@ -520,6 +523,7 @@
 				0133D5AE2C546EA4006B7C15 /* BouncingForegroundView.swift in Sources */,
 				0114ADBA2C406499008E5114 /* OptionsView.swift in Sources */,
 				01048C132C5983860057111D /* NowPlaying1PreviewView.swift in Sources */,
+				01DEC39A2C93B33100C8D1F8 /* Clock6View.swift in Sources */,
 				0109E8AB2C657EA700C94982 /* ColorGrad7View.swift in Sources */,
 				0178B0792C65557F002D9A5D /* ColorGrad5View.swift in Sources */,
 				015EC8D12C519B21002E05F2 /* OptionsViewModel.swift in Sources */,

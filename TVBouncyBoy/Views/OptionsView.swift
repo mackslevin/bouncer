@@ -113,6 +113,19 @@ struct OptionsView: View {
                                 .buttonStyle(OptionsRowButtonStyle())
                                 .aspectRatio(16/9, contentMode: .fit)
                                 .frame(height: Utility.tvAppOptionsButtonHeight)
+                                
+                                Button {
+                                    withAnimation {
+                                        homeVM.foregroundMode = .clock6
+                                        homeVM.boxImage = nil
+                                    }
+                                } label: {
+                                    Clock6View()
+                                        .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .clock6))
+                                }
+                                .buttonStyle(OptionsRowButtonStyle())
+                                .aspectRatio(16/9, contentMode: .fit)
+                                .frame(height: Utility.tvAppOptionsButtonHeight)
                             })
                         }
                         

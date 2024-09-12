@@ -18,6 +18,7 @@ enum ForegroundMode: String, Codable, CaseIterable {
     case clock3 = "clock3"
     case clock4 = "clock4"
     case clock5 = "clock5"
+    case clock6 = "clock6"
     case emoji1 = "emoji1"
     case emoji2 = "emoji2"
     case trivia1 = "trivia1"

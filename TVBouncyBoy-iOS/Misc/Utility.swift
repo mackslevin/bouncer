@@ -71,7 +71,7 @@ struct Utility {
     
     static func simpleFormattedTime() -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "hh:mm"
+        formatter.dateFormat = "h:mm"
         return formatter.string(from: .now)
     }
     
