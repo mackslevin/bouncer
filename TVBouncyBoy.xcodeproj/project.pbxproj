@@ -162,7 +162,7 @@
 		01ADC9192C49858C006A2214 /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
 		01ADC91C2C4989D2006A2214 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		01ADC91F2C498B12006A2214 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		01ADC9222C498DCD006A2214 /* TVBouncyBoy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TVBouncyBoy.entitlements; sourceTree = SOURCE_ROOT; };
+		01ADC9222C498DCD006A2214 /* TVBouncyBoy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = TVBouncyBoy.entitlements; path = TVBouncyBoy/TVBouncyBoy.entitlements; sourceTree = SOURCE_ROOT; };
 		01ADC9232C498EAC006A2214 /* TVBouncyBoy-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TVBouncyBoy-iOS.entitlements"; sourceTree = "<group>"; };
 		01ADC9242C49A656006A2214 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		01ADC9272C49A759006A2214 /* PhotosPickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPickerManager.swift; sourceTree = "<group>"; };
@@ -309,7 +309,6 @@
 			isa = PBXGroup;
 			children = (
 				01FC69E12C66B09600BAD81D /* PrivacyInfo.xcprivacy */,
-				01ADC9222C498DCD006A2214 /* TVBouncyBoy.entitlements */,
 				0150AB342C938C4F00BD3F40 /* secrets.plist */,
 				015E4FEE2C39E77600AFD64E /* TVBouncyBoy */,
 				01ADC90A2C49842F006A2214 /* TVBouncyBoy-iOS */,
@@ -329,6 +328,7 @@
 		015E4FEE2C39E77600AFD64E /* TVBouncyBoy */ = {
 			isa = PBXGroup;
 			children = (
+				01ADC9222C498DCD006A2214 /* TVBouncyBoy.entitlements */,
 				0133D5A62C546510006B7C15 /* Misc */,
 				0133D5A42C5464C2006B7C15 /* Views */,
 				0133D5A52C5464EB006B7C15 /* View Models */,
