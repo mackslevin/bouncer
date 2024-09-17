@@ -14,7 +14,6 @@ struct OptionsView: View {
     @Query var appImages: [AppImage]
     @State private var vm = OptionsViewModel()
     
-    
     var body: some View {
         NavigationStack {
             ScrollView {
