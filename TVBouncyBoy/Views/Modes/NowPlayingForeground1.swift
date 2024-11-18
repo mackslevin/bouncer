@@ -8,6 +8,8 @@ struct NowPlayingForeground1: View {
             ZStack {
                 if let uiImage = npvm.nowPlayingArtwork {
                     Image(uiImage: uiImage).resizable().scaledToFill()
+                } else {
+                    Rectangle().foregroundStyle(Color.secondary.gradient)
                 }
                 
                 Rectangle()
