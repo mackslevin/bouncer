@@ -19,6 +19,7 @@ struct NothingPlayingView: View {
             }
             .foregroundStyle(.secondary)
             .fontDesign(.rounded)
+            .multilineTextAlignment(.center)
             
         }
     }

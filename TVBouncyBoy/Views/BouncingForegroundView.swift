@@ -99,6 +99,8 @@ struct BouncingForegroundView<Content: View>: View {
                                         Trivia1View()
                                     case .oscars1:
                                         Oscars1View()
+                                    case .nowPlayingForeground1:
+                                        NowPlayingForeground1()
                                 }
                             }
                         }

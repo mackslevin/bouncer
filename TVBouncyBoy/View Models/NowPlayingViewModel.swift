@@ -41,11 +41,11 @@ final class NowPlayingViewModel {
     }
     
     func registerForNotifications() {
-            NotificationCenter.default.addObserver(self, selector: #selector(updateNowPlayingInfo), name: .MPMusicPlayerControllerNowPlayingItemDidChange, object: musicPlayer)
-            NotificationCenter.default.addObserver(self, selector: #selector(updateNowPlayingInfo), name: .MPMusicPlayerControllerPlaybackStateDidChange, object: musicPlayer)
-            
-            musicPlayer.beginGeneratingPlaybackNotifications()
-        }
+        NotificationCenter.default.addObserver(self, selector: #selector(updateNowPlayingInfo), name: .MPMusicPlayerControllerNowPlayingItemDidChange, object: musicPlayer)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateNowPlayingInfo), name: .MPMusicPlayerControllerPlaybackStateDidChange, object: musicPlayer)
+        
+        musicPlayer.beginGeneratingPlaybackNotifications()
+    }
     
     func someNowPlayingInfoExists() -> Bool {
         !nowPlayingAlbum.isEmpty || !nowPlayingTitle.isEmpty || !nowPlayingArtist.isEmpty || nowPlayingArtwork != nil

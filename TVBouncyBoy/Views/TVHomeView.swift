@@ -20,7 +20,6 @@ struct TVHomeView: View {
                             img.resizable().scaledToFill()
                         }
                     }
-                
                 case .nowPlaying1:
                     BouncingForegroundView(homeVM: vm) {
                         NowPlaying1View()
@@ -84,8 +83,6 @@ struct TVHomeView: View {
                     BouncingForegroundView(homeVM: vm) {
                         ColorGrad7View()
                     }
-                    
-                    
             }
         }
         .onPlayPauseCommand {

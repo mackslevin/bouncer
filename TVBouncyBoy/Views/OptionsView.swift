@@ -182,6 +182,23 @@ struct OptionsView: View {
                                     Text("Best Picture Winners").font(.caption2).foregroundStyle(.secondary)
                                 }
                                 
+                                VStack {
+                                    Button {
+                                        withAnimation {
+                                            homeVM.boxImage = nil
+                                            homeVM.foregroundMode = .nowPlayingForeground1
+                                        }
+                                    } label: {
+                                        NowPlayingForeground1()
+                                            .frame(width: Utility.tvAppOptionsButtonHeight * 1.77, height: Utility.tvAppOptionsButtonHeight)
+                                            .modifier(OptionButtonSelected(isSelected: homeVM.foregroundMode == .nowPlayingForeground1))
+                                    }
+                                    .buttonStyle(OptionsRowButtonStyle())
+                                    .aspectRatio(16/9, contentMode: .fit)
+                                    .frame(height: Utility.tvAppOptionsButtonHeight)
+                                    Text("Now Playing").font(.caption2).foregroundStyle(.secondary)
+                                }
+                                
                                 
                             })
                         }
